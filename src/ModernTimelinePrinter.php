@@ -8,6 +8,7 @@ use ParamProcessor\ProcessedParam;
 use SMW\Parser\RecursiveTextProcessor;
 use SMW\Query\QueryResult;
 use SMW\Query\ResultPrinter;
+use SMWOutputs;
 use SMWQuery;
 
 class ModernTimelinePrinter implements ResultPrinter {
@@ -28,6 +29,8 @@ class ModernTimelinePrinter implements ResultPrinter {
 	 * @return string
 	 */
 	public function getResult( QueryResult $results, array $parameters, $outputMode ): string {
+		SMWOutputs::requireResource( 'ext.modern.timeline' );
+
 		$presenter = new ResultPresenter();
 
 		return $presenter->present( $results );

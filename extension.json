@@ -20,6 +20,18 @@
 		]
 	},
 
+	"ResourceModules": {
+		"ext.modern.timeline": {
+			"scripts": "resources/timeline.js",
+			"styles": "resources/timeline.css"
+		}
+	},
+
+	"ResourceFileModulePaths": {
+		"localBasePath": "",
+		"remoteExtPath": "ModernTimeline"
+	},
+
 	"AutoloadClasses": {
 		"ModernTimeline\\ModernTimelineSetup": "src/ModernTimelineSetup.php",
 		"ModernTimeline\\ModernTimelinePrinter": "src/ModernTimelinePrinter.php"
