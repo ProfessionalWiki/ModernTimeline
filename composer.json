@@ -1,0 +1,41 @@
+{
+	"name": "mediawiki/modern-timeline",
+	"type": "mediawiki-extension",
+	"description": "Adds a modern timeline visualization as Semantic MediaWiki result format",
+	"keywords": [
+		"MediaWiki",
+		"Semantic MediaWiki",
+		"Timeline",
+		"Result format"
+	],
+	"homepage": "https://github.com/ProfessionalWiki/ModernTimeline",
+	"license": "GPL-2.0-or-later",
+	"authors": [
+		{
+			"name": "Professional.Wiki",
+			"email": "info@professional.wiki",
+			"homepage": "https://professional.wiki",
+			"role": "Creator"
+		},
+		{
+			"name": "Jeroen De Dauw",
+			"email": "jeroendedauw@gmail.com",
+			"homepage": "https://www.entropywins.wtf",
+			"role": "Creator and lead developer"
+		}
+	],
+	"support": {
+		"source": "https://github.com/ProfessionalWiki/ModernTimeline"
+	},
+	"require": {
+		"php": ">=7.1",
+		"composer/installers": "^1.0.1",
+		"mediawiki/semantic-media-wiki": "~3.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"ModernTimeline\\": "src/",
+			"ModernTimeline\\Tests\\": "tests/"
+		}
+	}
+}
