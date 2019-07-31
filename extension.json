@@ -1,0 +1,24 @@
+{
+	"name": "Modern Timeline",
+	"version": "0.1.0",
+
+	"author": [
+		"[https://professional.wiki/ <span style=\"color: #df2e2c \">Professional</span>.Wiki]",
+		"[https://www.entropywins.wtf/ Jeroen De Dauw]"
+	],
+	"url": "https://github.com/ProfessionalWiki/ModernTimeline#modern-timeline-for-mediawiki",
+	"descriptionmsg": "modern-timeline-desc",
+	"license-name": "GPL-2.0-or-later",
+
+	"requires": {
+		"MediaWiki": ">= 1.31.0"
+	},
+
+	"MessagesDirs": {
+		"ModernTimeline": [
+			"i18n"
+		]
+	},
+
+	"manifest_version": 2
+}
