@@ -8,6 +8,8 @@ class ModernTimelineSetup {
 
 	public static function onExtensionFunction() {
 		self::doSmwCheck();
+
+		$GLOBALS['smwgResultFormats']['moderntimeline'] = ModernTimelinePrinter::class;
 	}
 
 	private static function doSmwCheck() {

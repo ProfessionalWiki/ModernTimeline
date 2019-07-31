@@ -21,7 +21,8 @@
 	},
 
 	"AutoloadClasses": {
-		"ModernTimeline\\ModernTimelineSetup": "src/ModernTimelineSetup.php"
+		"ModernTimeline\\ModernTimelineSetup": "src/ModernTimelineSetup.php",
+		"ModernTimeline\\ModernTimelinePrinter": "src/ModernTimelinePrinter.php"
 	},
 
 	"ExtensionFunctions": [
