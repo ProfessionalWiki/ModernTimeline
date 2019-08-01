@@ -10,10 +10,12 @@ class ResultPresenter {
 
 	private $id;
 	private $options;
+	private $jsonBuilder;
 
-	public function __construct( string $id, TimelineOptions $options ) {
+	public function __construct( string $id, TimelineOptions $options, JsonBuilder $jsonBuilder ) {
 		$this->id = $id;
 		$this->options = $options;
+		$this->jsonBuilder = $jsonBuilder;
 	}
 
 	public function createDiv(): string {
@@ -28,7 +30,7 @@ class ResultPresenter {
 	}
 
 	public function createJs( QueryResult $results ): string {
-		$json = json_encode( ( new JsonBuilder() )->buildTimelineJson( $results ) );
+		$json = json_encode( $this->jsonBuilder->buildTimelineJson( $results ) );
 
 		return \Html::rawElement(
 			'script',

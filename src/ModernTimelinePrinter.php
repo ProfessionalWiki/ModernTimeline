@@ -61,7 +61,8 @@ class ModernTimelinePrinter implements ResultPrinter {
 
 		$presenter = new ResultPresenter(
 			$timelineId,
-			$this->newOptionsFromParameters( $parameters )
+			$this->newOptionsFromParameters( $parameters ),
+			new JsonBuilder()
 		);
 
 		SMWOutputs::requireScript(
