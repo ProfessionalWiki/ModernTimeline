@@ -31,13 +31,13 @@ class ModernTimelinePrinter implements ResultPrinter {
 			'type' => 'dimension',
 			'allowauto' => true,
 			'units' => [ 'px', 'ex', 'em', '%', '' ],
-			'default' => '100%', // TODO: config
+			'default' => $GLOBALS['wgModernTimelineWidth'],
 		];
 
 		$definitions[self::PARAM_HEIGHT] = [
 			'type' => 'dimension',
 			'units' => [ 'px', 'ex', 'em', '' ],
-			'default' => '250px', // TODO: config
+			'default' => $GLOBALS['wgModernTimelineHeight'],
 		];
 
 		foreach ( $definitions as $name => $definition ) {
