@@ -86,8 +86,12 @@ class ModernTimelinePrinter implements ResultPrinter {
 		return false;
 	}
 
-	public function getDefaultSort() {
+	public function getDefaultSort(): string {
 		return 'ASC';
+	}
+
+	public function isDeferrable(): bool {
+		return false;
 	}
 
 	public function supportsRecursiveAnnotation(): bool {
