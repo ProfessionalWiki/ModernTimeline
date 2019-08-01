@@ -7,7 +7,10 @@ namespace ModernTimeline\Tests\Unit;
 use ModernTimeline\JsonBuilder;
 use PHPUnit\Framework\TestCase;
 
-class DummyTest extends TestCase {
+/**
+ * @covers \ModernTimeline\JsonBuilder
+ */
+class JsonBuilderTest extends TestCase {
 
 	public function testFoo() {
 		$this->assertTrue( class_exists( JsonBuilder::class ) );
