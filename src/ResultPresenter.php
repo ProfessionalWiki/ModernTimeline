@@ -8,23 +8,15 @@ use SMW\Query\QueryResult;
 
 class ResultPresenter {
 
+	private $id;
 	private $options;
 
-	private $id = 'modern_timeline'; // TODO: make unique
-
-	public function __construct( TimelineOptions $options ) {
+	public function __construct( string $id, TimelineOptions $options ) {
+		$this->id = $id;
 		$this->options = $options;
 	}
 
-	public function present( QueryResult $results ): string {
-		$resultText = '';
-
-
-
-		return $this->createDiv() . $this->createJs( $results );
-	}
-
-	private function createDiv(): string {
+	public function createDiv(): string {
 		return \Html::element(
 			'div',
 			[
@@ -35,7 +27,7 @@ class ResultPresenter {
 		);
 	}
 
-	private function createJs( QueryResult $results ): string {
+	public function createJs( QueryResult $results ): string {
 		$json = json_encode( ( new JsonBuilder() )->buildTimelineJson( $results ) );
 
 		return \Html::rawElement(

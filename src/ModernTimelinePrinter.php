@@ -48,18 +48,32 @@ class ModernTimelinePrinter implements ResultPrinter {
 	}
 
 	/**
-	 * @param QueryResult $results
+	 * @param QueryResult $result
 	 * @param ProcessedParam[] $parameters Note: currently getting Param[] from SMW but lets pretend the legacy refactor happened already
 	 * @param int $outputMode
 	 *
 	 * @return string
 	 */
-	public function getResult( QueryResult $results, array $parameters, $outputMode ): string {
+	public function getResult( QueryResult $result, array $parameters, $outputMode ): string {
 		SMWOutputs::requireResource( 'ext.modern.timeline' );
 
-		$presenter = new ResultPresenter( $this->newOptionsFromParameters( $parameters ) );
+		$timelineId = $this->newTimelineId();
 
-		return $presenter->present( $results );
+		$presenter = new ResultPresenter(
+			$timelineId,
+			$this->newOptionsFromParameters( $parameters )
+		);
+
+		SMWOutputs::requireScript(
+			$timelineId,
+			$presenter->createJs( $result )
+		);
+
+		return $presenter->createDiv();
+	}
+
+	private function newTimelineId(): string {
+		return 'modern_timeline'; // TODO: make unique
 	}
 
 	/**
