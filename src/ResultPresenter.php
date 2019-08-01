@@ -6,6 +6,10 @@ namespace ModernTimeline;
 
 use SMW\Query\QueryResult;
 
+/**
+ * Creates the HTML and JS for the timeline.
+ * Purposefully decoupled from the ResultPrinter interface and the global state in the implementation.
+ */
 class ResultPresenter {
 
 	private $id;
