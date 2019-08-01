@@ -7,6 +7,8 @@ matrix:
   include:
     - env: DBTYPE=mysql; MW=1.31.3; SMW=dev-master
       php: 7.1
+    - env: DBTYPE=mysql; MW=1.31.3; SMW=3.0.0
+      php: 7.1
 
 install:
   - travis_retry composer self-update
