@@ -1,2 +1,5 @@
+// TODO: ES6 compat
 
-window.timeline = new TL.Timeline('modern_timeline', window.modernTimeline['modern_timeline']);
+for (const [timelineId, timelineJson] of Object.entries(window.modernTimeline)) {
+    new TL.Timeline(timelineId, timelineJson);
+}

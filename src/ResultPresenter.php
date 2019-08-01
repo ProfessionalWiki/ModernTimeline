@@ -35,7 +35,8 @@ class ResultPresenter {
 			[
 				'type' => 'text/javascript'
 			],
-			"window.modernTimeline = { {$this->id}: $json };"
+			"if (!window.hasOwnProperty('modernTimeline')) {window.modernTimeline = {};}"
+				. "\n window.modernTimeline.{$this->id} = $json;"
 		);
 	}
 

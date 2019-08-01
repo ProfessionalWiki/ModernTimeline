@@ -73,7 +73,8 @@ class ModernTimelinePrinter implements ResultPrinter {
 	}
 
 	private function newTimelineId(): string {
-		return 'modern_timeline'; // TODO: make unique
+		static $timelineNumber = 0;
+		return 'modern_timeline' . ++$timelineNumber;
 	}
 
 	/**
