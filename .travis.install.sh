@@ -29,21 +29,6 @@ then
 	composer require "mediawiki/semantic-media-wiki=$SMW" --prefer-source
 fi
 
-cat <<EOT >> composer.local.json
-{
-	"extra": {
-		"merge-plugin": {
-			"merge-dev": true,
-			"include": [
-				"extensions/*/composer.json"
-			]
-		}
-	}
-}
-EOT
-
-composer install --prefer-source
-
 echo 'wfLoadExtension( "ModernTimeline" );' >> LocalSettings.php
 
 if [ ! -z $SMW ]
