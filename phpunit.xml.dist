@@ -1,0 +1,22 @@
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         cacheTokens="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false">
+    <testsuites>
+        <testsuite name="ModernTimelineUnit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+</phpunit>
