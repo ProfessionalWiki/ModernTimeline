@@ -22,8 +22,11 @@
 
 	"ResourceModules": {
 		"ext.modern.timeline": {
-			"scripts": "resources/timeline.js",
-			"styles": "resources/timeline.css"
+			"scripts": [
+				"resources/vendor/timeline.js",
+				"resources/modernTimeline.js"
+			],
+			"styles": "resources/vendor/timeline.css"
 		}
 	},
 
