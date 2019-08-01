@@ -2,21 +2,21 @@
 
 namespace ModernTimeline\ResultFacade;
 
-class Pages {
+class SubjectCollection {
 
 	private $pages;
 
 	/**
-	 * @param Page[] $pages
+	 * @param Subject[] $pages
 	 */
 	public function __construct( array $pages ) {
 		$this->pages = $pages;
 	}
 
 	/**
-	 * @return Page[]
+	 * @return Subject[]
 	 */
-	public function toArray(): array {
+	public function getSubjects(): iterable {
 		return $this->pages;
 	}
 

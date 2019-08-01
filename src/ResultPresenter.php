@@ -4,8 +4,9 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
-use ModernTimeline\ResultFacade\Page;
-use ModernTimeline\ResultFacade\Pages;
+use ModernTimeline\ResultFacade\ResultSimplifier;
+use ModernTimeline\ResultFacade\Subject;
+use ModernTimeline\ResultFacade\SubjectCollection;
 use SMW\Query\QueryResult;
 
 /**
@@ -36,15 +37,9 @@ class ResultPresenter {
 	}
 
 	public function createJs( QueryResult $result ): string {
-		$pages = [];
-
-		while ( $object = $result->getNext() ) {
-			$pages[] = new Page( $object );
-		}
-
-		$pages = new Pages( $pages );
-
-		$json = json_encode( $this->jsonBuilder->buildTimelineJson( $pages ) );
+		$json = json_encode( $this->jsonBuilder->buildTimelineJson(
+			( new ResultSimplifier() )->newSubjectCollection( $result )
+		) );
 
 		return \Html::rawElement(
 			'script',
