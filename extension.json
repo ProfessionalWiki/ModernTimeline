@@ -26,7 +26,10 @@
 				"resources/vendor/timeline.js",
 				"resources/modernTimeline.js"
 			],
-			"styles": "resources/vendor/timeline.css"
+			"styles": [
+				"resources/vendor/timeline.css",
+				"resources/vendor/font.default.css"
+			]
 		}
 	},
 
