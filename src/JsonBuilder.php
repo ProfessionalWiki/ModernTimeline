@@ -4,37 +4,32 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
-use SMW\Query\QueryResult;
-use SMW\Query\Result\ResultArray;
+use ModernTimeline\ResultFacade\Page;
+use ModernTimeline\ResultFacade\Pages;
 use SMWDITime;
 
 class JsonBuilder {
 
 	private $events;
 
-	public function buildTimelineJson( QueryResult $result ): array {
+	public function buildTimelineJson( Pages $pages ): array {
 		$this->events = [];
 
-		while ( $object = $result->getNext() ) {
-			$this->addObject( $object );
+		foreach ( $pages->toArray() as $page ) {
+			$this->addObject( $page );
 		}
 
 		return [ 'events' => $this->events ];
 	}
 
-	/**
-	 * @param ResultArray[] $object Represents a single page or subobject
-	 */
-	private function addObject( array $object ) {
-		$pageStuff = array_shift( $object );
-
-		foreach ( $object as $propertyValues ) {
+	private function addObject( Page $page ) {
+		foreach ( $page->getPropertyValueSets() as $propertyValues ) {
 			$dataItem = $propertyValues->getNextDataItem();
 
 			if ( $dataItem instanceof SMWDITime ) {
 				$this->events[] = [
 					'text' => [
-						'headline' => $pageStuff->getContent()[0]->getTitle()->getPrefixedText()
+						'headline' => $page->getPageStuff()->getContent()[0]->getTitle()->getPrefixedText()
 					],
 					'start_date' => $this->timeToJson( $dataItem )
 				];
