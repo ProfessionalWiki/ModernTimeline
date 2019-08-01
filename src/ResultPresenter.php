@@ -19,15 +19,9 @@ class ResultPresenter {
 	public function present( QueryResult $results ): string {
 		$resultText = '';
 
-		while ( $object = $results->getNext() ) {
-			foreach ( $object as $propertyValues ) {
-				$resultText .= $propertyValues->getContent()[0]->getTitle()->getPrefixedText() . "<br>";
-				break;
-			}
 
-		}
 
-		return $this->createDiv() . $this->createJs();
+		return $this->createDiv() . $this->createJs( $results );
 	}
 
 	private function createDiv(): string {
@@ -41,19 +35,8 @@ class ResultPresenter {
 		);
 	}
 
-	private function createJs(): string {
-		// https://timeline.knightlab.com/docs/json-format.html
-		$timelineData = [
-			'events' => [
-				[
-					'start_date' => [
-						'year' => 2019
-					]
-				]
-			]
-		];
-
-		$json = json_encode( $timelineData );
+	private function createJs( QueryResult $results ): string {
+		$json = json_encode( ( new JsonBuilder() )->buildTimelineJson( $results ) );
 
 		return \Html::rawElement(
 			'script',
