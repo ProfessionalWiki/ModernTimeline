@@ -45,6 +45,8 @@ class ResultPresenter {
 			'scale_factor' => $this->options->scaleFactor,
 			'timenav_position' => $this->options->position,
 			'optimal_tick_width' => $this->options->tickWidth,
+			'start_at_slide' => $this->options->startSlide,
+			'start_at_end' => $this->options->startAtEnd,
 		];
 
 		$json = json_encode( $preJson );

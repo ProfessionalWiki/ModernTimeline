@@ -20,6 +20,8 @@ class ModernTimelinePrinter implements ResultPrinter {
 	private const PARAM_SCALE_FACTOR = 'scale factor';
 	private const PARAM_POSITION = 'position';
 	private const PARAM_TICK_WIDTH = 'tick width';
+	private const PARAM_START_SLIDE = 'start slide';
+	private const PARAM_START_AT_END = 'start at end';
 
 	public function getName(): string {
 		return wfMessage( 'modern-timeline-format-name' )->text();
@@ -69,6 +71,16 @@ class ModernTimelinePrinter implements ResultPrinter {
 		$definitions[self::PARAM_TICK_WIDTH] = [
 			'type' => 'integer',
 			'default' => $GLOBALS['wgModernTimelineTickWidth']
+		];
+
+		$definitions[self::PARAM_START_SLIDE] = [
+			'type' => 'integer',
+			'default' => $GLOBALS['wgModernTimelineStartSlide']
+		];
+
+		$definitions[self::PARAM_START_AT_END] = [
+			'type' => 'boolean',
+			'default' => $GLOBALS['wgModernTimelineStartAtEnd']
 		];
 
 		foreach ( $definitions as $name => $definition ) {
@@ -127,6 +139,8 @@ class ModernTimelinePrinter implements ResultPrinter {
 		$options->scaleFactor = $parameters[self::PARAM_SCALE_FACTOR]->getValue();
 		$options->position = $parameters[self::PARAM_POSITION]->getValue();
 		$options->tickWidth = $parameters[self::PARAM_TICK_WIDTH]->getValue();
+		$options->startSlide = $parameters[self::PARAM_START_SLIDE]->getValue();
+		$options->startAtEnd = $parameters[self::PARAM_START_AT_END]->getValue();
 
 		return $options;
 	}

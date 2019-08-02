@@ -11,5 +11,7 @@ class TimelineOptions {
 	public /* int */ $scaleFactor;
 	public /* string */ $position;
 	public /* int */ $tickWidth;
+	public /* int */ $startSlide;
+	public /* bool */ $startAtEnd;
 
 }

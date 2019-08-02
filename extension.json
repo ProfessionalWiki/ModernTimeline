@@ -33,8 +33,14 @@
 		"ModernTimelinePosition": {
 			"value": "bottom"
 		},
-		"TickWidth": {
+		"ModernTimelineTickWidth": {
 			"value": 100
+		},
+		"ModernTimelineStartSlide": {
+			"value": 0
+		},
+		"ModernTimelineStartAtEnd": {
+			"value": false
 		}
 	},
 
