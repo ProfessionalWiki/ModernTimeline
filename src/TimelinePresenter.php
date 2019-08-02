@@ -3,26 +3,21 @@
 namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\ResultSimplifier;
+use ParamProcessor\ProcessedParam;
 use SMW\Query\QueryResult;
 use SMWOutputs;
 
 class TimelinePresenter {
 
-	public function getResult( QueryResult $result, array $parameters ): string {
-		SMWOutputs::requireResource( 'ext.modern.timeline' );
+	private $id;
+	private $parameters;
 
-		$timelineId = $this->newTimelineId();
-
-		SMWOutputs::requireScript(
-			$timelineId,
-			$this->createJs( $timelineId, $result, $parameters )
-		);
-
-		return $this->createDiv(
-			$timelineId,
-			$parameters[TimelineOptions::PARAM_WIDTH]->getValue(),
-			$parameters[TimelineOptions::PARAM_HEIGHT]->getValue()
-		);
+	/**
+	 * @param ProcessedParam[] $parameters
+	 */
+	public function __construct( array $parameters ) {
+		$this->parameters = $parameters;
+		$this->id = $this->newTimelineId();
 	}
 
 	private function newTimelineId(): string {
@@ -30,23 +25,23 @@ class TimelinePresenter {
 		return 'modern_timeline' . ++$timelineNumber;
 	}
 
-	private function createDiv( string $timelineId, string $width, string $height ): string {
-		return \Html::element(
-			'div',
-			[
-				'id' => $timelineId,
-				'style' => "width: $width; height: $height;"
-			],
-			'Loading' // TODO
+	public function getResult( QueryResult $result ): string {
+		SMWOutputs::requireResource( 'ext.modern.timeline' );
+
+		SMWOutputs::requireScript(
+			$this->id,
+			$this->createJs( $result )
 		);
+
+		return $this->createDiv();
 	}
 
-	private function createJs( string $timelineId, QueryResult $result, array $parameters ): string {
+	private function createJs( QueryResult $result ): string {
 		$preJson = ( new JsonBuilder() )->buildTimelineJson(
 			( new ResultSimplifier() )->newSubjectCollection( $result )
 		);
 
-		$preJson['options'] = TimelineOptions::processedParamsToJson( $parameters );
+		$preJson['options'] = TimelineOptions::processedParamsToJson( $this->parameters );
 
 		$json = json_encode( $preJson );
 
@@ -56,7 +51,21 @@ class TimelinePresenter {
 				'type' => 'text/javascript'
 			],
 			"if (!window.hasOwnProperty('modernTimeline')) {window.modernTimeline = {};}"
-			. "\n window.modernTimeline.{$timelineId} = $json;"
+			. "\n window.modernTimeline.{$this->id} = $json;"
+		);
+	}
+
+	private function createDiv(): string {
+		$width = $this->parameters[TimelineOptions::PARAM_WIDTH]->getValue();
+		$height = $this->parameters[TimelineOptions::PARAM_HEIGHT]->getValue();
+
+		return \Html::element(
+			'div',
+			[
+				'id' => $this->id,
+				'style' => "width: $width; height: $height;"
+			],
+			'Loading' // TODO
 		);
 	}
 

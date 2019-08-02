@@ -28,7 +28,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 	 * @return string
 	 */
 	public function getResult( QueryResult $result, array $parameters, $outputMode ): string {
-		return ( new TimelinePresenter() )->getResult( $result, $parameters );
+		return ( new TimelinePresenter( $parameters ) )->getResult( $result );
 	}
 
 	public function getQueryMode( $context ): int {
