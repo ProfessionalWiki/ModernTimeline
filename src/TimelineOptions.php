@@ -8,5 +8,6 @@ class TimelineOptions {
 	public /* string */ $height;
 	public /* bool */ $bookmark;
 	public /* string */ $backgroundColor;
+	public /* int */ $scaleFactor;
 
 }

@@ -26,6 +26,9 @@
 		},
 		"ModernTimelineBackground": {
 			"value": "white"
+		},
+		"ModernTimelineScaleFactor": {
+			"value": 2
 		}
 	},
 

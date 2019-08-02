@@ -10,6 +10,7 @@
 	"modern-timeline-param-height": "Timeline height in pixels. Can also be specified in em and ex",
 	"modern-timeline-param-bookmark": "Make the timeline bookmarkable via the page URL",
 	"modern-timeline-param-background": "Background color for the timeline slides",
+	"modern-timeline-param-scale-factor": "Timeline width in screen widths at first presentation",
 
 	"modern-timeline-format-name": "Modern timeline"
 }
