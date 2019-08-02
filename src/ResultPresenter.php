@@ -5,8 +5,6 @@ declare( strict_types = 1 );
 namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\ResultSimplifier;
-use ModernTimeline\ResultFacade\Subject;
-use ModernTimeline\ResultFacade\SubjectCollection;
 use SMW\Query\QueryResult;
 
 /**
@@ -37,9 +35,15 @@ class ResultPresenter {
 	}
 
 	public function createJs( QueryResult $result ): string {
-		$json = json_encode( $this->jsonBuilder->buildTimelineJson(
+		$preJson = $this->jsonBuilder->buildTimelineJson(
 			( new ResultSimplifier() )->newSubjectCollection( $result )
-		) );
+		);
+
+		$preJson['options'] = [
+			'hash_bookmark' => $this->options->bookmark
+		];
+
+		$json = json_encode( $preJson );
 
 		return \Html::rawElement(
 			'script',

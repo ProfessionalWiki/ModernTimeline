@@ -20,6 +20,9 @@
 		},
 		"ModernTimelineHeight": {
 			"value": "300px"
+		},
+		"ModernTimelineBookmark": {
+			"value": false
 		}
 	},
 
