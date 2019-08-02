@@ -124,7 +124,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 		);
 	}
 
-	public function createDiv( int $timelineId, string $width, string $height ): string {
+	public function createDiv( string $timelineId, string $width, string $height ): string {
 		return \Html::element(
 			'div',
 			[
