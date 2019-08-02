@@ -43,6 +43,7 @@ class ResultPresenter {
 			'hash_bookmark' => $this->options->bookmark,
 			'default_bg_color' => $this->options->backgroundColor,
 			'scale_factor' => $this->options->scaleFactor,
+			'timenav_position' => $this->options->position,
 		];
 
 		$json = json_encode( $preJson );

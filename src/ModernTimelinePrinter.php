@@ -18,6 +18,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 	private const PARAM_BOOKMARK = 'bookmark';
 	private const PARAM_BACKGROUND = 'background';
 	private const PARAM_SCALE_FACTOR = 'scale factor';
+	private const PARAM_POSITION = 'position';
 
 	public function getName(): string {
 		return wfMessage( 'modern-timeline-format-name' )->text();
@@ -56,6 +57,12 @@ class ModernTimelinePrinter implements ResultPrinter {
 		$definitions[self::PARAM_SCALE_FACTOR] = [
 			'type' => 'integer',
 			'default' => $GLOBALS['wgModernTimelineScaleFactor'],
+		];
+
+		$definitions[self::PARAM_POSITION] = [
+			'type' => 'string',
+			'default' => $GLOBALS['wgModernTimelinePosition'],
+			'values' => [ 'top', 'bottom' ],
 		];
 
 		foreach ( $definitions as $name => $definition ) {
@@ -108,6 +115,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 		$options->bookmark = $parameters[self::PARAM_BOOKMARK]->getValue();
 		$options->backgroundColor = $parameters[self::PARAM_BACKGROUND]->getValue();
 		$options->scaleFactor = $parameters[self::PARAM_SCALE_FACTOR]->getValue();
+		$options->position = $parameters[self::PARAM_POSITION]->getValue();
 
 		return $options;
 	}

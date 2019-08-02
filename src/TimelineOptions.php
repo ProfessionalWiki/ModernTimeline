@@ -9,5 +9,6 @@ class TimelineOptions {
 	public /* bool */ $bookmark;
 	public /* string */ $backgroundColor;
 	public /* int */ $scaleFactor;
+	public /* string */ $position;
 
 }
