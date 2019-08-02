@@ -117,7 +117,10 @@ class ModernTimelinePrinter implements ResultPrinter {
 			$presenter->createJs( $result )
 		);
 
-		return $presenter->createDiv();
+		return $presenter->createDiv(
+			$parameters[self::PARAM_WIDTH]->getValue(),
+			$parameters[self::PARAM_HEIGHT]->getValue()
+		);
 	}
 
 	private function newTimelineId(): string {
@@ -132,8 +135,6 @@ class ModernTimelinePrinter implements ResultPrinter {
 	private function newOptionsFromParameters( array $parameters ): TimelineOptions {
 		$options = new TimelineOptions();
 
-		$options->width = $parameters[self::PARAM_WIDTH]->getValue();
-		$options->height = $parameters[self::PARAM_HEIGHT]->getValue();
 		$options->bookmark = $parameters[self::PARAM_BOOKMARK]->getValue();
 		$options->backgroundColor = $parameters[self::PARAM_BACKGROUND]->getValue();
 		$options->scaleFactor = $parameters[self::PARAM_SCALE_FACTOR]->getValue();

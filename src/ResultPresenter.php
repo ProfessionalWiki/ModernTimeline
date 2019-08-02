@@ -23,12 +23,12 @@ class ResultPresenter {
 		$this->jsonBuilder = $jsonBuilder;
 	}
 
-	public function createDiv(): string {
+	public function createDiv( string $width, string $height ): string {
 		return \Html::element(
 			'div',
 			[
 				'id' => $this->id,
-				'style' => "width: {$this->options->width}; height: {$this->options->height};"
+				'style' => "width: $width; height: $height;"
 			],
 			'Loading' // TODO
 		);
