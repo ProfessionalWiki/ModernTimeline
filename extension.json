@@ -23,6 +23,9 @@
 		},
 		"ModernTimelineBookmark": {
 			"value": false
+		},
+		"ModernTimelineBackground": {
+			"value": "white"
 		}
 	},
 

@@ -40,7 +40,8 @@ class ResultPresenter {
 		);
 
 		$preJson['options'] = [
-			'hash_bookmark' => $this->options->bookmark
+			'hash_bookmark' => $this->options->bookmark,
+			'default_bg_color' => $this->options->backgroundColor,
 		];
 
 		$json = json_encode( $preJson );

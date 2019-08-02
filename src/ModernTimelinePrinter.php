@@ -16,6 +16,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 	private const PARAM_WIDTH = 'width';
 	private const PARAM_HEIGHT = 'height';
 	private const PARAM_BOOKMARK = 'bookmark';
+	private const PARAM_BACKGROUND = 'background';
 
 	public function getName(): string {
 		return wfMessage( 'modern-timeline-format-name' )->text();
@@ -44,6 +45,11 @@ class ModernTimelinePrinter implements ResultPrinter {
 		$definitions[self::PARAM_BOOKMARK] = [
 			'type' => 'boolean',
 			'default' => $GLOBALS['wgModernTimelineBookmark'],
+		];
+
+		$definitions[self::PARAM_BACKGROUND] = [
+			'type' => 'string',
+			'default' => $GLOBALS['wgModernTimelineBackground'],
 		];
 
 		foreach ( $definitions as $name => $definition ) {
@@ -94,6 +100,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 		$options->width = $parameters[self::PARAM_WIDTH]->getValue();
 		$options->height = $parameters[self::PARAM_HEIGHT]->getValue();
 		$options->bookmark = $parameters[self::PARAM_BOOKMARK]->getValue();
+		$options->backgroundColor = $parameters[self::PARAM_BACKGROUND]->getValue();
 
 		return $options;
 	}
