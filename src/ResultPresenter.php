@@ -23,17 +23,6 @@ class ResultPresenter {
 		$this->jsonBuilder = $jsonBuilder;
 	}
 
-	public function createDiv( string $width, string $height ): string {
-		return \Html::element(
-			'div',
-			[
-				'id' => $this->id,
-				'style' => "width: $width; height: $height;"
-			],
-			'Loading' // TODO
-		);
-	}
-
 	public function createJs( QueryResult $result ): string {
 		$preJson = $this->jsonBuilder->buildTimelineJson(
 			( new ResultSimplifier() )->newSubjectCollection( $result )

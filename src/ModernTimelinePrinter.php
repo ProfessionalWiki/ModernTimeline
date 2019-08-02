@@ -117,9 +117,21 @@ class ModernTimelinePrinter implements ResultPrinter {
 			$presenter->createJs( $result )
 		);
 
-		return $presenter->createDiv(
+		return $this->createDiv(
+			$timelineId,
 			$parameters[self::PARAM_WIDTH]->getValue(),
 			$parameters[self::PARAM_HEIGHT]->getValue()
+		);
+	}
+
+	public function createDiv( int $timelineId, string $width, string $height ): string {
+		return \Html::element(
+			'div',
+			[
+				'id' => $timelineId,
+				'style' => "width: $width; height: $height;"
+			],
+			'Loading' // TODO
 		);
 	}
 
