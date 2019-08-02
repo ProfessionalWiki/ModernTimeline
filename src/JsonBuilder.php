@@ -44,7 +44,7 @@ class JsonBuilder {
 			'day' => $time->getDay(),
 			'hour' => $time->getHour(),
 			'minute' => $time->getMinute(),
-			'second' => $time->getSecond(),
+			'second' => (int)$time->getSecond(),
 		];
 	}
 
