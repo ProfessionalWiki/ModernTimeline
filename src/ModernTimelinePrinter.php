@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
+use ModernTimeline\ResultFacade\ResultSimplifier;
 use ParamProcessor\ProcessedParam;
 use SMW\Parser\RecursiveTextProcessor;
 use SMW\Query\QueryResult;
@@ -106,15 +107,9 @@ class ModernTimelinePrinter implements ResultPrinter {
 
 		$timelineId = $this->newTimelineId();
 
-		$presenter = new ResultPresenter(
-			$timelineId,
-			$this->newOptionsFromParameters( $parameters ),
-			new JsonBuilder()
-		);
-
 		SMWOutputs::requireScript(
 			$timelineId,
-			$presenter->createJs( $result )
+			$this->createJs( $timelineId, $result, $this->newOptionsFromParameters( $parameters ) )
 		);
 
 		return $this->createDiv(
@@ -122,6 +117,11 @@ class ModernTimelinePrinter implements ResultPrinter {
 			$parameters[self::PARAM_WIDTH]->getValue(),
 			$parameters[self::PARAM_HEIGHT]->getValue()
 		);
+	}
+
+	private function newTimelineId(): string {
+		static $timelineNumber = 0;
+		return 'modern_timeline' . ++$timelineNumber;
 	}
 
 	public function createDiv( string $timelineId, string $width, string $height ): string {
@@ -135,9 +135,31 @@ class ModernTimelinePrinter implements ResultPrinter {
 		);
 	}
 
-	private function newTimelineId(): string {
-		static $timelineNumber = 0;
-		return 'modern_timeline' . ++$timelineNumber;
+	public function createJs( string $timelineId, QueryResult $result, TimelineOptions $options ): string {
+		$preJson = ( new JsonBuilder() )->buildTimelineJson(
+			( new ResultSimplifier() )->newSubjectCollection( $result )
+		);
+
+		$preJson['options'] = [
+			'hash_bookmark' => $options->bookmark,
+			'default_bg_color' => $options->backgroundColor,
+			'scale_factor' => $options->scaleFactor,
+			'timenav_position' => $options->position,
+			'optimal_tick_width' => $options->tickWidth,
+			'start_at_slide' => $options->startSlide,
+			'start_at_end' => $options->startAtEnd,
+		];
+
+		$json = json_encode( $preJson );
+
+		return \Html::rawElement(
+			'script',
+			[
+				'type' => 'text/javascript'
+			],
+			"if (!window.hasOwnProperty('modernTimeline')) {window.modernTimeline = {};}"
+			. "\n window.modernTimeline.{$timelineId} = $json;"
+		);
 	}
 
 	/**
