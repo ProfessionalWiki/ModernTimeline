@@ -32,6 +32,9 @@
 		},
 		"ModernTimelinePosition": {
 			"value": "bottom"
+		},
+		"TickWidth": {
+			"value": 100
 		}
 	},
 

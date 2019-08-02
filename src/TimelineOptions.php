@@ -10,5 +10,6 @@ class TimelineOptions {
 	public /* string */ $backgroundColor;
 	public /* int */ $scaleFactor;
 	public /* string */ $position;
+	public /* int */ $tickWidth;
 
 }

@@ -12,6 +12,7 @@
 	"modern-timeline-param-background": "Background color for the timeline slides",
 	"modern-timeline-param-scale-factor": "Timeline width in screen widths at first presentation",
 	"modern-timeline-param-position": "Display the timeline navigation at the top or at the bottom",
+	"modern-timeline-param-tick-width": "Optimal distance (in pixels) between ticks on the axis",
 
 	"modern-timeline-format-name": "Modern timeline"
 }

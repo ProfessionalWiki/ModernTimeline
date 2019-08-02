@@ -19,6 +19,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 	private const PARAM_BACKGROUND = 'background';
 	private const PARAM_SCALE_FACTOR = 'scale factor';
 	private const PARAM_POSITION = 'position';
+	private const PARAM_TICK_WIDTH = 'tick width';
 
 	public function getName(): string {
 		return wfMessage( 'modern-timeline-format-name' )->text();
@@ -65,8 +66,17 @@ class ModernTimelinePrinter implements ResultPrinter {
 			'values' => [ 'top', 'bottom' ],
 		];
 
+		$definitions[self::PARAM_TICK_WIDTH] = [
+			'type' => 'integer',
+			'default' => $GLOBALS['wgModernTimelineTickWidth']
+		];
+
 		foreach ( $definitions as $name => $definition ) {
 			$definitions[$name]['message'] = 'modern-timeline-param-' . str_replace( ' ', '-', $name );
+
+			if ( strpos( $name, ' ' ) !== false ) {
+				$definitions[$name]['aliases'] = [ str_replace( ' ', '', $name ) ];
+			}
 		}
 
 		return $definitions;
@@ -116,6 +126,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 		$options->backgroundColor = $parameters[self::PARAM_BACKGROUND]->getValue();
 		$options->scaleFactor = $parameters[self::PARAM_SCALE_FACTOR]->getValue();
 		$options->position = $parameters[self::PARAM_POSITION]->getValue();
+		$options->tickWidth = $parameters[self::PARAM_TICK_WIDTH]->getValue();
 
 		return $options;
 	}
