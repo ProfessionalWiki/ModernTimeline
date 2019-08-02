@@ -4,12 +4,10 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
-use ModernTimeline\ResultFacade\ResultSimplifier;
 use ParamProcessor\ProcessedParam;
 use SMW\Parser\RecursiveTextProcessor;
 use SMW\Query\QueryResult;
 use SMW\Query\ResultPrinter;
-use SMWOutputs;
 use SMWQuery;
 
 class ModernTimelinePrinter implements ResultPrinter {
