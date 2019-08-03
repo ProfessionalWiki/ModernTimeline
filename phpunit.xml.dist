@@ -13,6 +13,9 @@
         <testsuite name="ModernTimelineUnit">
             <directory>tests/Unit</directory>
         </testsuite>
+        <testsuite name="ModernTimelineIntegration">
+            <directory>tests/Integration</directory>
+        </testsuite>
     </testsuites>
     <filter>
         <whitelist addUncoveredFilesFromWhitelist="true">
