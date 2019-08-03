@@ -19,6 +19,10 @@
 			"contents": "No date here"
 		},
 		{
+			"page": "SMWDoc",
+			"contents": "{{#smwdoc:moderntimeline}}"
+		},
+		{
 			"page": "Query page",
 			"contents": "{{ #ask: [[News date::+]] | format=moderntimeline | ?News date }}"
 		},
@@ -51,6 +55,19 @@
 				"to-contain": [
 					"width: 100%",
 					"height: 1337px"
+				]
+			}
+		},
+		{
+			"about": "All parameters have a message",
+			"type": "parser",
+			"subject": "SMWDoc",
+			"assert-output": {
+				"to-contain": [
+					"Background"
+				],
+				"not-contain": [
+					"modern-timeline-"
 				]
 			}
 		}
