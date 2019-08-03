@@ -30,7 +30,7 @@ class TimelinePresenter {
 
 		$json = $this->createJsonString( $result );
 
-		SMWOutputs::requireScript(
+		SMWOutputs::requireHeadItem(
 			$this->id,
 			$this->createJs( $json )
 		);
