@@ -29,6 +29,7 @@ class OptionsTest extends TestCase {
 				'start_at_slide' => self::DEFAULT_START_SLIDE,
 				'start_at_end' => false,
 				'duration' => 1000,
+				'timenav_height' => 200,
 			],
 			$this->processUserInputToTimelineOptions( [] )
 		);
@@ -137,6 +138,13 @@ class OptionsTest extends TestCase {
 	public function animationDurationAliasProvider() {
 		yield 'automatic alias' => [ 'animationduration' ];
 		yield 'manual alias' => [ 'duration' ];
+	}
+
+	public function testNavHeightUsesCorrectJsonFieldWhenGivenPercentage() {
+		$this->assertSame(
+			50,
+			$this->processUserInputToTimelineOptions( [ 'navigation height' => '50%' ] )['timenav_height_percentage']
+		);
 	}
 
 }

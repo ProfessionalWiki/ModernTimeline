@@ -17,6 +17,7 @@ class TimelineOptions {
 	private const PARAM_START_SLIDE = 'start slide';
 	private const PARAM_START_AT_END = 'start at end';
 	private const PARAM_ANIMATION_DURATION = 'animation duration';
+	private const PARAM_NAV_HEIGHT = 'navigation height';
 
 	public static function getTimelineParameterDefinitions(): array {
 		$definitions = [];
@@ -79,6 +80,12 @@ class TimelineOptions {
 			'lowerbound' => 1
 		];
 
+		$definitions[self::PARAM_NAV_HEIGHT] = [
+			'type' => ParameterTypes::DIMENSION,
+			'units' => [ 'px', '%' ],
+			'default' => $GLOBALS['wgModernTimelineNavHeight'],
+		];
+
 		foreach ( $definitions as $name => $definition ) {
 			$definitions[$name]['message'] = 'modern-timeline-param-' . str_replace( ' ', '-', $name );
 
@@ -98,16 +105,31 @@ class TimelineOptions {
 	 * @return array
 	 */
 	public static function processedParamsToJson( array $parameters ): array {
-		return [
+		$json = [
 			'hash_bookmark' => $parameters[self::PARAM_BOOKMARK]->getValue(),
 			'default_bg_color' => $parameters[self::PARAM_BACKGROUND]->getValue(),
 			'scale_factor' => $parameters[self::PARAM_SCALE_FACTOR]->getValue(),
 			'timenav_position' => $parameters[self::PARAM_POSITION]->getValue(),
 			'optimal_tick_width' => $parameters[self::PARAM_TICK_WIDTH]->getValue(),
-			'start_at_slide' => $parameters[self::PARAM_START_SLIDE]->getValue() - 1,
+			'start_at_slide' => self::getStartAtSlide( $parameters ),
 			'start_at_end' => $parameters[self::PARAM_START_AT_END]->getValue(),
 			'duration' => $parameters[self::PARAM_ANIMATION_DURATION]->getValue(),
 		];
+
+		$height = $parameters[self::PARAM_NAV_HEIGHT]->getValue();
+
+		if ( strpos( $height, '%' ) === false ) {
+			$json['timenav_height'] = (int)substr( $height, 0, -2 );
+		}
+		else {
+			$json['timenav_height_percentage'] = (int)substr( $height, 0, -1 );
+		}
+
+		return $json;
+	}
+
+	private static function getStartAtSlide( array $parameters ): int {
+		return $parameters[self::PARAM_START_SLIDE]->getValue() - 1;
 	}
 
 }

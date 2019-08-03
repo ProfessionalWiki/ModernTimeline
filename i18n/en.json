@@ -16,6 +16,7 @@
 	"modern-timeline-param-start-slide": "The first slide to display when the timeline is loaded",
 	"modern-timeline-param-start-at-end": "Start with the last timeline slide",
 	"modern-timeline-param-animation-duration": "Animation duration in milliseconds",
+	"modern-timeline-param-navigation-height": "Height of the timeline navigation section in % or px",
 
 	"modern-timeline-format-name": "Modern timeline"
 }
