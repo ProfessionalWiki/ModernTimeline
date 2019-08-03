@@ -2,6 +2,7 @@
 
 namespace ModernTimeline;
 
+use ParamProcessor\ParameterTypes;
 use ParamProcessor\ProcessedParam;
 
 class TimelineOptions {
@@ -20,51 +21,51 @@ class TimelineOptions {
 		$definitions = [];
 
 		$definitions[self::PARAM_WIDTH] = [
-			'type' => 'dimension',
+			'type' => ParameterTypes::DIMENSION,
 			'allowauto' => true,
 			'units' => [ 'px', 'ex', 'em', '%', '' ],
 			'default' => $GLOBALS['wgModernTimelineWidth'],
 		];
 
 		$definitions[self::PARAM_HEIGHT] = [
-			'type' => 'dimension',
+			'type' => ParameterTypes::DIMENSION,
 			'units' => [ 'px', 'ex', 'em', '' ],
 			'default' => $GLOBALS['wgModernTimelineHeight'],
 		];
 
 		$definitions[self::PARAM_BOOKMARK] = [
-			'type' => 'boolean',
+			'type' => ParameterTypes::BOOLEAN,
 			'default' => $GLOBALS['wgModernTimelineBookmark'],
 		];
 
 		$definitions[self::PARAM_BACKGROUND] = [
-			'type' => 'string',
+			'type' => ParameterTypes::STRING,
 			'default' => $GLOBALS['wgModernTimelineBackground'],
 		];
 
 		$definitions[self::PARAM_SCALE_FACTOR] = [
-			'type' => 'integer',
+			'type' => ParameterTypes::INTEGER,
 			'default' => $GLOBALS['wgModernTimelineScaleFactor'],
 		];
 
 		$definitions[self::PARAM_POSITION] = [
-			'type' => 'string',
+			'type' => ParameterTypes::STRING,
 			'default' => $GLOBALS['wgModernTimelinePosition'],
 			'values' => [ 'top', 'bottom' ],
 		];
 
 		$definitions[self::PARAM_TICK_WIDTH] = [
-			'type' => 'integer',
+			'type' => ParameterTypes::INTEGER,
 			'default' => $GLOBALS['wgModernTimelineTickWidth']
 		];
 
 		$definitions[self::PARAM_START_SLIDE] = [
-			'type' => 'integer',
+			'type' => ParameterTypes::INTEGER,
 			'default' => $GLOBALS['wgModernTimelineStartSlide']
 		];
 
 		$definitions[self::PARAM_START_AT_END] = [
-			'type' => 'boolean',
+			'type' => ParameterTypes::BOOLEAN,
 			'default' => $GLOBALS['wgModernTimelineStartAtEnd']
 		];
 

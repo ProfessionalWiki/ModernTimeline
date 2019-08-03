@@ -39,7 +39,7 @@ class OptionsTest extends TestCase {
 	private function processUserInput( array $userInput ): ProcessingResult {
 		$processor = Processor::newDefault();
 
-		$processor->setFunctionParams( $userInput );
+		$processor->setParameters( $userInput );
 		$processor->setParameterDefinitions( $this->getParameterDefinitions() );
 
 		return $processor->processParameters();
@@ -54,8 +54,46 @@ class OptionsTest extends TestCase {
 	public function testDefaultWidthAndHeight() {
 		$parameters = $this->processUserInput( [] )->getParameterArray();
 
-		$this->assertSame( '100%px', $parameters['width'] );
+		$this->assertSame( '100%', $parameters['width'] );
 		$this->assertSame( '300px', $parameters['height'] );
+	}
+
+	/**
+	 * @dataProvider widthProvider
+	 */
+	public function testWidth( string $input, string $expected ) {
+		$parameters = $this->processUserInput( [
+			'width' => $input,
+		] )->getParameterArray();
+
+		$this->assertSame( $expected, $parameters['width'] );
+	}
+
+	public function widthProvider() {
+		yield [ '10', '10px' ];
+		yield [ '10px', '10px' ];
+		yield [ '10%', '10%' ];
+		yield [ '10em', '10em' ];
+		yield [ '10ex', '10ex' ];
+		yield [ 'auto', 'auto' ];
+	}
+
+	/**
+	 * @dataProvider heightProvider
+	 */
+	public function testHeight( string $input, string $expected ) {
+		$parameters = $this->processUserInput( [
+			'height' => $input,
+		] )->getParameterArray();
+
+		$this->assertSame( $expected, $parameters['height'] );
+	}
+
+	public function heightProvider() {
+		yield [ '10', '10px' ];
+		yield [ '10px', '10px' ];
+		yield [ '10em', '10em' ];
+		yield [ '10ex', '10ex' ];
 	}
 
 }
