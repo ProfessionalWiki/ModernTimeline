@@ -60,7 +60,10 @@ class JsonBuilderTest extends TestCase {
 		$this->assertBuildsJson(
 			[
 				[
-					'text' => [ 'headline' => 'SomePage' ],
+					'text' => [
+						'headline' => 'SomePage',
+						'text' => 'hi there i am a text',
+					],
 					'start_date' => [
 						'year' => 2019,
 						'month' => 8,

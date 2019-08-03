@@ -58,8 +58,8 @@ class OptionsTest extends TestCase {
 	public function testDefaultWidthAndHeight() {
 		$parameters = $this->processUserInput( [] )->getParameterArray();
 
-		$this->assertSame( '100%', $parameters['width'] );
-		$this->assertSame( '300px', $parameters['height'] );
+		$this->assertSame( $GLOBALS['wgModernTimelineWidth'], $parameters['width'] );
+		$this->assertSame( $GLOBALS['wgModernTimelineHeight'], $parameters['height'] );
 	}
 
 	/**
