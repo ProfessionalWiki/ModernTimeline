@@ -112,7 +112,14 @@ class OptionsTest extends TestCase {
 	}
 
 	public function testTooLowStartSlideDefaults() {
-		$this->assertProcesses( 'start slide', '-1', self::DEFAULT_START_SLIDE );
+		$this->assertProcesses( 'start slide', '0', 1 );
+	}
+
+	public function testStartSlideIsOneBased() {
+		$this->assertSame(
+			2,
+			$this->processUserInputToTimelineOptions( [ 'start slide' => '3' ] )['start_at_slide']
+		);
 	}
 
 }

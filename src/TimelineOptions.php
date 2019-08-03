@@ -93,7 +93,7 @@ class TimelineOptions {
 			'scale_factor' => $parameters[self::PARAM_SCALE_FACTOR]->getValue(),
 			'timenav_position' => $parameters[self::PARAM_POSITION]->getValue(),
 			'optimal_tick_width' => $parameters[self::PARAM_TICK_WIDTH]->getValue(),
-			'start_at_slide' => $parameters[self::PARAM_START_SLIDE]->getValue(),
+			'start_at_slide' => $parameters[self::PARAM_START_SLIDE]->getValue() - 1,
 			'start_at_end' => $parameters[self::PARAM_START_AT_END]->getValue(),
 		];
 	}
