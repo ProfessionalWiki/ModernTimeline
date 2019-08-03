@@ -16,7 +16,7 @@ class TimelineOptions {
 	private const PARAM_TICK_WIDTH = 'tick width';
 	private const PARAM_START_SLIDE = 'start slide';
 	private const PARAM_START_AT_END = 'start at end';
-	private const PARAM_ANIMATION_DURATION = 'animation duration';
+	private const PARAM_TRANSITION_DURATION = 'transition duration';
 	private const PARAM_NAV_HEIGHT = 'navigation height';
 
 	public static function getTimelineParameterDefinitions(): array {
@@ -73,10 +73,10 @@ class TimelineOptions {
 			'default' => $GLOBALS['wgModernTimelineStartAtEnd']
 		];
 
-		$definitions[self::PARAM_ANIMATION_DURATION] = [
+		$definitions[self::PARAM_TRANSITION_DURATION] = [
 			'type' => ParameterTypes::INTEGER,
 			'aliases' => 'duration',
-			'default' => $GLOBALS['wgModernTimelineAnimationDuration'],
+			'default' => $GLOBALS['wgModernTimelineTransitionDuration'],
 			'lowerbound' => 1
 		];
 
@@ -113,7 +113,7 @@ class TimelineOptions {
 			'optimal_tick_width' => $parameters[self::PARAM_TICK_WIDTH]->getValue(),
 			'start_at_slide' => self::getStartAtSlide( $parameters ),
 			'start_at_end' => $parameters[self::PARAM_START_AT_END]->getValue(),
-			'duration' => $parameters[self::PARAM_ANIMATION_DURATION]->getValue(),
+			'duration' => $parameters[self::PARAM_TRANSITION_DURATION]->getValue(),
 		];
 
 		$height = $parameters[self::PARAM_NAV_HEIGHT]->getValue();

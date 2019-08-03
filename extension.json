@@ -42,7 +42,7 @@
 		"ModernTimelineStartAtEnd": {
 			"value": false
 		},
-		"ModernTimelineAnimationDuration": {
+		"ModernTimelineTransitionDuration": {
 			"value": 1000
 		},
 		"ModernTimelineNavHeight": {

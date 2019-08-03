@@ -132,11 +132,11 @@ class OptionsTest extends TestCase {
 			$alias => '42',
 		] )->getParameterArray();
 
-		$this->assertSame( 42, $parameters['animation duration'] );
+		$this->assertSame( 42, $parameters['transition duration'] );
 	}
 
 	public function animationDurationAliasProvider() {
-		yield 'automatic alias' => [ 'animationduration' ];
+		yield 'automatic alias' => [ 'transitionduration' ];
 		yield 'manual alias' => [ 'duration' ];
 	}
 
