@@ -15,6 +15,10 @@
 			"contents": "[[News date::August 2, 2019]]"
 		},
 		{
+			"page": "Page without date",
+			"contents": "No date here"
+		},
+		{
 			"page": "Query page",
 			"contents": "{{ #ask: [[News date::+]] | format=moderntimeline | ?News date }}"
 		},
@@ -25,8 +29,23 @@
 	],
 	"tests": [
 		{
+			"about": "Only pages with dates are shown",
 			"type": "parser",
-			"about": "Pages with dates are shown",
+			"subject": "Query page",
+			"assert-output": {
+				"include-head-items": true,
+				"to-contain": [
+					"First news event",
+					"Second news event"
+				],
+				"not-contain": [
+					"No date here"
+				]
+			}
+		},
+		{
+			"about": "Width and height parameters",
+			"type": "parser",
 			"subject": "Query with modified height",
 			"assert-output": {
 				"to-contain": [

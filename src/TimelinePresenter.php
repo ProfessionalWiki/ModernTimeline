@@ -28,23 +28,27 @@ class TimelinePresenter {
 	public function getResult( SMWQueryResult $result ): string {
 		SMWOutputs::requireResource( 'ext.modern.timeline' );
 
+		$json = $this->createJsonString( $result );
+
 		SMWOutputs::requireScript(
 			$this->id,
-			$this->createJs( $result )
+			$this->createJs( $json )
 		);
 
-		return $this->createDiv();
+		return $this->createDiv( $json );
 	}
 
-	private function createJs( SMWQueryResult $result ): string {
+	private function createJsonString( SMWQueryResult $result ) {
 		$preJson = ( new JsonBuilder() )->buildTimelineJson(
 			( new ResultSimplifier() )->newSubjectCollection( $result )
 		);
 
 		$preJson['options'] = TimelineOptions::processedParamsToJson( $this->parameters );
 
-		$json = json_encode( $preJson );
+		return json_encode( $preJson );
+	}
 
+	private function createJs( string $json ): string {
 		return \Html::rawElement(
 			'script',
 			[
@@ -55,7 +59,7 @@ class TimelinePresenter {
 		);
 	}
 
-	private function createDiv(): string {
+	private function createDiv( string $json ): string {
 		$width = $this->parameters[TimelineOptions::PARAM_WIDTH]->getValue();
 		$height = $this->parameters[TimelineOptions::PARAM_HEIGHT]->getValue();
 
@@ -65,8 +69,13 @@ class TimelinePresenter {
 				'id' => $this->id,
 				'style' => "width: $width; height: $height;"
 			],
-			'Loading' // TODO
-		);
+			'Loading' // TODO: add message or remove
+		)
+			. \Html::element( // TODO: remove when system tests can test head items
+				'div',
+				[ 'style' => 'display:none' ],
+				$json
+			);
 	}
 
 }

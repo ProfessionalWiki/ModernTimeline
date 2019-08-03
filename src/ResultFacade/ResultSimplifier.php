@@ -6,6 +6,7 @@ namespace ModernTimeline\ResultFacade;
 
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
+use SMW\Query\Result\ResultArray;
 use SMWQueryResult;
 
 class ResultSimplifier {
@@ -30,7 +31,7 @@ class ResultSimplifier {
 		$propertyValueCollections = [];
 
 		foreach ( $printRequests as $printRequest ) {
-			$dataItems = ( new \SMWResultArray( $resultPage, $printRequest, $result->getStore() ) )->getContent();
+			$dataItems = $this->newResultArray( $resultPage, $printRequest, $result )->getContent();
 
 			$propertyValueCollections[] = new PropertyValueCollection(
 				$printRequest,
@@ -39,6 +40,24 @@ class ResultSimplifier {
 		}
 
 		return new Subject( $resultPage, $propertyValueCollections );
+	}
+
+	/**
+	 * Compat with SMW 3.0
+	 * In 3.1+ do: ResultArray::factory( $resultPage, $printRequest, $result )
+	 */
+	private function newResultArray( DIWikiPage $resultPage, PrintRequest $printRequest, SMWQueryResult $result ): \SMWResultArray {
+		$resultArray = new \SMWResultArray(
+			$resultPage,
+			$printRequest,
+			$result->getStore(),
+			method_exists( $result, 'getFieldItemFinder' ) ? $result->getFieldItemFinder() : null
+		);
+
+		$resultArray->setQueryToken( $result->getQuery()->getQueryToken() );
+		$resultArray->setContextPage( $result->getQuery()->getContextPage() );
+
+		return $resultArray;
 	}
 
 }
