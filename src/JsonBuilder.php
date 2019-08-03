@@ -24,15 +24,19 @@ class JsonBuilder {
 
 	private function addObject( Subject $subject ) {
 		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
-			$dataItem = $propertyValues->getDataItems()[0];
+			$dataItems = $propertyValues->getDataItems();
 
-			if ( $dataItem instanceof SMWDITime ) {
-				$this->events[] = [
-					'text' => [
-						'headline' => $subject->getWikiPage()->getTitle()->getPrefixedText()
-					],
-					'start_date' => $this->timeToJson( $dataItem )
-				];
+			if ( array_key_exists( 0, $dataItems ) ) {
+				$dataItem = $dataItems[0];
+
+				if ( $dataItem instanceof SMWDITime ) {
+					$this->events[] = [
+						'text' => [
+							'headline' => $subject->getWikiPage()->getTitle()->getPrefixedText()
+						],
+						'start_date' => $this->timeToJson( $dataItem )
+					];
+				}
 			}
 		}
 	}

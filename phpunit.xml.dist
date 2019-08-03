@@ -1,5 +1,6 @@
 <phpunit backupGlobals="false"
          backupStaticAttributes="false"
+         bootstrap="tests/bootstrap.php"
          cacheTokens="false"
          colors="true"
          convertErrorsToExceptions="true"
@@ -15,6 +16,9 @@
         </testsuite>
         <testsuite name="ModernTimelineIntegration">
             <directory>tests/Integration</directory>
+        </testsuite>
+        <testsuite name="ModernTimelineSystem">
+            <directory>tests/System</directory>
         </testsuite>
     </testsuites>
     <filter>

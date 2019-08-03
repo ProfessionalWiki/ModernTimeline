@@ -6,12 +6,11 @@ namespace ModernTimeline\ResultFacade;
 
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
-use SMW\Query\QueryResult;
-use SMW\Query\Result\ResultArray;
+use SMWQueryResult;
 
 class ResultSimplifier {
 
-	public function newSubjectCollection( QueryResult $result ): SubjectCollection {
+	public function newSubjectCollection( SMWQueryResult $result ): SubjectCollection {
 		$subjects = [];
 
 		foreach ( $result->getResults() as $diWikiPage ) {
@@ -24,14 +23,14 @@ class ResultSimplifier {
 	/**
 	 * @param DIWikiPage $resultPage
 	 * @param PrintRequest[] $printRequests
-	 * @param QueryResult $result
+	 * @param SMWQueryResult $result
 	 * @return Subject
 	 */
-	private function newSubject( DIWikiPage $resultPage, array $printRequests, QueryResult $result ): Subject {
+	private function newSubject( DIWikiPage $resultPage, array $printRequests, SMWQueryResult $result ): Subject {
 		$propertyValueCollections = [];
 
 		foreach ( $printRequests as $printRequest ) {
-			$dataItems = ResultArray::factory( $resultPage, $printRequest, $result )->getContent();
+			$dataItems = ( new \SMWResultArray( $resultPage, $printRequest, $result->getStore() ) )->getContent();
 
 			$propertyValueCollections[] = new PropertyValueCollection(
 				$printRequest,

@@ -4,8 +4,8 @@ namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\ResultSimplifier;
 use ParamProcessor\ProcessedParam;
-use SMW\Query\QueryResult;
 use SMWOutputs;
+use SMWQueryResult;
 
 class TimelinePresenter {
 
@@ -25,7 +25,7 @@ class TimelinePresenter {
 		return 'modern_timeline' . ++$timelineNumber;
 	}
 
-	public function getResult( QueryResult $result ): string {
+	public function getResult( SMWQueryResult $result ): string {
 		SMWOutputs::requireResource( 'ext.modern.timeline' );
 
 		SMWOutputs::requireScript(
@@ -36,7 +36,7 @@ class TimelinePresenter {
 		return $this->createDiv();
 	}
 
-	private function createJs( QueryResult $result ): string {
+	private function createJs( SMWQueryResult $result ): string {
 		$preJson = ( new JsonBuilder() )->buildTimelineJson(
 			( new ResultSimplifier() )->newSubjectCollection( $result )
 		);
