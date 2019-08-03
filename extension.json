@@ -41,6 +41,9 @@
 		},
 		"ModernTimelineStartAtEnd": {
 			"value": false
+		},
+		"ModernTimelineAnimationDuration": {
+			"value": 1000
 		}
 	},
 

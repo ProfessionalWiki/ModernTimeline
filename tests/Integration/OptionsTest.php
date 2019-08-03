@@ -28,6 +28,7 @@ class OptionsTest extends TestCase {
 				'optimal_tick_width' => 100,
 				'start_at_slide' => self::DEFAULT_START_SLIDE,
 				'start_at_end' => false,
+				'duration' => 1000,
 			],
 			$this->processUserInputToTimelineOptions( [] )
 		);
@@ -120,6 +121,22 @@ class OptionsTest extends TestCase {
 			2,
 			$this->processUserInputToTimelineOptions( [ 'start slide' => '3' ] )['start_at_slide']
 		);
+	}
+
+	/**
+	 * @dataProvider animationDurationAliasProvider
+	 */
+	public function testAnimationDurationAliases( string $alias ) {
+		$parameters = $this->processUserInput( [
+			$alias => '42',
+		] )->getParameterArray();
+
+		$this->assertSame( 42, $parameters['animation duration'] );
+	}
+
+	public function animationDurationAliasProvider() {
+		yield 'automatic alias' => [ 'animationduration' ];
+		yield 'manual alias' => [ 'duration' ];
 	}
 
 }

@@ -16,6 +16,7 @@ class TimelineOptions {
 	private const PARAM_TICK_WIDTH = 'tick width';
 	private const PARAM_START_SLIDE = 'start slide';
 	private const PARAM_START_AT_END = 'start at end';
+	private const PARAM_ANIMATION_DURATION = 'animation duration';
 
 	public static function getTimelineParameterDefinitions(): array {
 		$definitions = [];
@@ -71,11 +72,21 @@ class TimelineOptions {
 			'default' => $GLOBALS['wgModernTimelineStartAtEnd']
 		];
 
+		$definitions[self::PARAM_ANIMATION_DURATION] = [
+			'type' => ParameterTypes::INTEGER,
+			'aliases' => 'duration',
+			'default' => $GLOBALS['wgModernTimelineAnimationDuration'],
+			'lowerbound' => 1
+		];
+
 		foreach ( $definitions as $name => $definition ) {
 			$definitions[$name]['message'] = 'modern-timeline-param-' . str_replace( ' ', '-', $name );
 
 			if ( strpos( $name, ' ' ) !== false ) {
-				$definitions[$name]['aliases'] = [ str_replace( ' ', '', $name ) ];
+				$definitions[$name]['aliases'] = array_merge(
+					array_key_exists( 'aliases', $definitions[$name] ) ? (array)$definitions[$name]['aliases'] : [],
+					[ str_replace( ' ', '', $name ) ]
+				);
 			}
 		}
 
@@ -95,6 +106,7 @@ class TimelineOptions {
 			'optimal_tick_width' => $parameters[self::PARAM_TICK_WIDTH]->getValue(),
 			'start_at_slide' => $parameters[self::PARAM_START_SLIDE]->getValue() - 1,
 			'start_at_end' => $parameters[self::PARAM_START_AT_END]->getValue(),
+			'duration' => $parameters[self::PARAM_ANIMATION_DURATION]->getValue(),
 		];
 	}
 
