@@ -46,6 +46,7 @@ class TimelineOptions {
 		$definitions[self::PARAM_SCALE_FACTOR] = [
 			'type' => ParameterTypes::INTEGER,
 			'default' => $GLOBALS['wgModernTimelineScaleFactor'],
+			'lowerbound' => 1
 		];
 
 		$definitions[self::PARAM_POSITION] = [
@@ -61,7 +62,8 @@ class TimelineOptions {
 
 		$definitions[self::PARAM_START_SLIDE] = [
 			'type' => ParameterTypes::INTEGER,
-			'default' => $GLOBALS['wgModernTimelineStartSlide']
+			'default' => $GLOBALS['wgModernTimelineStartSlide'],
+			'lowerbound' => 1
 		];
 
 		$definitions[self::PARAM_START_AT_END] = [

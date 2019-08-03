@@ -15,15 +15,18 @@ use PHPUnit\Framework\TestCase;
  */
 class OptionsTest extends TestCase {
 
-	public function testFoo() {
-		$this->assertEquals(
+	private const DEFAULT_SCALE_FACTOR = 2;
+	private const DEFAULT_START_SLIDE = 0;
+
+	public function testDefaultOptions() {
+		$this->assertSame(
 			[
 				'hash_bookmark' => false,
 				'default_bg_color' => 'white',
-				'scale_factor' => 2,
+				'scale_factor' => self::DEFAULT_SCALE_FACTOR,
 				'timenav_position' => 'bottom',
 				'optimal_tick_width' => 100,
-				'start_at_slide' => 0,
+				'start_at_slide' => self::DEFAULT_START_SLIDE,
 				'start_at_end' => false,
 			],
 			$this->processUserInputToTimelineOptions( [] )
@@ -94,6 +97,22 @@ class OptionsTest extends TestCase {
 		yield [ '10px', '10px' ];
 		yield [ '10em', '10em' ];
 		yield [ '10ex', '10ex' ];
+	}
+
+	public function testTooLowScaleFactorDefaults() {
+		$this->assertProcesses( 'scale factor', '0', self::DEFAULT_SCALE_FACTOR );
+	}
+
+	private function assertProcesses( string $paramName, string $input, $expected ) {
+		$parameters = $this->processUserInput( [
+			$paramName => $input,
+		] )->getParameterArray();
+
+		$this->assertSame( $expected, $parameters[$paramName] );
+	}
+
+	public function testTooLowStartSlideDefaults() {
+		$this->assertProcesses( 'start slide', '-1', self::DEFAULT_START_SLIDE );
 	}
 
 }
