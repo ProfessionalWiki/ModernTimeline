@@ -6,9 +6,9 @@ namespace ModernTimeline;
 
 use ParamProcessor\ProcessedParam;
 use SMW\Parser\RecursiveTextProcessor;
-use SMW\Query\QueryResult;
 use SMW\Query\ResultPrinter;
 use SMWQuery;
+use SMWQueryResult;
 
 class ModernTimelinePrinter implements ResultPrinter {
 
@@ -21,13 +21,13 @@ class ModernTimelinePrinter implements ResultPrinter {
 	}
 
 	/**
-	 * @param QueryResult $result
+	 * @param SMWQueryResult $result
 	 * @param ProcessedParam[] $parameters Note: currently getting Param[] from SMW but lets pretend the legacy refactor happened already
 	 * @param int $outputMode
 	 *
 	 * @return string
 	 */
-	public function getResult( QueryResult $result, array $parameters, $outputMode ): string {
+	public function getResult( SMWQueryResult $result, array $parameters, $outputMode ): string {
 		return ( new TimelinePresenter( $parameters ) )->getResult( $result );
 	}
 
