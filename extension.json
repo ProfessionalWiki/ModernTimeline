@@ -47,6 +47,9 @@
 		},
 		"ModernTimelineNavHeight": {
 			"value": "200px"
+		},
+		"ModernTimelineTemplate": {
+			"value": ""
 		}
 	},
 

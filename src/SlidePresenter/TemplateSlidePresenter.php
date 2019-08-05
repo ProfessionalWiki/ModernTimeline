@@ -2,18 +2,30 @@
 
 declare( strict_types = 1 );
 
-namespace ModernTimeline;
+namespace ModernTimeline\SlidePresenter;
 
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use SMW\DataValueFactory;
 
-class TemplateBuilder {
+class TemplateSlidePresenter implements SlidePresenter {
 
 	private $templateName;
 
 	public function __construct( string $templateName ) {
 		$this->templateName = $templateName;
+	}
+
+	public function getText( Subject $subject ): string {
+		$parser = $this->getParser();
+
+		return $parser->recursiveTagParseFully(
+			( new TemplateSlidePresenter( $this->templateName ) )->getTemplateText( $subject )
+		);
+	}
+
+	private function getParser(): \Parser {
+		return $GLOBALS['wgParser'];
 	}
 
 	public function getTemplateText( Subject $subject ): string {
@@ -45,5 +57,4 @@ class TemplateBuilder {
 	private function parameter( string $name, string $value ): string {
 		return $name . '=' . $value;
 	}
-
 }

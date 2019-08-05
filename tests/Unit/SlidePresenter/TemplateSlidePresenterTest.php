@@ -2,27 +2,27 @@
 
 declare( strict_types = 1 );
 
-namespace ModernTimeline\Tests\Unit;
+namespace ModernTimeline\Tests\Unit\SlidePresenter;
 
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
-use ModernTimeline\TemplateBuilder;
+use ModernTimeline\SlidePresenter\TemplateSlidePresenter;
 use PHPUnit\Framework\TestCase;
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
 use SMWDITime;
 
 /**
- * @covers \ModernTimeline\TemplateBuilder
+ * @covers \ModernTimeline\SlidePresenter\TemplateSlidePresenter
  */
-class TemplateBuilderTest extends TestCase {
+class TemplateSlidePresenterTest extends TestCase {
 
 	private const PAGE_NAME = 'Some Page';
 
 	public function testTemplate() {
 		$this->assertSame(
 			'{{TemplateName|title=Some Page|Has date=2 August 2019 16:07:42|End date=5 August 2019 17:39:23}}',
-			( new TemplateBuilder( 'TemplateName' ) )->getTemplateText( $this->newSinglePageWithStartAndEndDate() )
+			( new TemplateSlidePresenter( 'TemplateName' ) )->getTemplateText( $this->newSinglePageWithStartAndEndDate() )
 		);
 	}
 

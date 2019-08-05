@@ -7,6 +7,7 @@ namespace ModernTimeline;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
+use ModernTimeline\SlidePresenter\SlidePresenter;
 use SMWDITime;
 
 class JsonBuilder {

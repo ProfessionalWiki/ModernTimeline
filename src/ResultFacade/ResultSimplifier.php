@@ -6,7 +6,6 @@ namespace ModernTimeline\ResultFacade;
 
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
-use SMW\Query\Result\ResultArray;
 use SMWQueryResult;
 
 class ResultSimplifier {

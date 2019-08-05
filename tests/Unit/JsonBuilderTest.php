@@ -8,7 +8,8 @@ use ModernTimeline\JsonBuilder;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
-use ModernTimeline\SlidePresenter;
+use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
+use ModernTimeline\SlidePresenter\SlidePresenter;
 use PHPUnit\Framework\TestCase;
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
@@ -38,7 +39,7 @@ class JsonBuilderTest extends TestCase {
 	}
 
 	private function toJson( SubjectCollection $input ): array {
-		return ( new JsonBuilder( new SlidePresenter() ) )->buildTimelineJson( $input );
+		return ( new JsonBuilder( new SimpleSlidePresenter() ) )->buildTimelineJson( $input );
 	}
 
 	public function testOnlySubjectsWithNoValues() {

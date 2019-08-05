@@ -2,27 +2,16 @@
 
 declare( strict_types = 1 );
 
-namespace ModernTimeline;
+namespace ModernTimeline\SlidePresenter;
 
 use ModernTimeline\ResultFacade\Subject;
 use SMW\DataValueFactory;
 use SMW\Query\PrintRequest;
 
-class SlidePresenter {
-
-	private $template;
-
-	public function __construct( string $templateName = null ) {
-		$this->template = $templateName;
-	}
+class SimpleSlidePresenter implements SlidePresenter {
 
 	public function getText( Subject $subject ): string {
-		if ( false ) {
-			$a = $this->getRenderedTemplate( $subject );
-			return $a;
-		}
-
-		return implode( "<br>", iterator_to_array( $this->getDisplayValues( $subject ) ) );
+		return implode( '<br>', iterator_to_array( $this->getDisplayValues( $subject ) ) );
 	}
 
 	private function getDisplayValues( Subject $subject ) {
@@ -46,22 +35,6 @@ class SlidePresenter {
 
 	private function dataItemToText( \SMWDataItem $dataItem ): string {
 		return DataValueFactory::getInstance()->newDataValueByItem( $dataItem )->getLongHTMLText();
-	}
-
-	private function getRenderedTemplate( Subject $subject ): string {
-		$parser = $this->getParser( $subject->getWikiPage()->getTitle() );
-
-		$parserOutput = $parser->parse(
-			( new TemplateBuilder( 'testt' ) )->getTemplateText( $subject ),
-			$subject->getWikiPage()->getTitle(),
-			new \ParserOptions()
-		);
-
-		return $parserOutput->getText();
-	}
-
-	private function getParser( \Title $title ): \Parser {
-		return $GLOBALS['wgParser'];
 	}
 
 }

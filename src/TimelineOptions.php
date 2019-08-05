@@ -20,6 +20,7 @@ class TimelineOptions {
 	private const PARAM_START_AT_END = 'start at end';
 	private const PARAM_TRANSITION_DURATION = 'transition duration';
 	private const PARAM_NAV_HEIGHT = 'navigation height';
+	private const PARAM_TEMPLATE = 'template';
 
 	public static function getTimelineParameterDefinitions(): array {
 		$definitions = [];
@@ -86,6 +87,11 @@ class TimelineOptions {
 			'type' => ParameterTypes::DIMENSION,
 			'units' => [ 'px', '%' ],
 			'default' => $GLOBALS['wgModernTimelineNavHeight'],
+		];
+
+		$definitions[self::PARAM_TEMPLATE] = [
+			'type' => ParameterTypes::STRING,
+			'default' => $GLOBALS['wgModernTimelineTemplate']
 		];
 
 		foreach ( $definitions as $name => $definition ) {

@@ -17,6 +17,7 @@
 	"modern-timeline-param-start-at-end": "Start with the last timeline slide",
 	"modern-timeline-param-transition-duration": "Slide transition in milliseconds",
 	"modern-timeline-param-navigation-height": "Height of the timeline navigation section in % or px",
+	"modern-timeline-param-template": "Name of a template to show the slide area with",
 
 	"modern-timeline-format-name": "Modern timeline"
 }

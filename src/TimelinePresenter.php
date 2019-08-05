@@ -5,6 +5,9 @@ declare( strict_types = 1 );
 namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\ResultSimplifier;
+use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
+use ModernTimeline\SlidePresenter\SlidePresenter;
+use ModernTimeline\SlidePresenter\TemplateSlidePresenter;
 use ParamProcessor\ProcessedParam;
 use SMWOutputs;
 use SMWQueryResult;
@@ -41,13 +44,25 @@ class TimelinePresenter {
 	}
 
 	private function createJsonString( SMWQueryResult $result ) {
-		$preJson = ( new JsonBuilder( new SlidePresenter() ) )->buildTimelineJson(
+		$preJson = ( new JsonBuilder( $this->getSlidePresenter() ) )->buildTimelineJson(
 			( new ResultSimplifier() )->newSubjectCollection( $result )
 		);
 
 		$preJson['options'] = TimelineOptions::processedParamsToJson( $this->parameters );
 
 		return json_encode( $preJson );
+	}
+
+	private function getSlidePresenter(): SlidePresenter {
+		if ( $this->getTemplateName() === '' ) {
+			return new SimpleSlidePresenter();
+		}
+
+		return new TemplateSlidePresenter( $this->getTemplateName() );
+	}
+
+	private function getTemplateName(): string {
+		return $this->parameters['template']->getValue();
 	}
 
 	private function createJs( string $json ): string {
