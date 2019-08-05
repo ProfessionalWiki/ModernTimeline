@@ -1,10 +1,12 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jeroen De Dauw"
+			"Jeroen De Dauw",
+			"Karsten Hoffmeyer"
 		]
 	},
-	"modern-timeline-desc": "Modern timeline visualization for MediaWiki",
+	"modern-timeline-name": "Modern Timeline",
+	"modern-timeline-desc": "Provides a modern timeline visualization for Semantic MediaWiki",
 
 	"modern-timeline-param-width": "Timeline width in %. Can also be specified in px, em and ex",
 	"modern-timeline-param-height": "Timeline height in pixels. Can also be specified in em and ex",
