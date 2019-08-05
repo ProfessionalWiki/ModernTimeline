@@ -30,7 +30,7 @@
 		},
 		{
 			"page": "Query page",
-			"contents": "{{ #ask: [[Description::+]] | format=moderntimeline | ?News date | ?End date }}"
+			"contents": "{{ #ask: [[Description::+]] | format=moderntimeline | ?News date | ?End date | ?Description }}"
 		}
 	],
 	"tests": [
@@ -61,6 +61,18 @@
 					"day\":1",
 					"day\":3",
 					"day\":6"
+				]
+			}
+		},
+		{
+			"about": "Extra printouts are included",
+			"type": "parser",
+			"subject": "Query page",
+			"assert-output": {
+				"include-head-items": true,
+				"to-contain": [
+					"first desc",
+					"second desc"
 				]
 			}
 		}
