@@ -1,0 +1,54 @@
+{
+	"description": "Modern Timeline - template",
+	"setup": [
+		{
+			"page": "News date",
+			"namespace": "SMW_NS_PROPERTY",
+			"contents": "[[Has type::Date]]"
+		},
+		{
+			"page": "Description",
+			"namespace": "SMW_NS_PROPERTY",
+			"contents": "[[Has type::Text]]"
+		},
+		{
+			"page": "TimelineTest",
+			"namespace": "NS_TEMPLATE",
+			"contents": "Hi! {{{title}}} {{{Description}}} {{{News date}}}"
+		},
+		{
+			"page": "First news event",
+			"contents": "[[News date::August 1, 2019]] [[Description::first desc]]"
+		},
+		{
+			"page": "Query page",
+			"contents": "{{ #ask: [[Description::+]] | format=moderntimeline | ?News date | ?Description | template=TimelineTest }}"
+		}
+	],
+	"tests": [
+		{
+			"about": "Template parameter",
+			"type": "parser",
+			"subject": "Query page",
+			"assert-output": {
+				"include-head-items": true,
+				"to-contain": [
+					"Hi! First news event first desc 1 August 2019"
+				]
+			}
+		}
+	],
+	"settings": {
+		"wgContLang": "en",
+		"wgLang": "en",
+		"smwgNamespacesWithSemanticLinks": {
+			"NS_MAIN": true,
+			"SMW_NS_PROPERTY": true
+		}
+	},
+	"meta": {
+		"version": "2",
+		"is-incomplete": false,
+		"debug": false
+	}
+}
