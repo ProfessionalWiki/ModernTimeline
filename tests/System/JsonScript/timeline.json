@@ -7,12 +7,26 @@
 			"contents": "[[Has type::Date]]"
 		},
 		{
+			"page": "End date",
+			"namespace": "SMW_NS_PROPERTY",
+			"contents": "[[Has type::Date]]"
+		},
+		{
+			"page": "Description",
+			"namespace": "SMW_NS_PROPERTY",
+			"contents": "[[Has type::Text]]"
+		},
+		{
 			"page": "First news event",
-			"contents": "[[News date::August 1, 2019]]"
+			"contents": "[[News date::August 1, 2019]] [[End date::August 3, 2019]] [[Description::first desc]]"
 		},
 		{
 			"page": "Second news event",
-			"contents": "[[News date::August 2, 2019]]"
+			"contents": "[[News date::August 6, 2019]] [[Description::second desc]]"
+		},
+		{
+			"page": "Evil page",
+			"contents": "[[News date::August 11, 2019]] [[Description::<script></script>]]"
 		},
 		{
 			"page": "Page without date",

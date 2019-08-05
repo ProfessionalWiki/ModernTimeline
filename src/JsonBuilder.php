@@ -32,7 +32,7 @@ class JsonBuilder {
 				if ( $dataItem instanceof SMWDITime ) {
 					$this->events[] = [
 						'text' => [
-							'headline' => $subject->getWikiPage()->getTitle()->getPrefixedText(),
+							'headline' => htmlspecialchars( $subject->getWikiPage()->getTitle()->getPrefixedText() ),
 							'text' => 'hi there i am a text' // TODO
 						],
 						'start_date' => $this->timeToJson( $dataItem )
