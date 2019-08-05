@@ -24,34 +24,12 @@ class JsonBuilder {
 			[ $startDate, $endDate ] = $this->getDates( $subject );
 
 			if ( $startDate !== null ) {
-				$events[] = $this->buildEvent(
-					$subject,
-					$startDate,
-					$endDate
-				);
+				$events[] = new Event( $subject, $startDate, $endDate );
 			}
 		}
 
-		return [ 'events' => $events ];
+		return $this->eventsToTimelineJson( $events );
 	}
-
-	private function buildEvent( Subject $subject, SMWDITime $startDate, ?SMWDITime $endDate ): array {
-		$event = [
-			'text' => [
-				'headline' => $this->newHeadline( $subject->getWikiPage()->getTitle() ),
-				'text' =>  $this->slidePresenter->getText( $subject )
-			],
-			'start_date' => $this->timeToJson( $startDate )
-		];
-
-		if ( $endDate !== null ) {
-			$event['end_date'] = $this->timeToJson( $endDate );
-		}
-
-		return $event;
-	}
-
-
 
 	private function getDates( Subject $subject ): array {
 		$startDate = null;
@@ -74,6 +52,36 @@ class JsonBuilder {
 		}
 
 		return [ $startDate, $endDate ];
+	}
+
+	/**
+	 * @param Event[] $events
+	 * @return array
+	 */
+	public function eventsToTimelineJson( array $events ): array {
+		$jsonEvents = [];
+
+		foreach ( $events as $event ) {
+			$jsonEvents[] = $this->buildEvent( $event );
+		}
+
+		return [ 'events' => $jsonEvents ];
+	}
+
+	private function buildEvent( Event $event ): array {
+		$jsonEvent = [
+			'text' => [
+				'headline' => $this->newHeadline( $event->getSubject()->getWikiPage()->getTitle() ),
+				'text' =>  $this->slidePresenter->getText( $event->getSubject() )
+			],
+			'start_date' => $this->timeToJson( $event->getStartDate() )
+		];
+
+		if ( $event->getEndDate() !== null ) {
+			$jsonEvent['end_date'] = $this->timeToJson( $event->getEndDate() );
+		}
+
+		return $jsonEvent;
 	}
 
 	/**
