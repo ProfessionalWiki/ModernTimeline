@@ -1,17 +1,28 @@
 {
-	"name": "Modern Timeline",
-	"version": "0.1.0",
+	"name": "ModernTimeline",
+	
+	"version": "1.0.0-alpha",
 
 	"author": [
 		"[https://professional.wiki/ <span style=\"color: #df2e2c \">Professional</span>.Wiki]",
 		"[https://www.entropywins.wtf/mediawiki Jeroen De Dauw]"
 	],
+	
 	"url": "https://github.com/ProfessionalWiki/ModernTimeline#modern-timeline-for-mediawiki",
+	
+	"namemsg": "modern-timeline-name",
+	
 	"descriptionmsg": "modern-timeline-desc",
+	
 	"license-name": "GPL-2.0-or-later",
+	
+	"type": "semantic",
 
 	"requires": {
-		"MediaWiki": ">= 1.31.0"
+		"MediaWiki": ">= 1.31.0",
+		"extensions": {
+			"SemanticMediaWiki": ">= 3.0.0"
+		}
 	},
 
 	"config": {
