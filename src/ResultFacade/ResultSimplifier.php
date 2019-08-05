@@ -47,17 +47,12 @@ class ResultSimplifier {
 	 * In 3.1+ do: ResultArray::factory( $resultPage, $printRequest, $result )
 	 */
 	private function newResultArray( DIWikiPage $resultPage, PrintRequest $printRequest, SMWQueryResult $result ): \SMWResultArray {
-		$resultArray = new \SMWResultArray(
+		return new \SMWResultArray(
 			$resultPage,
 			$printRequest,
 			$result->getStore(),
 			method_exists( $result, 'getFieldItemFinder' ) ? $result->getFieldItemFinder() : null
 		);
-
-		$resultArray->setQueryToken( $result->getQuery()->getQueryToken() );
-		$resultArray->setContextPage( $result->getQuery()->getContextPage() );
-
-		return $resultArray;
 	}
 
 }
