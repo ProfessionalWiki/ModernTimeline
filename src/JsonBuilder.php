@@ -8,7 +8,7 @@ use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
 use SMW\DataValueFactory;
-use SMW\DIWikiPage;
+use SMW\Query\PrintRequest;
 use SMWDITime;
 
 class JsonBuilder {
@@ -30,19 +30,18 @@ class JsonBuilder {
 
 		if ( $startDate !== null ) {
 			$this->events[] = $this->buildEvent(
-				$subject->getWikiPage(),
+				$subject,
 				$startDate,
-				$endDate,
-				iterator_to_array( $this->getDisplayValues( $subject ) )
+				$endDate
 			);
 		}
 	}
 
-	private function buildEvent( DIWikiPage $page, SMWDITime $startDate, ?SMWDITime $endDate, array $displayValues ): array {
+	private function buildEvent( Subject $subject, SMWDITime $startDate, ?SMWDITime $endDate ): array {
 		$event = [
 			'text' => [
-				'headline' => $this->newHeadline( $page->getTitle() ),
-				'text' => implode( "<br>", $displayValues )
+				'headline' => $this->newHeadline( $subject->getWikiPage()->getTitle() ),
+				'text' =>  $this->getText( $subject )
 			],
 			'start_date' => $this->timeToJson( $startDate )
 		];
@@ -54,15 +53,27 @@ class JsonBuilder {
 		return $event;
 	}
 
-	private function getDisplayValues( Subject $subject ) {
-		// TODO: inject
-		$valueFactory = DataValueFactory::getInstance();
+	private function getText( Subject $subject ): string {
+		return implode( "<br>", iterator_to_array( $this->getDisplayValues( $subject ) ) );
+	}
 
+	private function getDisplayValues( Subject $subject ) {
 		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
 			foreach ( $propertyValues->getDataItems() as $dataItem ) {
-				yield $propertyValues->getPrintRequest()->getText( null ) . ': ' . $valueFactory::getInstance()->newDataValueByItem( $dataItem )->getLongHTMLText();
+				yield $this->getDisplayValue( $propertyValues->getPrintRequest(), $dataItem );
 			}
 		}
+	}
+
+	private function getDisplayValue( PrintRequest $pr, \SMWDataItem $dataItem ) {
+		$property = $pr->getText( null );
+		$value = DataValueFactory::getInstance()->newDataValueByItem( $dataItem )->getLongHTMLText();
+
+		if ( $property === '' ) {
+			return $value;
+		}
+
+		return $property . ': ' . $value;
 	}
 
 	private function getDates( Subject $subject ): array {
