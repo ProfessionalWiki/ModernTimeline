@@ -6,6 +6,7 @@ namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
+use SMW\DIWikiPage;
 use SMWDITime;
 
 class JsonBuilder {
@@ -16,27 +17,44 @@ class JsonBuilder {
 		$this->events = [];
 
 		foreach ( $pages->getSubjects() as $page ) {
-			$this->addObject( $page );
+			$this->addEventsForSubject( $page );
 		}
 
 		return [ 'events' => $this->events ];
 	}
 
-	private function addObject( Subject $subject ) {
-		$startDate = $this->getStartDate( $subject );
+	private function addEventsForSubject( Subject $subject ) {
+		[ $startDate, $endDate ] = $this->getDates( $subject );
 
 		if ( $startDate !== null ) {
-			$this->events[] = [
-				'text' => [
-					'headline' => $this->newHeadline( $subject->getWikiPage()->getTitle() ),
-					'text' => 'hi there i am a text' // TODO
-				],
-				'start_date' => $this->timeToJson( $startDate )
-			];
+			$this->events[] = $this->buildEvent(
+				$subject->getWikiPage(),
+				$startDate,
+				$endDate
+			);
 		}
 	}
 
-	private function getStartDate( Subject $subject ): ?SMWDITime {
+	private function buildEvent( DIWikiPage $page, SMWDITime $startDate, ?SMWDITime $endDate ): array {
+		$event = [
+			'text' => [
+				'headline' => $this->newHeadline( $page->getTitle() ),
+				'text' => 'hi there i am a text' // TODO
+			],
+			'start_date' => $this->timeToJson( $startDate )
+		];
+
+		if ( $endDate !== null ) {
+			$event['end_date'] = $this->timeToJson( $endDate );
+		}
+
+		return $event;
+	}
+
+	private function getDates( Subject $subject ): array {
+		$startDate = null;
+		$endDate = null;
+
 		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
 			$dataItems = $propertyValues->getDataItems();
 
@@ -44,12 +62,20 @@ class JsonBuilder {
 				$dataItem = $dataItems[0];
 
 				if ( $dataItem instanceof SMWDITime ) {
-					return $dataItem;
+					if ( $startDate === null ) {
+						$startDate = $dataItem;
+					}
+					else if ( $endDate === null ) {
+						$endDate = $dataItem;
+					}
+					else {
+						break;
+					}
 				}
 			}
 		}
 
-		return null;
+		return [ $startDate, $endDate ];
 	}
 
 	private function newHeadline( \Title $title ): string {
