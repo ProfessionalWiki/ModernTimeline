@@ -1,0 +1,37 @@
+{
+	"description": "Test Modern Timeline",
+	"setup": [
+		{
+			"page": "SMWDoc",
+			"contents": "{{#smwdoc:moderntimeline}}"
+		}
+	],
+	"tests": [
+		{
+			"about": "All parameters have a message",
+			"type": "parser",
+			"subject": "SMWDoc",
+			"assert-output": {
+				"to-contain": [
+					"Background"
+				],
+				"not-contain": [
+					"modern-timeline-"
+				]
+			}
+		}
+	],
+	"settings": {
+		"wgContLang": "en",
+		"wgLang": "en",
+		"smwgNamespacesWithSemanticLinks": {
+			"NS_MAIN": true,
+			"SMW_NS_PROPERTY": true
+		}
+	},
+	"meta": {
+		"version": "2",
+		"is-incomplete": false,
+		"debug": false
+	}
+}

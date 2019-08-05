@@ -1,0 +1,35 @@
+{
+	"description": "Test Modern Timeline",
+	"setup": [
+		{
+			"page": "Query with modified height",
+			"contents": "{{ #ask: [[News date::+]] | format=moderntimeline | ?News date | height=1337 }}"
+		}
+	],
+	"tests": [
+		{
+			"about": "Width and height parameters",
+			"type": "parser",
+			"subject": "Query with modified height",
+			"assert-output": {
+				"to-contain": [
+					"width: 100%",
+					"height: 1337px"
+				]
+			}
+		}
+	],
+	"settings": {
+		"wgContLang": "en",
+		"wgLang": "en",
+		"smwgNamespacesWithSemanticLinks": {
+			"NS_MAIN": true,
+			"SMW_NS_PROPERTY": true
+		}
+	},
+	"meta": {
+		"version": "2",
+		"is-incomplete": false,
+		"debug": false
+	}
+}
