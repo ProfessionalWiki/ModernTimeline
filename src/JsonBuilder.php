@@ -23,6 +23,20 @@ class JsonBuilder {
 	}
 
 	private function addObject( Subject $subject ) {
+		$startDate = $this->getStartDate( $subject );
+
+		if ( $startDate !== null ) {
+			$this->events[] = [
+				'text' => [
+					'headline' => $this->newHeadline( $subject->getWikiPage()->getTitle() ),
+					'text' => 'hi there i am a text' // TODO
+				],
+				'start_date' => $this->timeToJson( $startDate )
+			];
+		}
+	}
+
+	private function getStartDate( Subject $subject ): ?SMWDITime {
 		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
 			$dataItems = $propertyValues->getDataItems();
 
@@ -30,16 +44,12 @@ class JsonBuilder {
 				$dataItem = $dataItems[0];
 
 				if ( $dataItem instanceof SMWDITime ) {
-					$this->events[] = [
-						'text' => [
-							'headline' => $this->newHeadline( $subject->getWikiPage()->getTitle() ),
-							'text' => 'hi there i am a text' // TODO
-						],
-						'start_date' => $this->timeToJson( $dataItem )
-					];
+					return $dataItem;
 				}
 			}
 		}
+
+		return null;
 	}
 
 	private function newHeadline( \Title $title ): string {

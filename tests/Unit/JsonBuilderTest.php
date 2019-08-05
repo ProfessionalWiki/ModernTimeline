@@ -38,8 +38,12 @@ class JsonBuilderTest extends TestCase {
 			[
 				'events' => $expectedJson
 			],
-			( new JsonBuilder() )->buildTimelineJson( $input )
+			$this->toJson( $input )
 		);
+	}
+
+	private function toJson( SubjectCollection $input ): array {
+		return ( new JsonBuilder() )->buildTimelineJson( $input );
 	}
 
 	public function testOnlySubjectsWithNoValues() {
@@ -57,23 +61,7 @@ class JsonBuilderTest extends TestCase {
 	}
 
 	public function testSingleTimeValue() {
-		$this->assertBuildsJson(
-			[
-				[
-					'text' => [
-						'headline' => 'SomePage',
-						'text' => 'hi there i am a text',
-					],
-					'start_date' => [
-						'year' => 2019,
-						'month' => 8,
-						'day' => 2,
-						'hour' => 16,
-						'minute' => 7,
-						'second' => 42,
-					]
-				]
-			],
+		$json = $this->toJson(
 			new SubjectCollection(
 				[
 					new Subject(
@@ -97,6 +85,18 @@ class JsonBuilderTest extends TestCase {
 					)
 				]
 			)
+		);
+
+		$this->assertSame(
+			[
+				'year' => 2019,
+				'month' => 8,
+				'day' => 2,
+				'hour' => 16,
+				'minute' => 7,
+				'second' => 42,
+			],
+			$json['events'][0]['start_date']
 		);
 	}
 
