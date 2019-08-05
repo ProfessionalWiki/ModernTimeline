@@ -57,7 +57,21 @@
 					"Second news event"
 				],
 				"not-contain": [
-					"No date here"
+					"No date",
+					"without date"
+				]
+			}
+		},
+		{
+			"about": "Dates are included",
+			"type": "parser",
+			"subject": "Query page",
+			"assert-output": {
+				"include-head-items": true,
+				"to-contain": [
+					"month\":8",
+					"day\":1",
+					"day\":6"
 				]
 			}
 		},
