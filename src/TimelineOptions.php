@@ -114,6 +114,7 @@ class TimelineOptions {
 			'start_at_slide' => self::getStartAtSlide( $parameters ),
 			'start_at_end' => $parameters[self::PARAM_START_AT_END]->getValue(),
 			'duration' => $parameters[self::PARAM_TRANSITION_DURATION]->getValue(),
+			'base_class' => "modern_timeline",
 		];
 
 		$height = $parameters[self::PARAM_NAV_HEIGHT]->getValue();

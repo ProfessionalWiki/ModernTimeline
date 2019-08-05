@@ -32,7 +32,7 @@ class JsonBuilder {
 				if ( $dataItem instanceof SMWDITime ) {
 					$this->events[] = [
 						'text' => [
-							'headline' => htmlspecialchars( $subject->getWikiPage()->getTitle()->getPrefixedText() ),
+							'headline' => $this->newHeadline( $subject->getWikiPage()->getTitle() ),
 							'text' => 'hi there i am a text' // TODO
 						],
 						'start_date' => $this->timeToJson( $dataItem )
@@ -40,6 +40,16 @@ class JsonBuilder {
 				}
 			}
 		}
+	}
+
+	private function newHeadline( \Title $title ): string {
+		return \Html::element(
+			'a',
+			[ 'href' => $title->getFullURL() ],
+			$title->getText()
+		);
+
+//		return DataValueFactory::getInstance()->newDataValueByItem( $subject->getWikiPage() )->getLongHTMLText( smwfGetLinker() );
 	}
 
 	private function timeToJson( SMWDITime $time ): array {
