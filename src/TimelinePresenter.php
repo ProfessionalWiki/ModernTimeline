@@ -1,5 +1,7 @@
 <?php
 
+declare( strict_types = 1 );
+
 namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\ResultSimplifier;
@@ -39,7 +41,7 @@ class TimelinePresenter {
 	}
 
 	private function createJsonString( SMWQueryResult $result ) {
-		$preJson = ( new JsonBuilder() )->buildTimelineJson(
+		$preJson = ( new JsonBuilder( new SlidePresenter() ) )->buildTimelineJson(
 			( new ResultSimplifier() )->newSubjectCollection( $result )
 		);
 

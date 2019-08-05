@@ -7,41 +7,39 @@ namespace ModernTimeline;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
-use SMW\DataValueFactory;
-use SMW\Query\PrintRequest;
 use SMWDITime;
 
 class JsonBuilder {
 
-	private $events;
+	private $slidePresenter;
 
-	public function buildTimelineJson( SubjectCollection $pages ): array {
-		$this->events = [];
-
-		foreach ( $pages->getSubjects() as $page ) {
-			$this->addEventsForSubject( $page );
-		}
-
-		return [ 'events' => $this->events ];
+	public function __construct( SlidePresenter $slidePresenter ) {
+		$this->slidePresenter = $slidePresenter;
 	}
 
-	private function addEventsForSubject( Subject $subject ) {
-		[ $startDate, $endDate ] = $this->getDates( $subject );
+	public function buildTimelineJson( SubjectCollection $pages ): array {
+		$events = [];
 
-		if ( $startDate !== null ) {
-			$this->events[] = $this->buildEvent(
-				$subject,
-				$startDate,
-				$endDate
-			);
+		foreach ( $pages->getSubjects() as $subject ) {
+			[ $startDate, $endDate ] = $this->getDates( $subject );
+
+			if ( $startDate !== null ) {
+				$events[] = $this->buildEvent(
+					$subject,
+					$startDate,
+					$endDate
+				);
+			}
 		}
+
+		return [ 'events' => $events ];
 	}
 
 	private function buildEvent( Subject $subject, SMWDITime $startDate, ?SMWDITime $endDate ): array {
 		$event = [
 			'text' => [
 				'headline' => $this->newHeadline( $subject->getWikiPage()->getTitle() ),
-				'text' =>  $this->getText( $subject )
+				'text' =>  $this->slidePresenter->getText( $subject )
 			],
 			'start_date' => $this->timeToJson( $startDate )
 		];
@@ -53,28 +51,7 @@ class JsonBuilder {
 		return $event;
 	}
 
-	private function getText( Subject $subject ): string {
-		return implode( "<br>", iterator_to_array( $this->getDisplayValues( $subject ) ) );
-	}
 
-	private function getDisplayValues( Subject $subject ) {
-		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
-			foreach ( $propertyValues->getDataItems() as $dataItem ) {
-				yield $this->getDisplayValue( $propertyValues->getPrintRequest(), $dataItem );
-			}
-		}
-	}
-
-	private function getDisplayValue( PrintRequest $pr, \SMWDataItem $dataItem ) {
-		$property = $pr->getText( null );
-		$value = DataValueFactory::getInstance()->newDataValueByItem( $dataItem )->getLongHTMLText();
-
-		if ( $property === '' ) {
-			return $value;
-		}
-
-		return $property . ': ' . $value;
-	}
 
 	private function getDates( Subject $subject ): array {
 		$startDate = null;
