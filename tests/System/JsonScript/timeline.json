@@ -38,7 +38,7 @@
 		},
 		{
 			"page": "Query page",
-			"contents": "{{ #ask: [[Description::+]] | format=moderntimeline | ?News date }}"
+			"contents": "{{ #ask: [[Description::+]] | format=moderntimeline | ?News date | ?End date }}"
 		},
 		{
 			"page": "Query with modified height",
@@ -71,6 +71,7 @@
 				"to-contain": [
 					"month\":8",
 					"day\":1",
+					"day\":3",
 					"day\":6"
 				]
 			}
