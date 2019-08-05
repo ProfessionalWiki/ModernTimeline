@@ -110,7 +110,6 @@ class JsonBuilderTest extends TestCase {
 		return $pr;
 	}
 
-
 	public function testStartDate() {
 		$json = $this->toJson( $this->newSinglePageWithStartAndEndDate() );
 
