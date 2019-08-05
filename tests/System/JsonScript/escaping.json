@@ -1,0 +1,51 @@
+{
+	"description": "Modern Timeline - escaping",
+	"setup": [
+		{
+			"page": "News date",
+			"namespace": "SMW_NS_PROPERTY",
+			"contents": "[[Has type::Date]]"
+		},
+		{
+			"page": "Description",
+			"namespace": "SMW_NS_PROPERTY",
+			"contents": "[[Has type::Text]]"
+		},
+		{
+			"page": "Evil page",
+			"contents": "[[News date::August 11, 2019]] [[Description::<script></script>]]"
+		},
+		{
+			"page": "Query page",
+			"contents": "{{ #ask: [[Description::+]] | format=moderntimeline | ?News date | ?Description }}"
+		}
+	],
+	"tests": [
+		{
+			"about": "Evil descriptions are escaped",
+			"type": "parser",
+			"subject": "Query page",
+			"assert-output": {
+				"include-head-items": true,
+				"to-contain": [
+					"Evil page",
+					"2019",
+					"Description: &amp;lt;script&amp;gt;&amp;lt;\\/script&amp;gt"
+				]
+			}
+		}
+	],
+	"settings": {
+		"wgContLang": "en",
+		"wgLang": "en",
+		"smwgNamespacesWithSemanticLinks": {
+			"NS_MAIN": true,
+			"SMW_NS_PROPERTY": true
+		}
+	},
+	"meta": {
+		"version": "2",
+		"is-incomplete": false,
+		"debug": false
+	}
+}

@@ -1,5 +1,5 @@
 {
-	"description": "Test Modern Timeline",
+	"description": "Modern Timeline - query result content",
 	"setup": [
 		{
 			"page": "News date",
@@ -23,10 +23,6 @@
 		{
 			"page": "Second news event",
 			"contents": "[[News date::August 6, 2019]] [[Description::second desc]]"
-		},
-		{
-			"page": "Evil page",
-			"contents": "[[News date::August 11, 2019]] [[Description::<script></script>]]"
 		},
 		{
 			"page": "Page without date",

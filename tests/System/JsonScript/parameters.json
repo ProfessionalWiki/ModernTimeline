@@ -1,5 +1,5 @@
 {
-	"description": "Test Modern Timeline",
+	"description": "Modern Timeline - parameters",
 	"setup": [
 		{
 			"page": "Query with modified height",
