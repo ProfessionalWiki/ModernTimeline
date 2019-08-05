@@ -69,7 +69,7 @@ class JsonBuilderTest extends TestCase {
 					$this->newDiWikiPage(),
 					[
 						new PropertyValueCollection(
-							$this->newPrintRequestWithLabel( 'Has date' ),
+							$this->newDatePrintRequestWithLabel( 'Has date' ),
 							[
 								new SMWDITime(
 									SMWDITime::CM_GREGORIAN,
@@ -83,7 +83,7 @@ class JsonBuilderTest extends TestCase {
 							]
 						),
 						new PropertyValueCollection(
-							$this->newPrintRequestWithLabel( 'End date' ),
+							$this->newDatePrintRequestWithLabel( 'End date' ),
 							[
 								new SMWDITime(
 									SMWDITime::CM_GREGORIAN,
@@ -102,9 +102,10 @@ class JsonBuilderTest extends TestCase {
 		);
 	}
 
-	private function newPrintRequestWithLabel( string $label ): PrintRequest {
+	private function newDatePrintRequestWithLabel( string $label ): PrintRequest {
 		$pr = $this->createMock( PrintRequest::class );
 		$pr->method( 'getLabel' )->willReturn( $label );
+		$pr->method( 'getTypeID' )->willReturn( '_dat' );
 		return $pr;
 	}
 

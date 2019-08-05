@@ -4,8 +4,10 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
+use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
+use SMW\DataValueFactory;
 use SMW\DIWikiPage;
 use SMWDITime;
 
@@ -30,16 +32,17 @@ class JsonBuilder {
 			$this->events[] = $this->buildEvent(
 				$subject->getWikiPage(),
 				$startDate,
-				$endDate
+				$endDate,
+				iterator_to_array( $this->getDisplayValues( $subject ) )
 			);
 		}
 	}
 
-	private function buildEvent( DIWikiPage $page, SMWDITime $startDate, ?SMWDITime $endDate ): array {
+	private function buildEvent( DIWikiPage $page, SMWDITime $startDate, ?SMWDITime $endDate, array $displayValues ): array {
 		$event = [
 			'text' => [
 				'headline' => $this->newHeadline( $page->getTitle() ),
-				'text' => 'hi there i am a text' // TODO
+				'text' => implode( "<br>", $displayValues )
 			],
 			'start_date' => $this->timeToJson( $startDate )
 		];
@@ -51,31 +54,51 @@ class JsonBuilder {
 		return $event;
 	}
 
+	private function getDisplayValues( Subject $subject ) {
+		// TODO: inject
+		$valueFactory = DataValueFactory::getInstance();
+
+		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
+			foreach ( $propertyValues->getDataItems() as $dataItem ) {
+				yield $propertyValues->getPrintRequest()->getText( null ) . ': ' . $valueFactory::getInstance()->newDataValueByItem( $dataItem )->getLongHTMLText();
+			}
+		}
+	}
+
 	private function getDates( Subject $subject ): array {
 		$startDate = null;
 		$endDate = null;
 
-		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
-			$dataItems = $propertyValues->getDataItems();
+		foreach ( $this->getPropertyValueCollectionsWithDates( $subject ) as $propertyValues ) {
+			$dataItem = $propertyValues->getDataItems()[0];
 
-			if ( array_key_exists( 0, $dataItems ) ) {
-				$dataItem = $dataItems[0];
-
-				if ( $dataItem instanceof SMWDITime ) {
-					if ( $startDate === null ) {
-						$startDate = $dataItem;
-					}
-					else if ( $endDate === null ) {
-						$endDate = $dataItem;
-					}
-					else {
-						break;
-					}
+			if ( $dataItem instanceof SMWDITime ) {
+				if ( $startDate === null ) {
+					$startDate = $dataItem;
+				}
+				else if ( $endDate === null ) {
+					$endDate = $dataItem;
+				}
+				else {
+					break;
 				}
 			}
 		}
 
 		return [ $startDate, $endDate ];
+	}
+
+	/**
+	 * @return PropertyValueCollection[]
+	 */
+	private function getPropertyValueCollectionsWithDates( Subject $subject ) {
+		return array_filter(
+			$subject->getPropertyValueCollections(),
+			function( PropertyValueCollection $pvc ) {
+				return $pvc->getPrintRequest()->getTypeID() === '_dat'
+					&& $pvc->getDataItems() !== [];
+			}
+		);
 	}
 
 	private function newHeadline( \Title $title ): string {
