@@ -9,6 +9,8 @@ matrix:
       php: 7.1
     - env: DBTYPE=sqlite; MW=1.31.3; SMW=3.0.0
       php: 7.1
+  allow_failures:
+    - env: DBTYPE=sqlite; MW=1.31.3; SMW=dev-master
 
 install:
   - travis_retry composer self-update
