@@ -1,8 +1,25 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jeroen De Dauw"
+			"Jeroen De Dauw",
+			"Karsten Hoffmeyer"
 		]
 	},
-	"modern-timeline-desc": "{{desc|name=Modern Timeline|url=https://github.com/ProfessionalWiki/ModernTimeline}}"
+	"modern-timeline-name": "{{Name}}",
+	"modern-timeline-desc": "{{Desc|name=Modern Timeline|url=https://github.com/ProfessionalWiki/ModernTimeline}}",
+
+	"modern-timeline-param-width": "{{Doc-paramdesc|width}}",
+	"modern-timeline-param-height": "{{Doc-paramdesc|height}}",
+	"modern-timeline-param-bookmark": "{{Doc-paramdesc|bookmark}}",
+	"modern-timeline-param-background": "{{Doc-paramdesc|background}}",
+	"modern-timeline-param-scale-factor": "{{Doc-paramdesc|scale-factor}}",
+	"modern-timeline-param-position": "{{Doc-paramdesc|position}}",
+	"modern-timeline-param-tick-width": "{{Doc-paramdesc|tick-width}}",
+	"modern-timeline-param-start-slide": "{{Doc-paramdesc|start-slide}}",
+	"modern-timeline-param-start-at-end": "{{Doc-paramdesc|start-at-end}}",
+	"modern-timeline-param-transition-duration": "{{Doc-paramdesc|transition-duration}}",
+	"modern-timeline-param-navigation-height": "{{Doc-paramdesc|navigation-height}}",
+	"modern-timeline-param-template": "{{Doc-paramdesc|template}}",
+
+	"modern-timeline-format-name": "{{Doc-smwformat}}"
 }
