@@ -29,7 +29,6 @@ class OptionsTest extends TestCase {
 				'start_at_slide' => self::DEFAULT_START_SLIDE,
 				'start_at_end' => false,
 				'duration' => 1000,
-				'base_class' => 'modern_timeline',
 				'timenav_height' => 200,
 			],
 			$this->processUserInputToTimelineOptions( [] )
