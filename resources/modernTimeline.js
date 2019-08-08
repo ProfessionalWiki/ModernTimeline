@@ -5,6 +5,8 @@ function modernTimelineLog( message ) {
     }
 }
 
+modernTimelineLog( 'Timeline script' );
+
 for( var timelineId in window.modernTimeline ) {
     if( window.modernTimeline.hasOwnProperty( timelineId ) ) {
         modernTimelineLog( 'Initializing timeline "' + timelineId + '"' );
