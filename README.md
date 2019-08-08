@@ -1,8 +1,14 @@
 # Modern Timeline for MediaWiki
 
+[![Build Status](https://travis-ci.org/ProfessionalWiki/ModernTimeline.svg?branch=master)](https://travis-ci.org/ProfessionalWiki/ModernTimeline)
+[![Latest Stable Version](https://poser.pugx.org/professional-wiki/modern-timeline/version.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
+[![Download count](https://poser.pugx.org/professional-wiki/modern-timeline/d/total.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
+
 MediaWiki extension that adds a modern timeline visualization available as Semantic MediaWiki result format.
 
-Requirements:
+Demo: [https://sandbox.semantic-mediawiki.org/wiki/Modern_Timeline](https://sandbox.semantic-mediawiki.org/wiki/Modern_Timeline)
+
+## Platform requirements
 
 * PHP 7.1 or later
 * MediaWiki 1.31 up to 1.34
@@ -46,3 +52,9 @@ A full list of supported parameters can be obtained in wiki via the `smwdoc` par
 ```
 {{ #smwdoc: moderntimeline}}
 ```
+
+## Limitations
+
+* Template parameter is not supported on Special:Ask
+* The timeline style does not automatically match that of the wiki
+* The timeline language does not automatically match that of the wiki

@@ -9,14 +9,17 @@ matrix:
       php: 7.1
     - env: DBTYPE=sqlite; MW=1.31.3; SMW=3.0.0
       php: 7.1
+    - env: DBTYPE=sqlite; MW=1.31.3; SMW=3.0.0; TYPE=coverage
+      php: 7.3
   allow_failures:
     - env: DBTYPE=sqlite; MW=1.31.3; SMW=dev-master
+    - env: DBTYPE=sqlite; MW=1.31.3; SMW=3.0.0; TYPE=coverage
 
 install:
   - travis_retry composer self-update
   - bash .travis.install.sh
 
-script: ../phase3/tests/phpunit/phpunit.php -c ../phase3/extensions/ModernTimeline/phpunit.xml.dist
+script: if [[ "$TYPE" != "coverage" ]]; then ../phase3/tests/phpunit/phpunit.php -c ../phase3/extensions/ModernTimeline/phpunit.xml.dist; fi
 
 after_success:
   - if [[ "$TYPE" != "coverage" ]]; then exit 0; fi
