@@ -84,9 +84,8 @@ class TimelinePresenter {
 			'div',
 			[
 				'id' => $this->id,
-				'style' => "width: $width; height: $height;"
-			],
-			'Loading' // TODO: add message or remove
+				'style' => "width: $width; height: $height; background-color: rgba(0, 0, 0, 0.05)",
+			]
 		)
 			. \Html::element( // TODO: remove when system tests can test head items
 				'div',
