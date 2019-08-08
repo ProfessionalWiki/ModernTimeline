@@ -80,12 +80,20 @@ class TimelinePresenter {
 		$width = $this->parameters[TimelineOptions::PARAM_WIDTH]->getValue();
 		$height = $this->parameters[TimelineOptions::PARAM_HEIGHT]->getValue();
 
-		return \Html::element(
+		return \Html::rawElement(
 			'div',
 			[
 				'id' => $this->id,
-				'style' => "width: $width; height: $height; background-color: rgba(0, 0, 0, 0.05)",
-			]
+				'style' => "width: $width; height: $height",
+				'class' => 'modern_timeline_outer_div'
+			],
+			\Html::element(
+				'div',
+				[
+					'class' => 'modern_timeline_inner_div',
+					'style' => 'width: 100%; height: calc(100% - 10px); background-color: rgba(0, 0, 0, 0.05); margin-top: 5px; margin-bottom: 5px;'
+				]
+			)
 		)
 			. \Html::element( // TODO: remove when system tests can test head items
 				'div',
