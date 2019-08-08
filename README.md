@@ -1,6 +1,8 @@
 # Modern Timeline for MediaWiki
 
 [![Build Status](https://travis-ci.org/ProfessionalWiki/ModernTimeline.svg?branch=master)](https://travis-ci.org/ProfessionalWiki/ModernTimeline)
+[![Code Coverage](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/professional-wiki/modern-timeline/version.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
 [![Download count](https://poser.pugx.org/professional-wiki/modern-timeline/d/total.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
 
