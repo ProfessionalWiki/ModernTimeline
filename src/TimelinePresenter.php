@@ -27,7 +27,7 @@ class TimelinePresenter {
 
 	private function newTimelineId(): string {
 		static $timelineNumber = 0;
-		return 'modern_timeline' . ++$timelineNumber;
+		return 'modern_timeline_' . ++$timelineNumber;
 	}
 
 	public function getResult( SMWQueryResult $result ): string {

@@ -79,7 +79,9 @@
 			"styles": [
 				"resources/vendor/timeline.css",
 				"resources/vendor/font.default.css"
-			]
+			],
+			"targets": [ "desktop", "mobile" ],
+			"position": "bottom"
 		}
 	},
 

@@ -1,6 +1,6 @@
 
 function modernTimelineLog( message ) {
-    if( mediaWiki.config.get( 'debug' ) ) {
+    if( true ) { // mediaWiki.config.get( 'debug' )
         console.log( message );
     }
 }
