@@ -16,7 +16,7 @@ The **Modern Timeline** extension provides a modern timeline visualization for [
 
 ## Releases
 
-See the [REALEASE NOTES](/REALEASE NOTES.md) for further information on the releases made.
+See the [RELEASE-NOTES](/RELEASE-NOTES.md) for further information on the releases made.
 
 ## Installation
 
