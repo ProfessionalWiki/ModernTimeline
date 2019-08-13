@@ -19,9 +19,9 @@ and funded by "KDZ - Centre for Public Administration Research".
 * MediaWiki 1.31.x up to 1.34.x
 * Semantic MediaWiki 3.0.x or later
 
-## Releases
+## Versions
 
-See the [RELEASE-NOTES](/RELEASE-NOTES.md) for further information on the releases made.
+See the [RELEASE-NOTES](/RELEASE-NOTES.md) for more information on the different versions of Modern Timeline.
 
 ## Installation
 
