@@ -6,7 +6,12 @@
 [![Latest Stable Version](https://poser.pugx.org/professional-wiki/modern-timeline/version.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
 [![Download count](https://poser.pugx.org/professional-wiki/modern-timeline/d/total.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
 
-The **Modern Timeline** extension provides a modern timeline visualization for [Semantic MediaWiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) as a result format.
+The **Modern Timeline** extension provides a modern timeline visualization for
+[Semantic MediaWiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) as a
+[result format](https://www.semantic-mediawiki.org/wiki/Help:Result_formats).
+
+Modern Timeline was created by [Professional Wiki](https://professional.wiki/)
+and funded by "KDZ - Centre for Public Administration Research".
 
 ## Platform requirements
 
