@@ -3,7 +3,7 @@
     modernTimelineLog( 'Timeline script' );
 
     function modernTimelineLog( message ) {
-        if( true ) { // mw.config.get( 'debug' )
+        if( mw.config.get( 'debug' ) ) {
             console.log( message );
         }
     }
