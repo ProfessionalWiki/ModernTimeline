@@ -78,7 +78,8 @@
 			],
 			"styles": [
 				"resources/vendor/timeline.css",
-				"resources/vendor/font.default.css"
+				"resources/vendor/font.default.css",
+				"resources/modernTimeline.css"
 			],
 			"targets": [ "desktop", "mobile" ],
 			"position": "bottom"
