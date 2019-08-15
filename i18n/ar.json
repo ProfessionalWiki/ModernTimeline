@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"ديفيد"
+		]
+	},
+	"modern-timeline-desc": "يوفر تصورا زمنيا حديثا لميدياويكي الدلالي",
+	"modern-timeline-param-width": "عرض الجدول الزمني ب%، يمكن أيضا تحديده بpx وem وex",
+	"modern-timeline-param-height": "ارتفاع الخط الزمني بالبكسل. يمكن أيضا تحديده بem وex",
+	"modern-timeline-param-bookmark": "اجعل الخط الزمني مرجعيًا عبر مصار الصفحة",
+	"modern-timeline-param-background": "لون الخلفية لشرائح الخط الزمني",
+	"modern-timeline-param-scale-factor": "عرض الجدول الزمني بعرض الشاشة في العرض التقديمي الأول",
+	"modern-timeline-param-position": "عرض الجدول الزمني في الأعلى أو في الأسفل",
+	"modern-timeline-param-tick-width": "المسافة المثلى (بالبكسل) بين علامات التجزئة على المحور",
+	"modern-timeline-param-start-slide": "الشريحة الأولى لعرضها عند تحميل الجدول الزمني",
+	"modern-timeline-param-start-at-end": "أبدا بشريحة الجدول الزمني الأخيرة",
+	"modern-timeline-param-transition-duration": "انتقال الشريحة بوحدات الميلي ثانية",
+	"modern-timeline-param-navigation-height": "ارتفاع قسم التنقل في المخطط الزمني ب٪ أو البكسل",
+	"modern-timeline-param-template": "اسم قالب لإظهار مساحة الشريحة به",
+	"modern-timeline-format-name": "الجدول الزمني الحديث"
+}

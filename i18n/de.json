@@ -1,12 +1,11 @@
-
 {
 	"@metadata": {
 		"authors": [
-			"Karsten Hoffmeyer"
+			"Karsten Hoffmeyer",
+			"Kghbln"
 		]
 	},
 	"modern-timeline-desc": "Stellt eine moderne Zeitleistenvisualisierung als Ergebnisformat bereit",
-
 	"modern-timeline-param-width": "Legt fest, wie breit die Zeitleiste sein soll (in %). Mögliche Maßeinheiten: %, px, em und ex",
 	"modern-timeline-param-height": "Legt fest, wie hoch die Zeitleiste sein soll (in px). Mögliche Maßeinheiten: px, em und ex",
 	"modern-timeline-param-bookmark": "Legt fest, ob für die Zeitleiste ein Lesezeichen als URL der Seite hinzugefügt werden kann",
@@ -16,9 +15,8 @@
 	"modern-timeline-param-tick-width": "Legt fest, welches die optimale Entfernung zwischen den Zeitpunkten auf der Achse der Zeitleiste sein soll (in px)",
 	"modern-timeline-param-start-slide": "Legt fest, welches Element der Zeitleiste als Erstes angezeigt werden soll",
 	"modern-timeline-param-start-at-end": "Legt fest, dass das letzte Element der Zeitleiste bei der erstmaligen Anzeige verwendet werden soll",
-	"modern-timeline-param-transition-duration": "Legt fest, wieviel Milisekunden während des Wechselns der Anzeige der Elemente der Zeitleiste vergehen sollen",
+	"modern-timeline-param-transition-duration": "Legt fest, wie viele Millisekunden zwischen dem Wechseln der Anzeige einzelner Elemente der Zeitleiste vergehen sollen",
 	"modern-timeline-param-navigation-height": "Legt fest, wie hoch der Navigationsbereich der Zeitleiste sein soll (in %). Mögliche Maßeinheiten: % und px",
-	"modern-timeline-param-template": "Legt fest, welche Vorlage das Anzeigen der Zeitleiste verwendet werden soll",
-
+	"modern-timeline-param-template": "Legt fest, welche Vorlage zum Anzeigen der Zeitleiste verwendet werden soll",
 	"modern-timeline-format-name": "Zeit (moderne Zeitleiste)"
 }

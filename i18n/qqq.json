@@ -7,7 +7,6 @@
 	},
 	"modern-timeline-name": "{{Name}}",
 	"modern-timeline-desc": "{{Desc|name=Modern Timeline|url=https://github.com/ProfessionalWiki/ModernTimeline}}",
-
 	"modern-timeline-param-width": "{{Doc-paramdesc|width}}",
 	"modern-timeline-param-height": "{{Doc-paramdesc|height}}",
 	"modern-timeline-param-bookmark": "{{Doc-paramdesc|bookmark}}",
@@ -20,6 +19,5 @@
 	"modern-timeline-param-transition-duration": "{{Doc-paramdesc|transition-duration}}",
 	"modern-timeline-param-navigation-height": "{{Doc-paramdesc|navigation-height}}",
 	"modern-timeline-param-template": "{{Doc-paramdesc|template}}",
-
 	"modern-timeline-format-name": "{{Doc-smwformat}}"
 }
