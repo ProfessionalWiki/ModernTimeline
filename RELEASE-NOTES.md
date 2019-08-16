@@ -4,7 +4,7 @@ and usage.
 
 ## Version 1.0.0
 
-Released on August xx, 2019.
+Released on August 16th, 2019.
 
 Initial release with a [TimelineJS3](https://github.com/NUKnightLab/TimelineJS3)
 based result format featuring 12 customization parameters, template support and
