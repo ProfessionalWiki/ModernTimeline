@@ -6,7 +6,10 @@
 		"MediaWiki",
 		"Semantic MediaWiki",
 		"Timeline",
-		"Result format"
+		"Result format",
+		"wiki",
+		"visualization",
+		"TimelineJS3"
 	],
 	"homepage": "https://github.com/ProfessionalWiki/ModernTimeline",
 	"license": "GPL-2.0-or-later",

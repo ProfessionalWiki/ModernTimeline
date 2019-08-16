@@ -11,7 +11,7 @@ The **Modern Timeline** extension provides a modern timeline visualization for
 [result format](https://www.semantic-mediawiki.org/wiki/Help:Result_formats).
 
 Modern Timeline was created by [Professional Wiki](https://professional.wiki/)
-and funded by "KDZ - Centre for Public Administration Research".
+and funded by [KDZ - Centre for Public Administration Research](https://www.kdz.eu/).
 
 ## Platform requirements
 
@@ -25,7 +25,7 @@ See the [RELEASE-NOTES](/RELEASE-NOTES.md) for more information on the different
 
 ## Installation
 
-The recommended way to install Modern Timeline is using [Composer](http:s//getcomposer.org) with
+The recommended way to install Modern Timeline is using [Composer](https://getcomposer.org) with
 [MediaWiki's built-in support for Composer](https://www.mediawiki.org/wiki/Composer).
 
 Note that the required extension Semantic MediaWiki must be installed first according to the installation
@@ -81,7 +81,8 @@ wiki and check that it is listed in the semantic extensions section.
 
 ## Usage
 
-See also live demos at the following location: [https://starter.professional.wiki/page/Category:Modern_Timeline_examples](https://starter.professional.wiki/page/Category:Modern_Timeline_examples)
+See also live demos at the following location:
+[https://starter.professional.wiki/page/Category:Modern_Timeline_examples](https://starter.professional.wiki/page/Category:Modern_Timeline_examples)
 
 The first date printout is used as date for the timeline events:
 
@@ -129,6 +130,9 @@ A full list of supported output parameters can be obtained in wiki via the `smwd
 * The timeline style does not automatically match that of the wiki
 * The timeline language does not automatically match that of the wiki
 
+[Professional MediaWiki development](https://professional.wiki/en/services#development) is available via
+[Professional Wiki](https://professional.wiki/).
+
 ## Contribution and support
 
 If you want to contribute work to the project please subscribe to the developers mailing list and
@@ -137,6 +141,9 @@ have a look at the contribution guideline.
 * [File an issue](https://github.com/ProfessionalWiki/ModernTimeline/issues)
 * [Submit a pull request](https://github.com/ProfessionalWiki/ModernTimeline/pulls)
 * Ask a question on [the mailing list](https://www.semantic-mediawiki.org/wiki/Mailing_list)
+
+[Professional MediaWiki support](https://professional.wiki/en/support) is available via
+[Professional Wiki](https://professional.wiki/).
 
 ## License
 
