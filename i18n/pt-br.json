@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eduardo Addad de Oliveira"
+		]
+	},
+	"modern-timeline-desc": "Fornece uma visualização moderna da linha do tempo para o MediaWiki semântico",
+	"modern-timeline-param-width": "Largura da linha do tempo em %. Também pode ser especificado em px, em e ex",
+	"modern-timeline-param-height": "Altura da linha do tempo em pixels. Também pode ser especificado em em e ex",
+	"modern-timeline-param-bookmark": "Tornar a linha do tempo marcada por meio do URL da página",
+	"modern-timeline-param-background": "Cor de fundo para os slides da linha do tempo",
+	"modern-timeline-param-scale-factor": "Largura da linha do tempo em larguras de tela na primeira apresentação",
+	"modern-timeline-param-position": "Exibe a navegação da linha do tempo no topo ou na parte inferior",
+	"modern-timeline-param-tick-width": "Distância ideal (em pixels) entre os carrapatos no eixo",
+	"modern-timeline-param-start-slide": "O primeiro slide a ser exibido quando a linha do tempo é carregada",
+	"modern-timeline-param-start-at-end": "Comece com o último slide da linha do tempo",
+	"modern-timeline-param-transition-duration": "Transição de slides em milissegundos",
+	"modern-timeline-param-navigation-height": "Altura da seção de navegação da linha do tempo em % ou px",
+	"modern-timeline-param-template": "Nome de uma predefinição para mostrar a área do slide com",
+	"modern-timeline-format-name": "Linha do tempo moderna"
+}

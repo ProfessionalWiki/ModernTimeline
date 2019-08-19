@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Verdy p",
+			"Wladek92"
+		]
+	},
+	"modern-timeline-desc": "Fournit une visualisation moderne de frise chronologique pour ''Semantic MediaWiki''.",
+	"modern-timeline-param-width": "Largeur de la frise chronologique en <tt>%</tt>. Peut également être indiquée en <tt>px</tt>, <tt>em</tt>, ou <tt>ex</tt>.",
+	"modern-timeline-param-height": "Hauteur de la frise chronologique en pixels. Peut également être indiquée en <tt>em</tt> ou en <tt>ex</tt>.",
+	"modern-timeline-param-bookmark": "Permet de marquer la frise chronologique avec un signet via l’URL de la page",
+	"modern-timeline-param-background": "Couleur de fond pour les pages de frise chronologique",
+	"modern-timeline-param-scale-factor": "Largeur de la frise chronologique en nombre de largeurs d’écran à la première présentation",
+	"modern-timeline-param-position": "Affiche la navigation dans la frise chronologique en haut ou en bas",
+	"modern-timeline-param-tick-width": "Distance optimale (en pixels) entre les graduations de l’axe",
+	"modern-timeline-param-start-slide": "La première page à afficher lorsque la frise chronologique est chargée",
+	"modern-timeline-param-start-at-end": "Démarrer au dernier élément de la frise chronologique",
+	"modern-timeline-param-transition-duration": "Durée de transition des pages en millisecondes",
+	"modern-timeline-param-navigation-height": "Hauteur de la section navigable de la frise chronologique en <tt>%</tt>ou en <tt>px</tt>.",
+	"modern-timeline-param-template": "Nom du modèle pour afficher la frise chronologique",
+	"modern-timeline-format-name": "Frise chronologique moderne"
+}
