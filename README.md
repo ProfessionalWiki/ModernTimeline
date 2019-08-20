@@ -10,14 +10,14 @@ The **Modern Timeline** extension provides a modern timeline visualization for
 [Semantic MediaWiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) as a
 [result format](https://www.semantic-mediawiki.org/wiki/Help:Result_formats).
 
-Modern Timeline was created by [Professional Wiki](https://professional.wiki/)
-and funded by [KDZ - Centre for Public Administration Research](https://www.kdz.eu/).
+It was created by [Professional.Wiki](https://professional.wiki/) and funded by
+[KDZ - Centre for Public Administration Research](https://www.kdz.eu/).
 
 ## Platform requirements
 
 * PHP 7.1 or later
 * MediaWiki 1.31.x up to 1.34.x
-* Semantic MediaWiki 3.0.x or later
+* Semantic MediaWiki 3.0 or later
 
 ## Versions
 
@@ -57,8 +57,7 @@ Run the following command in your shell:
 
     php composer.phar update --no-dev
 
-Note if you have Git installed on your system add the `--prefer-source` flag to the above command. Also
-note that it may be necessary to run this command twice. If unsure do it twice right away.
+Note if you have Git installed on your system add the `--prefer-source` flag to the above command.
 
 ### Step 3
 
@@ -68,8 +67,8 @@ Add the following line to the end of your "LocalSettings.php" file:
 
 ## Usage
 
-See also live demos at the following location:
-[https://starter.professional.wiki/page/Category:Modern_Timeline_examples](https://starter.professional.wiki/page/Category:Modern_Timeline_examples)
+See also live demos at the following website:
+[Professional.Wiki Starter demo wiki - Category:Modern Timeline examples.](https://starter.professional.wiki/page/Category:Modern_Timeline_examples)
 
 The first date printout is used as date for the timeline events:
 
