@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Joetaras"
+		]
+	},
+	"modern-timeline-desc": "Dèje 'nu 'ndrucamende d'a linèe d'u tiembe moderne pe MediaUicchi Semandeche",
+	"modern-timeline-param-width": "Lunghezze d'a linèe d'u tiembe jndr'à %. Pò pure essere specificate cu le px, em e ex",
+	"modern-timeline-param-height": "Altezze d'a linèe d'u tiembe jndr'à pixel. Pò pure essere specificate cu le em e ex",
+	"modern-timeline-param-bookmark": "Fà 'a linèe d'u tiembe cu 'u segnalibbre ausanne l'URL d'a pàgene",
+	"modern-timeline-param-background": "Colore de funne pe le diapositive d'a linèe d'u tiembe",
+	"modern-timeline-param-scale-factor": "Lunghezze d'a linèe d'u tiembe jndr'à lunghezze d'u scherme cumme prima presendazione",
+	"modern-timeline-param-position": "'Ndruche 'a navigazzione jndr'à linèe d'u tiembe sus o sotte",
+	"modern-timeline-param-tick-width": "Distazne ottimale (jndr'à le pixel) 'mbrà le pundine sus a le asse",
+	"modern-timeline-param-start-slide": "'A prime diapositive da 'ndrucà quanne 'a linèe d'u tiembe jè carecate",
+	"modern-timeline-param-start-at-end": "Accuminze cu l'urtema diapositive d'a linèe d'u tiembe",
+	"modern-timeline-param-transition-duration": "Transazione d'a diapositive jndr'à milliseconde",
+	"modern-timeline-param-navigation-height": "Altezze d'a navigazzione jndr'à sezione d'a linèe d'u tiembe jndr'à % o px",
+	"modern-timeline-param-template": "Nome d'u modelle pe 'ndrucà l'area d'a diapositive",
+	"modern-timeline-format-name": "Linèe d'u tiembe moderne"
+}
