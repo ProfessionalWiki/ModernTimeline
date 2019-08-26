@@ -94,12 +94,7 @@ class TimelinePresenter {
 					'style' => 'width: 100%; height: calc(100% - 10px); background-color: rgba(0, 0, 0, 0.05); margin-top: 5px; margin-bottom: 5px;'
 				]
 			)
-		)
-			. \Html::element( // TODO: remove when system tests can test head items
-				'div',
-				[ 'style' => 'display:none' ],
-				$json
-			);
+		);
 	}
 
 }
