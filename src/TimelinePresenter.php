@@ -33,14 +33,12 @@ class TimelinePresenter {
 	public function getResult( SMWQueryResult $result ): string {
 		SMWOutputs::requireResource( 'ext.modern.timeline' );
 
-		$json = $this->createJsonString( $result );
-
 		SMWOutputs::requireHeadItem(
 			$this->id,
-			$this->createJs( $json )
+			$this->createJs( $this->createJsonString( $result ) )
 		);
 
-		return $this->createDiv( $json );
+		return $this->createDiv();
 	}
 
 	private function createJsonString( SMWQueryResult $result ) {
@@ -76,7 +74,7 @@ class TimelinePresenter {
 		);
 	}
 
-	private function createDiv( string $json ): string {
+	private function createDiv(): string {
 		$width = $this->parameters[TimelineOptions::PARAM_WIDTH]->getValue();
 		$height = $this->parameters[TimelineOptions::PARAM_HEIGHT]->getValue();
 
@@ -94,12 +92,7 @@ class TimelinePresenter {
 					'style' => 'width: 100%; height: calc(100% - 10px); background-color: rgba(0, 0, 0, 0.05); margin-top: 5px; margin-bottom: 5px;'
 				]
 			)
-		)
-			. \Html::element( // TODO: remove when system tests can test head items
-				'div',
-				[ 'style' => 'display:none' ],
-				$json
-			);
+		);
 	}
 
 }

@@ -104,11 +104,33 @@ Display and behaviour of the timeline can be changed via several output paramete
 }}
 ```
 
+### Parameters
+
 A full list of supported output parameters can be obtained in wiki via the `smwdoc` parser function:
 
 ```
 {{#smwdoc: moderntimeline }}
 ```
+
+### Configuration
+
+The default value of all parameters can be changed by placing configuration in `LocalSettings.php`.
+These configuration settings are available:
+
+* wgModernTimelineWidth
+* wgModernTimelineHeight
+* wgModernTimelineBookmark
+* wgModernTimelineBackground
+* wgModernTimelineScaleFactor
+* wgModernTimelinePosition
+* wgModernTimelineTickWidth
+* wgModernTimelineStartSlide
+* wgModernTimelineStartAtEnd
+* wgModernTimelineTransitionDuration
+* wgModernTimelineNavHeight
+* wgModernTimelineTemplate
+
+Default values of these configuration settings can be found in `extension.json`. Do not change `extension.json`.
 
 ## Limitations
 

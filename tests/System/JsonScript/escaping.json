@@ -30,7 +30,10 @@
 				"to-contain": [
 					"Evil page",
 					"2019",
-					"Description: &amp;lt;script&amp;gt;&amp;lt;\\/script&amp;gt"
+					"&lt;script&gt;"
+				],
+				"not-contain": [
+					"<script></script>"
 				]
 			}
 		}
