@@ -9,7 +9,7 @@ use SMW\Tests\Integration\JSONScript\JsonTestCaseScriptRunnerTest;
 class JsonScriptTest extends JsonTestCaseScriptRunnerTest {
 
 	public function setUp() {
-		if ( version_compare( SMW_VERSION, '3.1c', '<' ) ) {
+		if ( substr( SMW_VERSION, 0, 3 ) === '3.0' ) {
 			$this->markTestSkipped( 'SMW version too old' );
 		}
 
