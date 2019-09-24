@@ -21,6 +21,7 @@ class TimelineOptions {
 	private const PARAM_TRANSITION_DURATION = 'transition duration';
 	private const PARAM_NAV_HEIGHT = 'navigation height';
 	private const PARAM_TEMPLATE = 'template';
+	private const PARAM_THUMB = 'thumb';
 
 	public static function getTimelineParameterDefinitions(): array {
 		$definitions = [];
@@ -92,6 +93,12 @@ class TimelineOptions {
 		$definitions[self::PARAM_TEMPLATE] = [
 			'type' => ParameterTypes::STRING,
 			'default' => $GLOBALS['wgModernTimelineTemplate']
+		];
+
+		$definitions[self::PARAM_THUMB] = [
+			'type' => ParameterTypes::STRING,
+			'default' => $GLOBALS['wgModernTimelineThumbnail'],
+			'aliases' => 'thumbnail',
 		];
 
 		foreach ( $definitions as $name => $definition ) {

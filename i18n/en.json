@@ -20,6 +20,7 @@
 	"modern-timeline-param-transition-duration": "Slide transition in milliseconds",
 	"modern-timeline-param-navigation-height": "Height of the timeline navigation section in % or px",
 	"modern-timeline-param-template": "Name of a template to show the slide area with",
+	"modern-timeline-param-thumb": "Name of semantic property that holds an image to use a thumbnail on the events",
 
 	"modern-timeline-format-name": "Modern timeline"
 }

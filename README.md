@@ -165,7 +165,8 @@ have a look at the contribution guideline.
 
 ### Version 1.2.0
 
-
+* Added `thumb` parameter (with `thumbnail` alias)
+* Added `wgModernTimelineThumbnail` configuration parameter
 
 ### Version 1.1.0
 
