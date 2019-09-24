@@ -24,7 +24,7 @@ class JsonBuilder {
 	 * @param Event[] $events
 	 * @return array
 	 */
-	public function eventsToTimelineJson( array $events ): array {
+	private function eventsToTimelineJson( array $events ): array {
 		$jsonEvents = [];
 
 		foreach ( $events as $event ) {
@@ -34,13 +34,16 @@ class JsonBuilder {
 		return [ 'events' => $jsonEvents ];
 	}
 
-	private function buildEvent( Event $event ): array {
+	public function buildEvent( Event $event ): array {
 		$jsonEvent = [
 			'text' => [
 				'headline' => $this->newHeadline( $event->getSubject()->getWikiPage()->getTitle() ),
 				'text' =>  $this->slidePresenter->getText( $event->getSubject() )
 			],
-			'start_date' => $this->timeToJson( $event->getStartDate() )
+			'start_date' => $this->timeToJson( $event->getStartDate() ),
+//			'media' => [
+//				'thumbnail' => 'http://default.web.mw.localhost:8080/mediawiki/images/docker/default/3/35/Media.png'
+//			]
 		];
 
 		if ( $event->getEndDate() !== null ) {

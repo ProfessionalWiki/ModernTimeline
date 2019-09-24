@@ -4,19 +4,21 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline\Tests\Unit;
 
+use ModernTimeline\Event;
 use ModernTimeline\JsonBuilder;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
 use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
-use ModernTimeline\SlidePresenter\SlidePresenter;
 use PHPUnit\Framework\TestCase;
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
 use SMWDITime;
+use Title;
 
 /**
  * @covers \ModernTimeline\JsonBuilder
+ * @covers \ModernTimeline\EventExtractor
  */
 class JsonBuilderTest extends TestCase {
 
@@ -59,7 +61,7 @@ class JsonBuilderTest extends TestCase {
 	private function newDiWikiPage( string $pageName = self::PAGE_NAME ): DIWikiPage {
 		$page = $this->createMock( DIWikiPage::class );
 
-		$page->method( 'getTitle' )->willReturn( \Title::newFromText( $pageName ) );
+		$page->method( 'getTitle' )->willReturn( Title::newFromText( $pageName ) );
 
 		return $page;
 	}
@@ -67,40 +69,60 @@ class JsonBuilderTest extends TestCase {
 	private function newSinglePageWithStartAndEndDate(): SubjectCollection {
 		return new SubjectCollection(
 			[
-				new Subject(
-					$this->newDiWikiPage(),
-					[
-						new PropertyValueCollection(
-							$this->newDatePrintRequestWithLabel( 'Has date' ),
-							[
-								new SMWDITime(
-									SMWDITime::CM_GREGORIAN,
-									2019,
-									8,
-									2,
-									16,
-									7,
-									42
-								)
-							]
-						),
-						new PropertyValueCollection(
-							$this->newDatePrintRequestWithLabel( 'End date' ),
-							[
-								new SMWDITime(
-									SMWDITime::CM_GREGORIAN,
-									2019,
-									8,
-									5,
-									17,
-									39,
-									23
-								)
-							]
-						)
-					]
-				)
+				$this->newSubjectWithStartAndEndDate()
 			]
+		);
+	}
+
+	private function newSubjectWithStartAndEndDate(): Subject {
+		return new Subject(
+			$this->newDiWikiPage(),
+			[
+				$this->newStartDateValueCollection(),
+				$this->newEndDateValueCollection()
+			]
+		);
+	}
+
+	private function newStartDateValueCollection(): PropertyValueCollection {
+		return new PropertyValueCollection(
+			$this->newDatePrintRequestWithLabel( 'Has date' ),
+			[
+				$this->newStartDate()
+			]
+		);
+	}
+
+	private function newStartDate(): SMWDITime {
+		return new SMWDITime(
+			SMWDITime::CM_GREGORIAN,
+			2019,
+			8,
+			2,
+			16,
+			7,
+			42
+		);
+	}
+
+	private function newEndDateValueCollection(): PropertyValueCollection {
+		return new PropertyValueCollection(
+			$this->newDatePrintRequestWithLabel( 'End date' ),
+			[
+				$this->newEndDate()
+			]
+		);
+	}
+
+	private function newEndDate(): SMWDITime {
+		return new SMWDITime(
+			SMWDITime::CM_GREGORIAN,
+			2019,
+			8,
+			5,
+			17,
+			39,
+			23
 		);
 	}
 
@@ -157,6 +179,23 @@ class JsonBuilderTest extends TestCase {
 			1,
 			$this->toJson( $this->newSinglePageWithStartAndEndDate() )['events']
 		);
+	}
+
+	public function testEventWithoutImageHasNoMedia() {
+		$event = new Event(
+			$this->newSubjectWithStartAndEndDate(),
+			$this->newStartDate(),
+			$this->newEndDate()
+		);
+
+		$this->assertArrayNotHasKey(
+			'media',
+			$this->newJsonBuilder()->buildEvent( $event )
+		);
+	}
+
+	private function newJsonBuilder(): JsonBuilder {
+		return new JsonBuilder( new SimpleSlidePresenter() );
 	}
 
 }
