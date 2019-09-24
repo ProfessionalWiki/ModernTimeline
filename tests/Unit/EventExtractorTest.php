@@ -23,7 +23,7 @@ class EventExtractorTest extends TestCase {
 	public function testEmptySubjectCollection() {
 		$this->assertExtractsEvents(
 			[],
-			new SubjectCollection( [] )
+			new SubjectCollection()
 		);
 	}
 
@@ -38,12 +38,10 @@ class EventExtractorTest extends TestCase {
 		$this->assertExtractsEvents(
 			[],
 			new SubjectCollection(
-				[
-					new Subject(
-						$this->newDiWikiPage(),
-						[]
-					)
-				]
+				new Subject(
+					$this->newDiWikiPage(),
+					[]
+				)
 			)
 		);
 	}
@@ -72,11 +70,7 @@ class EventExtractorTest extends TestCase {
 					null
 				)
 			],
-			new SubjectCollection(
-				[
-					$subject
-				]
-			)
+			new SubjectCollection( $subject )
 		);
 	}
 

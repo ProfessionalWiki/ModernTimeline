@@ -6,11 +6,18 @@ class SubjectCollection {
 
 	private $pages;
 
+	public function __construct( Subject ...$subjects ) {
+		$this->pages = $subjects;
+	}
+
 	/**
-	 * @param Subject[] $pages
+	 * @param Subject[] $subjects
+	 * @return self
 	 */
-	public function __construct( array $pages ) {
-		$this->pages = $pages;
+	public static function newFromArray( array $subjects ): self {
+		$instance = new self();
+		$instance->pages = $subjects;
+		return $instance;
 	}
 
 	/**
