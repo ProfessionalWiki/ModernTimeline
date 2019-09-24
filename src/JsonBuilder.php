@@ -16,15 +16,11 @@ class JsonBuilder {
 		$this->slidePresenter = $slidePresenter;
 	}
 
-	public function buildTimelineJson( SubjectCollection $pages ): array {
-		return $this->eventsToTimelineJson( ( new EventExtractor() )->extractEvents( $pages ) );
-	}
-
 	/**
 	 * @param Event[] $events
 	 * @return array
 	 */
-	private function eventsToTimelineJson( array $events ): array {
+	public function eventsToTimelineJson( array $events ): array {
 		$jsonEvents = [];
 
 		foreach ( $events as $event ) {

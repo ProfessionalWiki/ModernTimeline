@@ -42,13 +42,21 @@ class TimelinePresenter {
 	}
 
 	private function createJsonString( SMWQueryResult $result ) {
-		$preJson = ( new JsonBuilder( $this->getSlidePresenter() ) )->buildTimelineJson(
-			( new ResultSimplifier() )->newSubjectCollection( $result )
+		$preJson = $this->newJsonBuilder()->eventsToTimelineJson(
+			( new EventExtractor() )->extractEvents(
+				( new ResultSimplifier() )->newSubjectCollection( $result )
+			)
 		);
 
 		$preJson['options'] = TimelineOptions::processedParamsToJson( $this->parameters );
 
 		return json_encode( $preJson );
+	}
+
+	private function newJsonBuilder(): JsonBuilder {
+		return new JsonBuilder(
+			$this->getSlidePresenter()
+		);
 	}
 
 	private function getSlidePresenter(): SlidePresenter {
