@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\ResultSimplifier;
+use ModernTimeline\ResultFacade\ResultFormatRegistry;
 use ModernTimeline\ResultFacade\SimpleQueryResult;
 use ModernTimeline\ResultFacade\SubjectCollection;
 use ParamProcessor\Param;
@@ -20,7 +21,18 @@ class ModernTimelinePrinter implements ResultPrinter {
 	private $simplePrinter;
 
 	public function __construct() {
-		$this->simplePrinter = new TimelinePresenter();
+		$registry = new ResultFormatRegistry();
+
+		$registry->newFormat()
+			->withName( 'moderntimeline' )
+			->andMessageKey( 'modern-timeline-format-name' )
+			->andParameterDefinitions( TimelineOptions::getTimelineParameterDefinitions() )
+			->andPrinterBuilder( function() {
+				return new TimelinePresenter();
+			} )
+			->register();
+
+		$this->simplePrinter = $registry->getFormatByName( 'moderntimeline' )->buildPrinter();
 	}
 
 	public function getName(): string {
