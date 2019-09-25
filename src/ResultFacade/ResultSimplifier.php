@@ -32,7 +32,7 @@ class ResultSimplifier {
 		foreach ( $printRequests as $printRequest ) {
 			$dataItems = $this->newResultArray( $resultPage, $printRequest, $result )->getContent();
 
-			$propertyValueCollections[] = new PropertyValues(
+			$propertyValueCollections[] = new PropertyValueCollection(
 				$printRequest,
 				$dataItems === false ? [] : $dataItems
 			);

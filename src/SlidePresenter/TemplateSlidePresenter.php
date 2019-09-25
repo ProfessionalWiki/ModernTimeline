@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline\SlidePresenter;
 
-use ModernTimeline\ResultFacade\PropertyValues;
+use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use SMW\DataValueFactory;
 
@@ -39,13 +39,13 @@ class TemplateSlidePresenter implements SlidePresenter {
 				$this->parameter( 'title', $subject->getWikiPage()->getTitle()->getFullText() )
 			],
 			array_map(
-				function( PropertyValues $pvc ) {
+				function( PropertyValueCollection $pvc ) {
 					return $this->parameter(
 						$pvc->getPrintRequest()->getText( null ) ?? '',
 						$pvc->getDataItems() === [] ? '' : $this->dataItemToText( $pvc->getDataItems()[0] )
 					);
 				},
-				$subject->getPropertyValueCollections()
+				$subject->getPropertyValueCollections()->toArray()
 			)
 		);
 	}

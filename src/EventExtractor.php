@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
-use ModernTimeline\ResultFacade\PropertyValues;
+use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
 use SMWDITime;
@@ -51,12 +51,12 @@ class EventExtractor {
 	}
 
 	/**
-	 * @return PropertyValues[]
+	 * @return PropertyValueCollection[]
 	 */
 	private function getPropertyValueCollectionsWithDates( Subject $subject ) {
 		return array_filter(
-			$subject->getPropertyValueCollections(),
-			function( PropertyValues $pvc ) {
+			$subject->getPropertyValueCollections()->toArray(),
+			function( PropertyValueCollection $pvc ) {
 				return $pvc->getPrintRequest()->getTypeID() === '_dat'
 					&& $pvc->getDataItems() !== [];
 			}
