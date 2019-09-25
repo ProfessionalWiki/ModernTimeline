@@ -6,7 +6,7 @@ namespace ModernTimeline\Tests\Unit;
 
 use ModernTimeline\Event;
 use ModernTimeline\EventExtractor;
-use ModernTimeline\ResultFacade\PropertyValueCollection;
+use ModernTimeline\ResultFacade\PropertyValues;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
 use PHPUnit\Framework\TestCase;
@@ -74,8 +74,8 @@ class EventExtractorTest extends TestCase {
 		);
 	}
 
-	private function newStartDateValueCollection(): PropertyValueCollection {
-		return new PropertyValueCollection(
+	private function newStartDateValueCollection(): PropertyValues {
+		return new PropertyValues(
 			$this->newDatePrintRequestWithLabel( 'Has date' ),
 			[
 				$this->newStartDate()

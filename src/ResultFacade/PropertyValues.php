@@ -7,7 +7,7 @@ namespace ModernTimeline\ResultFacade;
 use SMW\Query\PrintRequest;
 use SMWDataItem;
 
-class PropertyValueCollection {
+class PropertyValues {
 
 	private $printRequest;
 	private $dataItems;

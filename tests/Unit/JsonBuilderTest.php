@@ -6,7 +6,7 @@ namespace ModernTimeline\Tests\Unit;
 
 use ModernTimeline\Event;
 use ModernTimeline\JsonBuilder;
-use ModernTimeline\ResultFacade\PropertyValueCollection;
+use ModernTimeline\ResultFacade\PropertyValues;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
 use PHPUnit\Framework\TestCase;
@@ -68,8 +68,8 @@ class JsonBuilderTest extends TestCase {
 		return $page;
 	}
 
-	private function newStartDateValueCollection(): PropertyValueCollection {
-		return new PropertyValueCollection(
+	private function newStartDateValueCollection(): PropertyValues {
+		return new PropertyValues(
 			$this->newDatePrintRequestWithLabel( 'Has date' ),
 			[
 				$this->newStartDate()
@@ -89,8 +89,8 @@ class JsonBuilderTest extends TestCase {
 		);
 	}
 
-	private function newEndDateValueCollection(): PropertyValueCollection {
-		return new PropertyValueCollection(
+	private function newEndDateValueCollection(): PropertyValues {
+		return new PropertyValues(
 			$this->newDatePrintRequestWithLabel( 'End date' ),
 			[
 				$this->newEndDate()

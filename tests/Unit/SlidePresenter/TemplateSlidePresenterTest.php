@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline\Tests\Unit\SlidePresenter;
 
-use ModernTimeline\ResultFacade\PropertyValueCollection;
+use ModernTimeline\ResultFacade\PropertyValues;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\SlidePresenter\TemplateSlidePresenter;
 use PHPUnit\Framework\TestCase;
@@ -30,7 +30,7 @@ class TemplateSlidePresenterTest extends TestCase {
 		return new Subject(
 			$this->newDiWikiPage(),
 			[
-				new PropertyValueCollection(
+				new PropertyValues(
 					$this->newDatePrintRequestWithLabel( 'Has date' ),
 					[
 						new SMWDITime(
@@ -44,7 +44,7 @@ class TemplateSlidePresenterTest extends TestCase {
 						)
 					]
 				),
-				new PropertyValueCollection(
+				new PropertyValues(
 					$this->newDatePrintRequestWithLabel( 'End date' ),
 					[
 						new SMWDITime(
