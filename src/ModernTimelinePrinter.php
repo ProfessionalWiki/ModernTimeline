@@ -4,7 +4,12 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
+use ModernTimeline\ResultFacade\ResultSimplifier;
+use ModernTimeline\ResultFacade\SimpleQueryResult;
+use ModernTimeline\ResultFacade\SubjectCollection;
+use ParamProcessor\Param;
 use ParamProcessor\ProcessedParam;
+use ParamProcessor\ProcessingResult;
 use SMW\Parser\RecursiveTextProcessor;
 use SMW\Query\ResultPrinter;
 use SMWQuery;
@@ -12,23 +17,66 @@ use SMWQueryResult;
 
 class ModernTimelinePrinter implements ResultPrinter {
 
+	private $simplePrinter;
+
+	public function __construct() {
+		$this->simplePrinter = new TimelinePresenter();
+	}
+
 	public function getName(): string {
-		return wfMessage( 'modern-timeline-format-name' )->text();
+		return wfMessage( $this->simplePrinter->getNameMessageKey() )->text();
 	}
 
 	public function getParamDefinitions( array $definitions ) {
-		return array_merge( $definitions, TimelineOptions::getTimelineParameterDefinitions() );
+		return array_merge( $definitions, $this->simplePrinter->getParameterDefinitions() );
 	}
 
 	/**
 	 * @param SMWQueryResult $result
-	 * @param ProcessedParam[] $parameters Note: currently getting Param[] from SMW but lets pretend the legacy refactor happened already
+	 * @param Param[] $parameters
 	 * @param int $outputMode
 	 *
 	 * @return string
 	 */
 	public function getResult( SMWQueryResult $result, array $parameters, $outputMode ): string {
-		return ( new TimelinePresenter( $parameters ) )->getResult( $result );
+		return $this->simplePrinter->getResult(
+			new SimpleQueryResult(
+				$this->simplifyResult( $result ),
+				$this->newProcessingResultFromParams( $parameters )
+			)
+		);
+	}
+
+	private function simplifyResult( SMWQueryResult $result ): SubjectCollection {
+		return ( new ResultSimplifier() )->newSubjectCollection( $result );
+	}
+
+	/**
+	 * This is code copied over from ParamProcessor to go from the deprecated Param[] to ProcessingResult.
+	 * Once the main ResultPrinter interface has been migrated away from Param this can be removed.
+	 */
+	private function newProcessingResultFromParams( array $params ): ProcessingResult {
+		$parameters = [];
+
+		foreach ( $params as $param ) {
+			$processedParam = new ProcessedParam(
+				$param->getName(),
+				$param->getValue(),
+				$param->wasSetToDefault()
+			);
+
+			if ( !$param->wasSetToDefault() ) {
+				$processedParam->setOriginalName( $param->getOriginalName() );
+				$processedParam->setOriginalValue( $param->getOriginalValue() );
+			}
+
+			$parameters[$processedParam->getName()] = $processedParam;
+		}
+
+		return new ProcessingResult(
+			$parameters,
+			[]
+		);
 	}
 
 	public function getQueryMode( $context ): int {

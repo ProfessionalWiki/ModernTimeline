@@ -23,7 +23,7 @@ class SubjectCollection {
 	/**
 	 * @return Subject[]
 	 */
-	public function getSubjects(): iterable {
+	public function getSubjects(): array {
 		return $this->pages;
 	}
 
