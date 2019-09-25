@@ -11,11 +11,11 @@ class ResultFormat {
 	private $parameterDefinitions;
 	private $constructionFunction;
 
-	public function __construct( string $name, string $nameMessageKey, array $parameterDefinitions, callable $printerBuilder ) {
+	public function __construct( string $name, string $nameMessageKey, array $parameterDefinitions, callable $presenterBuilder ) {
 		$this->name = $name;
 		$this->nameMessageKey = $nameMessageKey;
 		$this->parameterDefinitions = $parameterDefinitions;
-		$this->constructionFunction = $printerBuilder;
+		$this->constructionFunction = $presenterBuilder;
 	}
 
 	public function getName(): string {
@@ -30,7 +30,7 @@ class ResultFormat {
 		return $this->parameterDefinitions;
 	}
 
-	public function buildPrinter(): SimpleResultPrinter {
+	public function buildPresenter(): ResultPresenter {
 		return call_user_func( $this->constructionFunction );
 	}
 

@@ -32,16 +32,16 @@ class ResultFormatRegistrator {
 		return $this;
 	}
 
-	public function andPrinterBuilder( callable $constructionFunction ): self {
+	public function andPresenterBuilder( callable $constructionFunction ): self {
 		$this->constructionFunction = $constructionFunction;
 		return $this;
 	}
 
 	public function register() {
-		call_user_func( $this->registry, $this->newPrinterInfo() );
+		call_user_func( $this->registry, $this->newResultFormat() );
 	}
 
-	private function newPrinterInfo(): ResultFormat {
+	private function newResultFormat(): ResultFormat {
 		return new ResultFormat(
 			$this->name,
 			$this->nameMessageKey,

@@ -5,13 +5,13 @@ declare( strict_types = 1 );
 namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\SimpleQueryResult;
-use ModernTimeline\ResultFacade\SimpleResultPrinter;
+use ModernTimeline\ResultFacade\ResultPresenter;
 use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
 use ModernTimeline\SlidePresenter\SlidePresenter;
 use ModernTimeline\SlidePresenter\TemplateSlidePresenter;
 use SMWOutputs;
 
-class TimelinePresenter implements SimpleResultPrinter {
+class TimelinePresenter implements ResultPresenter {
 
 	private $id;
 
@@ -24,15 +24,7 @@ class TimelinePresenter implements SimpleResultPrinter {
 		return 'modern_timeline_' . ++$timelineNumber;
 	}
 
-	public function getNameMessageKey(): string {
-		return 'modern-timeline-format-name';
-	}
-
-	public function getParameterDefinitions(): array {
-		return TimelineOptions::getTimelineParameterDefinitions();
-	}
-
-	public function getResult( SimpleQueryResult $result ): string {
+	public function presentResult( SimpleQueryResult $result ): string {
 		SMWOutputs::requireResource( 'ext.modern.timeline' );
 
 		SMWOutputs::requireHeadItem(

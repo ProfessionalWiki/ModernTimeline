@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
+use ModernTimeline\ResultFacade\ResultFormat;
 use ModernTimeline\ResultFacade\ResultSimplifier;
 use ModernTimeline\ResultFacade\ResultFormatRegistry;
 use ModernTimeline\ResultFacade\SimpleQueryResult;
@@ -18,7 +19,10 @@ use SMWQueryResult;
 
 class ModernTimelinePrinter implements ResultPrinter {
 
-	private $simplePrinter;
+	/**
+	 * @var ResultFormat
+	 */
+	private $format;
 
 	public function __construct() {
 		$registry = new ResultFormatRegistry();
@@ -27,20 +31,20 @@ class ModernTimelinePrinter implements ResultPrinter {
 			->withName( 'moderntimeline' )
 			->andMessageKey( 'modern-timeline-format-name' )
 			->andParameterDefinitions( TimelineOptions::getTimelineParameterDefinitions() )
-			->andPrinterBuilder( function() {
+			->andPresenterBuilder( function() {
 				return new TimelinePresenter();
 			} )
 			->register();
 
-		$this->simplePrinter = $registry->getFormatByName( 'moderntimeline' )->buildPrinter();
+		$this->format = $registry->getFormatByName( 'moderntimeline' );
 	}
 
 	public function getName(): string {
-		return wfMessage( $this->simplePrinter->getNameMessageKey() )->text();
+		return wfMessage( $this->format->getNameMessageKey() )->text();
 	}
 
 	public function getParamDefinitions( array $definitions ) {
-		return array_merge( $definitions, $this->simplePrinter->getParameterDefinitions() );
+		return array_merge( $definitions, $this->format->getParameterDefinitions() );
 	}
 
 	/**
@@ -51,7 +55,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 	 * @return string
 	 */
 	public function getResult( SMWQueryResult $result, array $parameters, $outputMode ): string {
-		return $this->simplePrinter->getResult(
+		return $this->format->buildPresenter()->presentResult(
 			new SimpleQueryResult(
 				$this->simplifyResult( $result ),
 				$this->newProcessingResultFromParams( $parameters )
