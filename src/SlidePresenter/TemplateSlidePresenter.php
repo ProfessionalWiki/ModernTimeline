@@ -45,7 +45,7 @@ class TemplateSlidePresenter implements SlidePresenter {
 						$pvc->getDataItems() === [] ? '' : $this->dataItemToText( $pvc->getDataItems()[0] )
 					);
 				},
-				$subject->getPropertyValueCollections()
+				$subject->getPropertyValueCollections()->toArray()
 			)
 		);
 	}

@@ -19,9 +19,7 @@ It was created by [Professional.Wiki](https://professional.wiki/) and funded by
 * MediaWiki 1.31.x up to 1.34.x
 * Semantic MediaWiki 3.0 or later
 
-## Versions
-
-See the [RELEASE-NOTES](/RELEASE-NOTES.md) for more information on the different versions of Modern Timeline.
+See the [release notes](#release-notes) for more information on the different versions of Modern Timeline.
 
 ## Installation
 
@@ -162,3 +160,25 @@ have a look at the contribution guideline.
 ## License
 
 [GNU General Public License v2.0 or later (GPL-2.0-or-later)](/COPYING).
+
+## Release notes
+
+### Version 1.2.0
+
+* Added `thumb` parameter (with `thumbnail` alias)
+* Added `wgModernTimelineThumbnail` configuration parameter
+
+### Version 1.1.0
+
+Released on August 28, 2019.
+
+* Improved handling of large data sets
+* Translation updates from https://translatewiki.net
+
+### Version 1.0.0
+
+Released on August 16, 2019.
+
+Initial release with a [TimelineJS3](https://github.com/NUKnightLab/TimelineJS3)
+based result format featuring 12 customization parameters, template support and
+date range support.

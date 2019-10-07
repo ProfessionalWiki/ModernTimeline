@@ -21,6 +21,7 @@ class TimelineOptions {
 	private const PARAM_TRANSITION_DURATION = 'transition duration';
 	private const PARAM_NAV_HEIGHT = 'navigation height';
 	private const PARAM_TEMPLATE = 'template';
+	private const PARAM_THUMB = 'thumb';
 
 	public static function getTimelineParameterDefinitions(): array {
 		$definitions = [];
@@ -94,6 +95,12 @@ class TimelineOptions {
 			'default' => $GLOBALS['wgModernTimelineTemplate']
 		];
 
+		$definitions[self::PARAM_THUMB] = [
+			'type' => ParameterTypes::STRING,
+			'default' => $GLOBALS['wgModernTimelineThumbnail'],
+			'aliases' => 'thumbnail',
+		];
+
 		foreach ( $definitions as $name => $definition ) {
 			$definitions[$name]['message'] = 'modern-timeline-param-' . str_replace( ' ', '-', $name );
 
@@ -109,22 +116,22 @@ class TimelineOptions {
 	}
 
 	/**
-	 * @param ProcessedParam[] $parameters
+	 * @param array $parameters
 	 * @return array
 	 */
 	public static function processedParamsToJson( array $parameters ): array {
 		$json = [
-			'hash_bookmark' => $parameters[self::PARAM_BOOKMARK]->getValue(),
-			'default_bg_color' => $parameters[self::PARAM_BACKGROUND]->getValue(),
-			'scale_factor' => $parameters[self::PARAM_SCALE_FACTOR]->getValue(),
-			'timenav_position' => $parameters[self::PARAM_POSITION]->getValue(),
-			'optimal_tick_width' => $parameters[self::PARAM_TICK_WIDTH]->getValue(),
+			'hash_bookmark' => $parameters[self::PARAM_BOOKMARK],
+			'default_bg_color' => $parameters[self::PARAM_BACKGROUND],
+			'scale_factor' => $parameters[self::PARAM_SCALE_FACTOR],
+			'timenav_position' => $parameters[self::PARAM_POSITION],
+			'optimal_tick_width' => $parameters[self::PARAM_TICK_WIDTH],
 			'start_at_slide' => self::getStartAtSlide( $parameters ),
-			'start_at_end' => $parameters[self::PARAM_START_AT_END]->getValue(),
-			'duration' => $parameters[self::PARAM_TRANSITION_DURATION]->getValue(),
+			'start_at_end' => $parameters[self::PARAM_START_AT_END],
+			'duration' => $parameters[self::PARAM_TRANSITION_DURATION],
 		];
 
-		$height = $parameters[self::PARAM_NAV_HEIGHT]->getValue();
+		$height = $parameters[self::PARAM_NAV_HEIGHT];
 
 		if ( strpos( $height, '%' ) === false ) {
 			$json['timenav_height'] = (int)substr( $height, 0, -2 );
@@ -137,7 +144,7 @@ class TimelineOptions {
 	}
 
 	private static function getStartAtSlide( array $parameters ): int {
-		return $parameters[self::PARAM_START_SLIDE]->getValue() - 1;
+		return $parameters[self::PARAM_START_SLIDE] - 1;
 	}
 
 }

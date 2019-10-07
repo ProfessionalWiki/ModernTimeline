@@ -20,7 +20,7 @@ class Subject {
 	 */
 	public function __construct( DIWikiPage $wikiPage, array $propertyValueCollections ) {
 		$this->wikiPage = $wikiPage;
-		$this->propertyValueCollections = $propertyValueCollections;
+		$this->propertyValueCollections = new PropertyValueCollections( $propertyValueCollections );
 	}
 
 	public function getWikiPage(): DIWikiPage {
@@ -30,10 +30,8 @@ class Subject {
 	/**
 	 * @return PropertyValueCollection[]
 	 */
-	public function getPropertyValueCollections(): array {
+	public function getPropertyValueCollections(): PropertyValueCollections {
 		return $this->propertyValueCollections;
 	}
-
-
 
 }

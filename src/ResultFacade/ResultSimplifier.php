@@ -17,7 +17,7 @@ class ResultSimplifier {
 			$subjects[] = $this->newSubject( $diWikiPage, $result->getPrintRequests(), $result );
 		}
 
-		return new SubjectCollection( $subjects );
+		return SubjectCollection::newFromArray( $subjects );
 	}
 
 	/**

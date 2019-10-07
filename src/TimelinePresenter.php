@@ -4,24 +4,18 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
-use ModernTimeline\ResultFacade\ResultSimplifier;
+use ModernTimeline\ResultFacade\SimpleQueryResult;
+use ModernTimeline\ResultFacade\ResultPresenter;
 use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
 use ModernTimeline\SlidePresenter\SlidePresenter;
 use ModernTimeline\SlidePresenter\TemplateSlidePresenter;
-use ParamProcessor\ProcessedParam;
 use SMWOutputs;
-use SMWQueryResult;
 
-class TimelinePresenter {
+class TimelinePresenter implements ResultPresenter {
 
 	private $id;
-	private $parameters;
 
-	/**
-	 * @param ProcessedParam[] $parameters
-	 */
-	public function __construct( array $parameters ) {
-		$this->parameters = $parameters;
+	public function __construct() {
 		$this->id = $this->newTimelineId();
 	}
 
@@ -30,7 +24,7 @@ class TimelinePresenter {
 		return 'modern_timeline_' . ++$timelineNumber;
 	}
 
-	public function getResult( SMWQueryResult $result ): string {
+	public function presentResult( SimpleQueryResult $result ): string {
 		SMWOutputs::requireResource( 'ext.modern.timeline' );
 
 		SMWOutputs::requireHeadItem(
@@ -38,29 +32,33 @@ class TimelinePresenter {
 			$this->createJs( $this->createJsonString( $result ) )
 		);
 
-		return $this->createDiv();
+		return $this->createDiv( $result->getParameters() );
 	}
 
-	private function createJsonString( SMWQueryResult $result ) {
-		$preJson = ( new JsonBuilder( $this->getSlidePresenter() ) )->buildTimelineJson(
-			( new ResultSimplifier() )->newSubjectCollection( $result )
+	private function createJsonString( SimpleQueryResult $result ) {
+		$parameters = $result->getParameters();
+
+		$preJson = $this->newJsonBuilder( $parameters['template'] )->eventsToTimelineJson(
+			( new EventExtractor() )->extractEvents( $result->getSubjects() )
 		);
 
-		$preJson['options'] = TimelineOptions::processedParamsToJson( $this->parameters );
+		$preJson['options'] = TimelineOptions::processedParamsToJson( $parameters );
 
 		return json_encode( $preJson );
 	}
 
-	private function getSlidePresenter(): SlidePresenter {
-		if ( $this->getTemplateName() === '' ) {
+	private function newJsonBuilder( string $templateName ): JsonBuilder {
+		return new JsonBuilder(
+			$this->getSlidePresenter( $templateName )
+		);
+	}
+
+	private function getSlidePresenter( string $templateName ): SlidePresenter {
+		if ( $templateName === '' ) {
 			return new SimpleSlidePresenter();
 		}
 
-		return new TemplateSlidePresenter( $this->getTemplateName() );
-	}
-
-	private function getTemplateName(): string {
-		return $this->parameters['template']->getValue();
+		return new TemplateSlidePresenter( $templateName );
 	}
 
 	private function createJs( string $json ): string {
@@ -74,9 +72,9 @@ class TimelinePresenter {
 		);
 	}
 
-	private function createDiv(): string {
-		$width = $this->parameters[TimelineOptions::PARAM_WIDTH]->getValue();
-		$height = $this->parameters[TimelineOptions::PARAM_HEIGHT]->getValue();
+	private function createDiv( array $parameters ): string {
+		$width = $parameters[TimelineOptions::PARAM_WIDTH];
+		$height = $parameters[TimelineOptions::PARAM_HEIGHT];
 
 		return \Html::rawElement(
 			'div',

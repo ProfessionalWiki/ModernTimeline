@@ -37,7 +37,7 @@ class OptionsTest extends TestCase {
 
 	private function processUserInputToTimelineOptions( array $userInput ): array {
 		return TimelineOptions::processedParamsToJson(
-			$this->processUserInput( $userInput )->getParameters()
+			$this->processUserInput( $userInput )->getParameterArray()
 		);
 	}
 
