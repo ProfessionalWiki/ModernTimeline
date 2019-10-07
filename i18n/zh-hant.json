@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Kly"
+		]
+	},
+	"modern-timeline-desc": "提供用於 Semantic MediaWiki 的新型視覺化時間軸",
+	"modern-timeline-param-width": "時間軸寬度，以 % 為單位。也可以用 px、em、ex 來指定",
+	"modern-timeline-param-height": "時間軸高度，以像素為單位。也可以用 em、ex 來指定",
+	"modern-timeline-param-bookmark": "透過頁面 URL 產生時間軸標註",
+	"modern-timeline-param-background": "時間軸投影片的背景色彩",
+	"modern-timeline-param-scale-factor": "在首次展示時在螢幕寬度裡的時間軸寬度",
+	"modern-timeline-param-position": "顯示在頂端或底部的時間軸導航",
+	"modern-timeline-param-tick-width": "在軸上刻度之間的最佳間距，以像素為單位",
+	"modern-timeline-param-start-slide": "當時間軸載入時第一張顯示的投影片",
+	"modern-timeline-param-start-at-end": "從最後的時間軸投影片開始",
+	"modern-timeline-param-transition-duration": "投影片轉場，以毫秒為單位",
+	"modern-timeline-param-navigation-height": "以 % 或 px 為單位的時間軸導航段落的高度",
+	"modern-timeline-param-template": "用於顯示投影片區域的模版名稱",
+	"modern-timeline-param-thumb": "持有圖片在活動上使用縮圖的語義屬性名稱",
+	"modern-timeline-format-name": "新型時間軸"
+}
