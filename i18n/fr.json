@@ -18,5 +18,6 @@
 	"modern-timeline-param-transition-duration": "Durée de transition des pages en millisecondes",
 	"modern-timeline-param-navigation-height": "Hauteur de la section navigable de la frise chronologique en <tt>%</tt>ou en <tt>px</tt>.",
 	"modern-timeline-param-template": "Nom du modèle pour afficher la frise chronologique",
+	"modern-timeline-param-thumb": "Nom de la propriété sémantique qui indique l’image à utiliser en vignette sur les événements",
 	"modern-timeline-format-name": "Frise chronologique moderne"
 }

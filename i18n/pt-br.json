@@ -17,5 +17,6 @@
 	"modern-timeline-param-transition-duration": "Transição de slides em milissegundos",
 	"modern-timeline-param-navigation-height": "Altura da seção de navegação da linha do tempo em % ou px",
 	"modern-timeline-param-template": "Nome de uma predefinição para mostrar a área do slide com",
+	"modern-timeline-param-thumb": "Nome da propriedade semântica que contém uma imagem para usar uma miniatura nos eventos",
 	"modern-timeline-format-name": "Linha do tempo moderna"
 }
