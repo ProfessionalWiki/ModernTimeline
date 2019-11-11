@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Jon Harald Søby"
+		]
+	},
+	"modern-timeline-desc": "Gir en moderne tidslinjevisualisering for Semantic MediaWiki",
+	"modern-timeline-param-width": "Tidslinjebredde i %. Kan også angis i px, em eller ex",
+	"modern-timeline-param-height": "Tidslinjehøyde i piksler. Kan også angis som em eller ex",
+	"modern-timeline-param-bookmark": "Gjør at tidslinjen kan merkes som favoritt via side-URL-en",
+	"modern-timeline-param-background": "Bakgrunnsfarge for tidslinjearkene",
+	"modern-timeline-param-scale-factor": "Tidslinjebredde i skjermbredder ved første presentasjon",
+	"modern-timeline-param-position": "Vis tidslinjenavigatoren på toppen eller bunnen",
+	"modern-timeline-param-tick-width": "Optimal avstand (i piksler) mellom merker på aksen",
+	"modern-timeline-param-start-slide": "Det første arket som skal vises når tidslinjen lastes",
+	"modern-timeline-param-start-at-end": "Begynn med det siste tidslinjearket",
+	"modern-timeline-param-transition-duration": "Arkovergang i millisekunder",
+	"modern-timeline-param-navigation-height": "Høyden til tidslinjenavigasjonsseksjonen i % eller px",
+	"modern-timeline-param-template": "Navn på en mal som arkområdet skal vises med",
+	"modern-timeline-param-thumb": "Navnet på en semantisk egenskap som holder et bilde som skal brukes som miniatyrbilde for hendelsene",
+	"modern-timeline-format-name": "Moderne tidslinje"
+}
