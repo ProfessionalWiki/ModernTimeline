@@ -4,6 +4,7 @@
 			"BaRaN6161 TURK"
 		]
 	},
+	"modern-timeline-desc": "Semantic MediaWiki için modern bir zaman çizelgesi görselleştirme sağlar",
 	"modern-timeline-param-width": "Zaman çizelgesi genişliği % cinsinde. Ayrıca px, em ve ex olarak da belirtilebilir.",
 	"modern-timeline-param-height": "Zaman çizelgesi yüksekliği piksel cinsinden. Em ve ex olarak da belirtilebilir",
 	"modern-timeline-param-bookmark": "Zaman çizelgesini sayfa URL’si üzerinden favorilere eklenebilir hale getirin",
@@ -16,5 +17,6 @@
 	"modern-timeline-param-transition-duration": "Milisaniye cinsinden slayt geçişi",
 	"modern-timeline-param-navigation-height": "Zaman çizelgesi gezinti bölümünün % veya px cinsinden yüksekliği",
 	"modern-timeline-param-template": "Slayt alanını gösterilecek şablonun adı",
+	"modern-timeline-param-thumb": "Olaylarda küçük resmi kullanmak için görüntüyü tutan semantik özelliğin adı",
 	"modern-timeline-format-name": "Modern zaman çizelgesi"
 }
