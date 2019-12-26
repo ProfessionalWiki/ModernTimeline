@@ -16,7 +16,7 @@
 	"modern-timeline-param-start-at-end": "Почни со последниот времеследен приказ",
 	"modern-timeline-param-transition-duration": "Преод на приказите во милисекунди",
 	"modern-timeline-param-navigation-height": "Висина на времеследниот изборник во % или px",
-	"modern-timeline-param-template": "Со кој шаблон да се прикажува времеследот",
+	"modern-timeline-param-template": "Со која предлошка да се прикажува времеследот",
 	"modern-timeline-param-thumb": "Назив на семантичкото својство кое ја содржи сликата што се користи како минијатура за настаните",
 	"modern-timeline-format-name": "Современ времеслед"
 }
