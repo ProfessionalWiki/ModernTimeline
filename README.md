@@ -24,7 +24,7 @@ See the [release notes](#release-notes) for more information on the different ve
 ## Installation
 
 The recommended way to install Modern Timeline is using [Composer](https://getcomposer.org) with
-[MediaWiki's built-in support for Composer](https://www.mediawiki.org/wiki/Composer).
+[MediaWiki's built-in support for Composer](https://professional.wiki/en/articles/installing-mediawiki-extensions-with-composer).
 
 Note that the required extension Semantic MediaWiki must be installed first according to the installation
 instructions provided.
