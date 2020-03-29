@@ -116,19 +116,19 @@ A full list of supported output parameters can be obtained in wiki via the `smwd
 The default value of all parameters can be changed by placing configuration in `LocalSettings.php`.
 These configuration settings are available:
 
-* $wgModernTimelineWidth - Timeline width in %. Can also be specified in px, em and ex
-* $wgModernTimelineHeight - Timeline height in pixels. Can also be specified in em and ex
-* $wgModernTimelineBookmark - Make the timeline bookmarkable via the page URL
-* $wgModernTimelineBackground - Background color for the timeline slides (CSS color values)
-* $wgModernTimelineScaleFactor - Timeline width in screen widths at first presentation
-* $wgModernTimelinePosition - Display the timeline navigation at the top or at the bottom
-* $wgModernTimelineTickWidth - Optimal distance (in pixels) between ticks on the axis
-* $wgModernTimelineStartSlide - The first slide to display when the timeline is loaded
-* $wgModernTimelineStartAtEnd - Start with the last timeline slide
-* $wgModernTimelineTransitionDuration - Slide transition in milliseconds
-* $wgModernTimelineNavHeight - Height of the timeline navigation section in % or px
-* $wgModernTimelineTemplate - Name of a template to show the slide area with
-* $wgModernTimelineImageProperty - Semantic property of type Page. Needs to be queried as print request
+* `$wgModernTimelineWidth` – Timeline width in %. Can also be specified in px, em and ex
+* `$wgModernTimelineHeight` – Timeline height in pixels. Can also be specified in em and ex
+* `$wgModernTimelineBookmark` – Make the timeline bookmarkable via the page URL
+* `$wgModernTimelineBackground` – Background color for the timeline slides (CSS color values)
+* `$wgModernTimelineScaleFactor` – Timeline width in screen widths at first presentation
+* `$wgModernTimelinePosition` – Display the timeline navigation at the top or at the bottom
+* `$wgModernTimelineTickWidth` – Optimal distance (in pixels) between ticks on the axis
+* `$wgModernTimelineStartSlide` – The first slide to display when the timeline is loaded
+* `$wgModernTimelineStartAtEnd` – Start with the last timeline slide
+* `$wgModernTimelineTransitionDuration` – Slide transition in milliseconds
+* `$wgModernTimelineNavHeight` – Height of the timeline navigation section in % or px
+* `$wgModernTimelineTemplate` – Name of a template to show the slide area with
+* `$wgModernTimelineImageProperty` – Semantic property of type Page. Needs to be queried as print request
 
 Default values of these configuration settings can be found in `extension.json`. Do not change `extension.json`.
 
