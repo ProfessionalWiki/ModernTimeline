@@ -157,7 +157,7 @@ have a look at the contribution guideline.
 * Ask a question on [the mailing list](https://www.semantic-mediawiki.org/wiki/Mailing_list)
 
 [Professional MediaWiki support](https://professional.wiki/en/support) is available via
-[Professional Wiki](https://professional.wiki/).
+[Professional.Wiki](https://professional.wiki/).
 
 ## License
 
