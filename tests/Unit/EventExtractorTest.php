@@ -30,7 +30,7 @@ class EventExtractorTest extends TestCase {
 	private function assertExtractsEvents( array $expectedEvents, SubjectCollection $subjects ) {
 		$this->assertEquals(
 			$expectedEvents,
-			( new EventExtractor() )->extractEvents( $subjects )
+			( new EventExtractor( [ 'image property' => '' ] ) )->extractEvents( $subjects )
 		);
 	}
 

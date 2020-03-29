@@ -36,26 +36,25 @@ class TimelinePresenter implements ResultPresenter {
 	}
 
 	private function createJsonString( SimpleQueryResult $result ) {
-		$parameters = $result->getParameters();
+		$preJson = $this->newJsonBuilder( $result )
+			->eventsToTimelineJson( ( new EventExtractor( $result->getParameters() ) )->extractEvents( $result->getSubjects() ) );
 
-		$preJson = $this->newJsonBuilder( $parameters['template'] )->eventsToTimelineJson(
-			( new EventExtractor() )->extractEvents( $result->getSubjects() )
-		);
-
-		$preJson['options'] = TimelineOptions::processedParamsToJson( $parameters );
+		$preJson['options'] = TimelineOptions::processedParamsToJson( $result->getParameters() );
 
 		return json_encode( $preJson );
 	}
 
-	private function newJsonBuilder( string $templateName ): JsonBuilder {
+	private function newJsonBuilder( SimpleQueryResult $result ): JsonBuilder {
 		return new JsonBuilder(
-			$this->getSlidePresenter( $templateName )
+			$this->getSlidePresenter( $result )
 		);
 	}
 
-	private function getSlidePresenter( string $templateName ): SlidePresenter {
+	private function getSlidePresenter( SimpleQueryResult $result ): SlidePresenter {
+		$templateName = $result->getParameters()['template'];
+
 		if ( $templateName === '' ) {
-			return new SimpleSlidePresenter();
+			return new SimpleSlidePresenter( $result->getProcessingResult()->getParameterArray() );
 		}
 
 		return new TemplateSlidePresenter( $templateName );

@@ -37,13 +37,17 @@ class JsonBuilder {
 				'text' =>  $this->slidePresenter->getText( $event->getSubject() )
 			],
 			'start_date' => $this->timeToJson( $event->getStartDate() ),
-//			'media' => [
-//				'thumbnail' => 'http://default.web.mw.localhost:8080/mediawiki/images/docker/default/3/35/Media.png'
-//			]
 		];
 
 		if ( $event->getEndDate() !== null ) {
 			$jsonEvent['end_date'] = $this->timeToJson( $event->getEndDate() );
+		}
+
+		if ( $event->hasImage() ) {
+			$jsonEvent['media'] = [
+				'url' => $event->getImageUrl(),
+				'thumbnail' => $event->getImageUrl()
+			];
 		}
 
 		return $jsonEvent;

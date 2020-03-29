@@ -39,7 +39,7 @@ class JsonBuilderTest extends TestCase {
 	}
 
 	private function toJson( Event ...$events ): array {
-		return ( new JsonBuilder( new SimpleSlidePresenter() ) )->eventsToTimelineJson( $events );
+		return ( new JsonBuilder( new SimpleSlidePresenter( [ 'image property' => null ] ) ) )->eventsToTimelineJson( $events );
 	}
 
 	private function newEventWithStartAndEndDate(): Event {

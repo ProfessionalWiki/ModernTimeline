@@ -7,9 +7,17 @@ namespace ModernTimeline;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
+use RepoGroup;
+use SMW\DIWikiPage;
 use SMWDITime;
 
 class EventExtractor {
+
+	private $parameters;
+
+	public function __construct( array $parameters ) {
+		$this->parameters = $parameters;
+	}
 
 	/**
 	 * @param SubjectCollection $pages
@@ -22,11 +30,34 @@ class EventExtractor {
 			[ $startDate, $endDate ] = $this->getDates( $subject );
 
 			if ( $startDate !== null ) {
-				$events[] = new Event( $subject, $startDate, $endDate );
+				$event = new Event( $subject, $startDate, $endDate );
+
+				foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
+					if ( $propertyValues->getPrintRequest()->getText( null ) === $this->parameters['image property'] ) {
+						foreach ( $propertyValues->getDataItems() as $dataItem ) {
+							if ( $this->isImageValue( $dataItem ) ) {
+								$event->setImageUrl( $this->getUrlForFileTitle( $dataItem->getTitle() ) );
+							}
+						}
+					}
+				}
+
+				$events[] = $event;
 			}
 		}
 
 		return $events;
+	}
+
+	private function isImageValue( \SMWDataItem $dataItem ) {
+		return $dataItem instanceof DIWikiPage
+			&& $dataItem->getTitle() instanceof \Title
+			&& $dataItem->getTitle()->getNamespace() === NS_FILE
+			&& $dataItem->getTitle()->exists();
+	}
+
+	public function getUrlForFileTitle( \Title $existingTitle ): string {
+		return RepoGroup::singleton()->findFile( $existingTitle )->getURL();
 	}
 
 	private function getDates( Subject $subject ): array {

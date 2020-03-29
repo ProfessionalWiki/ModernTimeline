@@ -10,6 +10,12 @@ use SMW\Query\PrintRequest;
 
 class SimpleSlidePresenter implements SlidePresenter {
 
+	private $parameters;
+
+	public function __construct( array $parameters ) {
+		$this->parameters = $parameters;
+	}
+
 	public function getText( Subject $subject ): string {
 		return implode( '<br>', iterator_to_array( $this->getDisplayValues( $subject ) ) );
 	}
@@ -17,9 +23,15 @@ class SimpleSlidePresenter implements SlidePresenter {
 	private function getDisplayValues( Subject $subject ) {
 		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
 			foreach ( $propertyValues->getDataItems() as $dataItem ) {
-				yield $this->getDisplayValue( $propertyValues->getPrintRequest(), $dataItem );
+				if ( !$this->isHiddenPrintRequest( $propertyValues->getPrintRequest() ) ) {
+					yield $this->getDisplayValue( $propertyValues->getPrintRequest(), $dataItem );
+				}
 			}
 		}
+	}
+
+	private function isHiddenPrintRequest( PrintRequest $pr ) {
+		return $pr->getText( null ) === $this->parameters['image property'];
 	}
 
 	private function getDisplayValue( PrintRequest $pr, \SMWDataItem $dataItem ) {
