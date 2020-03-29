@@ -113,7 +113,7 @@ A full list of supported output parameters can be obtained in wiki via the `smwd
 
 ### Configuration
 
-The default value of all parameters can be changed by placing configuration in `LocalSettings.php`.
+The default value of all parameters can be changed by placing configuration in "LocalSettings.php".
 These configuration settings are available:
 
 * `$wgModernTimelineWidth` – Timeline width in %. Can also be specified in px, em and ex
@@ -130,7 +130,7 @@ These configuration settings are available:
 * `$wgModernTimelineTemplate` – Name of a template to show the slide area with
 * `$wgModernTimelineImageProperty` – Semantic property of type Page. Needs to be queried as print request
 
-Default values of these configuration settings can be found in `extension.json`. Do not change `extension.json`.
+Default values of these configuration settings can be found in "extension.json". Do not change "extension.json".
 
 Example of changing one of the configuration settings:
 
@@ -145,7 +145,7 @@ $wgModernTimelineHeight = '500px';
 * The timeline language does not automatically match that of the wiki
 
 [Professional MediaWiki development](https://professional.wiki/en/services#development) is available via
-[Professional Wiki](https://professional.wiki/).
+[Professional.Wiki](https://professional.wiki/).
 
 ## Contribution and support
 
