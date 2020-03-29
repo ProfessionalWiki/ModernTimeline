@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline\SlidePresenter;
 
+use MediaWiki\MediaWikiServices;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use SMW\DataValueFactory;
@@ -25,7 +26,7 @@ class TemplateSlidePresenter implements SlidePresenter {
 	}
 
 	private function getParser(): \Parser {
-		return $GLOBALS['wgParser'];
+		return MediaWikiServices::getInstance()->getParser();
 	}
 
 	public function getTemplateText( Subject $subject ): string {
