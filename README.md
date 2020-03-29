@@ -166,6 +166,9 @@ have a look at the contribution guideline.
 
 ### Version 1.2.0
 
+Released on March 29, 2020.
+
+* Fixed error occurring when using the `template` parameter with MediaWiki 1.34 or later
 * Added `image property` parameter (with `image` alias)
 * Added `wgModernTimelineImageProperty` configuration parameter
 
