@@ -6,7 +6,8 @@
 [![Latest Stable Version](https://poser.pugx.org/professional-wiki/modern-timeline/version.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
 [![Download count](https://poser.pugx.org/professional-wiki/modern-timeline/d/total.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
 
-The **Modern Timeline** extension provides a modern timeline visualization for
+The **Modern Timeline** extension provides a
+[modern timeline visualization](https://timeline.knightlab.com) for
 [Semantic MediaWiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) as a
 [result format](https://www.semantic-mediawiki.org/wiki/Help:Result_formats).
 
