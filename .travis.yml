@@ -1,11 +1,12 @@
 language: php
 
-sudo: false
+services:
+  - mysql
 
-matrix:
+jobs:
   fast_finish: true
   include:
-    - env: DBTYPE=sqlite; MW=1.31.3; SMW=dev-master; TYPE=coverage
+    - env: DBTYPE=mysql; MW=1.31.3; SMW=dev-master; TYPE=coverage
       php: 7.3
     - env: DBTYPE=sqlite; MW=1.31.3; SMW=3.0.0
       php: 7.1
