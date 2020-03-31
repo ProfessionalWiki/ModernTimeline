@@ -193,6 +193,8 @@ Initial release with a [TimelineJS3](https://github.com/NUKnightLab/TimelineJS3)
 based result format featuring 12 customization parameters, template support and
 date range support.
 
-## Example
+## Examples
 
 ![image](https://user-images.githubusercontent.com/146040/78049781-c31f4700-737b-11ea-839e-4ec8fe1d9d70.png)
+
+[![image](https://user-images.githubusercontent.com/146040/78048722-70915b00-737a-11ea-89af-7c555b4f2ae7.png)](https://fina.oeaw.ac.at/wiki/index.php/Timeline_of_Correspondence_in_the_16th_Century#event-aahrefhttpsfinaoeawacatwikiindexphpchristopheplantin-fulvioorsini-1574-11-6christopheaplantina-afulvioaorsinia-a1574-11-6a)
