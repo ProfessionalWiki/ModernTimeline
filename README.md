@@ -192,3 +192,7 @@ Released on August 16, 2019.
 Initial release with a [TimelineJS3](https://github.com/NUKnightLab/TimelineJS3)
 based result format featuring 12 customization parameters, template support and
 date range support.
+
+## Example
+
+![image](https://user-images.githubusercontent.com/146040/78049781-c31f4700-737b-11ea-839e-4ec8fe1d9d70.png)
