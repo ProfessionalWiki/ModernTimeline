@@ -14,6 +14,10 @@ The **Modern Timeline** extension provides a
 It was created by [Professional.Wiki](https://professional.wiki/) and funded by
 [KDZ - Centre for Public Administration Research](https://www.kdz.eu/).
 
+Example timeline
+
+![image](https://user-images.githubusercontent.com/146040/78048722-70915b00-737a-11ea-89af-7c555b4f2ae7.png)
+
 ## Platform requirements
 
 * PHP 7.1 or later
