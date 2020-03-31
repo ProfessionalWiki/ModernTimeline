@@ -16,7 +16,7 @@ It was created by [Professional.Wiki](https://professional.wiki/) and funded by
 
 Example timeline
 
-![image](https://user-images.githubusercontent.com/146040/78048722-70915b00-737a-11ea-89af-7c555b4f2ae7.png)
+[![image](https://user-images.githubusercontent.com/146040/78048722-70915b00-737a-11ea-89af-7c555b4f2ae7.png)](https://fina.oeaw.ac.at/wiki/index.php/Timeline_of_Correspondence_in_the_16th_Century#event-aahrefhttpsfinaoeawacatwikiindexphpchristopheplantin-fulvioorsini-1574-11-6christopheaplantina-afulvioaorsinia-a1574-11-6a)
 
 ## Platform requirements
 
