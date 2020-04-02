@@ -8,7 +8,7 @@
 	"modern-timeline-param-width": "Ширина на времеследот во %. Може да се зададе и како px, em и ex",
 	"modern-timeline-param-height": "Висина на времеследот во пиксели. Може да се зададе и како em и ex",
 	"modern-timeline-param-bookmark": "Прелистувачки бележник на времеследот со неговиот URL",
-	"modern-timeline-param-background": "Позадинска боја на времеследот",
+	"modern-timeline-param-background": "Позадинска боја на времеследот (бојни вредности по CSS)",
 	"modern-timeline-param-scale-factor": "Ширина на првичниот преглед во екрански ширини",
 	"modern-timeline-param-position": "Дали времеследниот изборник да биде најгоре или најдолу",
 	"modern-timeline-param-tick-width": "Оптимално расстојание (во пиксели) помеѓу временските точки на оската",
@@ -17,6 +17,6 @@
 	"modern-timeline-param-transition-duration": "Преод на приказите во милисекунди",
 	"modern-timeline-param-navigation-height": "Висина на времеследниот изборник во % или px",
 	"modern-timeline-param-template": "Со која предлошка да се прикажува времеследот",
-	"modern-timeline-param-thumb": "Назив на семантичкото својство кое ја содржи сликата што се користи како минијатура за настаните",
+	"modern-timeline-param-image-property": "Семантичко својство за видот Страница. Треба да се побара како барање за печатење",
 	"modern-timeline-format-name": "Современ времеслед"
 }

@@ -17,6 +17,5 @@
 	"modern-timeline-param-transition-duration": "Arkovergang i millisekunder",
 	"modern-timeline-param-navigation-height": "Høyden til tidslinjenavigasjonsseksjonen i % eller px",
 	"modern-timeline-param-template": "Navn på en mal som arkområdet skal vises med",
-	"modern-timeline-param-thumb": "Navnet på en semantisk egenskap som holder et bilde som skal brukes som miniatyrbilde for hendelsene",
 	"modern-timeline-format-name": "Moderne tidslinje"
 }

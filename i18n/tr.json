@@ -8,7 +8,7 @@
 	"modern-timeline-param-width": "Zaman çizelgesi genişliği % cinsinde. Ayrıca px, em ve ex olarak da belirtilebilir.",
 	"modern-timeline-param-height": "Zaman çizelgesi yüksekliği piksel cinsinden. Em ve ex olarak da belirtilebilir",
 	"modern-timeline-param-bookmark": "Zaman çizelgesini sayfa URL’si üzerinden favorilere eklenebilir hale getirin",
-	"modern-timeline-param-background": "Zaman çizelgesi slaytları için arka plan rengi",
+	"modern-timeline-param-background": "Zaman çizelgesi slaytları için arka plan rengi (CSS renk değerleri)",
 	"modern-timeline-param-scale-factor": "İlk sunumda ekran genişliklerinde zaman çizelgesi genişliği",
 	"modern-timeline-param-position": "Zaman çizelgesi gezinmesini üstten veya alttan görüntüleyin",
 	"modern-timeline-param-tick-width": "Eksendeki keneler arasındaki en uygun mesafe (piksel cinsinden)",
@@ -17,6 +17,6 @@
 	"modern-timeline-param-transition-duration": "Milisaniye cinsinden slayt geçişi",
 	"modern-timeline-param-navigation-height": "Zaman çizelgesi gezinti bölümünün % veya px cinsinden yüksekliği",
 	"modern-timeline-param-template": "Slayt alanını gösterilecek şablonun adı",
-	"modern-timeline-param-thumb": "Olaylarda küçük resmi kullanmak için görüntüyü tutan semantik özelliğin adı",
+	"modern-timeline-param-image-property": "Türün semantik özelliği. Baskı isteği olarak sorgulanması gerekiyor",
 	"modern-timeline-format-name": "Modern zaman çizelgesi"
 }

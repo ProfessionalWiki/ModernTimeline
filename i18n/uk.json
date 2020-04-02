@@ -1,14 +1,15 @@
 {
 	"@metadata": {
 		"authors": [
-			"Piramidion"
+			"Piramidion",
+			"Movses"
 		]
 	},
 	"modern-timeline-desc": "Забезпечує для Семантичної MediaWiki візуалізацію сучасної хронології",
 	"modern-timeline-param-width": "Ширина хронології у %. Також можна вказувати в px, em та ex",
 	"modern-timeline-param-height": "Висота хронології в пікселях. Також можна вказувати в em та ex",
 	"modern-timeline-param-bookmark": "Зробити хронологію придатною для створення закладок через URL-адресу сторінки",
-	"modern-timeline-param-background": "Колір тла слайдів хронології",
+	"modern-timeline-param-background": "Колір тла слайдів хронології (CSS-коди кольорів)",
 	"modern-timeline-param-scale-factor": "Ширина хронології, виміряна в кількості екранів на першій презентації",
 	"modern-timeline-param-position": "Показувати навігацію хронологією вгорі або внизу",
 	"modern-timeline-param-tick-width": "Оптимальна відстань (у пікселях) між позначками на осі",
@@ -17,6 +18,6 @@
 	"modern-timeline-param-transition-duration": "Перемикання слайдів у мілісекундах",
 	"modern-timeline-param-navigation-height": "Висота розділу навігації хронологією у % чи px",
 	"modern-timeline-param-template": "Назва шаблону, за допомогою якого слід показати область слайда",
-	"modern-timeline-param-thumb": "Назва семантичної властивості, яка містить зображення, мінітіатюру якого слід використовувати в подіях",
+	"modern-timeline-param-image-property": "Семантична властивість типу «сторінка». Запит до неї слід відсилати у формі запиту на друк",
 	"modern-timeline-format-name": "Сучасна хронологія"
 }
