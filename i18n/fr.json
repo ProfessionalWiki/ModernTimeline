@@ -1,9 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Gomoko",
 			"Verdy p",
-			"Wladek92",
-			"Gomoko"
+			"Wladek92"
 		]
 	},
 	"modern-timeline-desc": "Fournit une visualisation moderne de frise chronologique pour ''Semantic MediaWiki''.",
