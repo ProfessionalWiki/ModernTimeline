@@ -6,7 +6,7 @@
 		]
 	},
 	"modern-timeline-name": "{{Name}}",
-	"modern-timeline-desc": "{{Desc|name=Modern Timeline|url=https://github.com/ProfessionalWiki/ModernTimeline}}",
+	"modern-timeline-desc": "{{Desc|name=Network|url=https://github.com/ProfessionalWiki/Network}}",
 	"modern-timeline-param-width": "{{Doc-paramdesc|width}}",
 	"modern-timeline-param-height": "{{Doc-paramdesc|height}}",
 	"modern-timeline-param-bookmark": "{{Doc-paramdesc|bookmark}}",
