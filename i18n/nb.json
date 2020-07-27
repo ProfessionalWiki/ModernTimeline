@@ -8,7 +8,7 @@
 	"modern-timeline-param-width": "Tidslinjebredde i %. Kan også angis i px, em eller ex",
 	"modern-timeline-param-height": "Tidslinjehøyde i piksler. Kan også angis som em eller ex",
 	"modern-timeline-param-bookmark": "Gjør at tidslinjen kan merkes som favoritt via side-URL-en",
-	"modern-timeline-param-background": "Bakgrunnsfarge for tidslinjearkene",
+	"modern-timeline-param-background": "Bakgrunnsfarge for tidslinjearkene (CSS-fargeverdier)",
 	"modern-timeline-param-scale-factor": "Tidslinjebredde i skjermbredder ved første presentasjon",
 	"modern-timeline-param-position": "Vis tidslinjenavigatoren på toppen eller bunnen",
 	"modern-timeline-param-tick-width": "Optimal avstand (i piksler) mellom merker på aksen",
