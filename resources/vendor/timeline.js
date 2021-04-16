@@ -8484,9 +8484,9 @@ TL.Media.GoogleMap = TL.Media.extend({
         var data_regex = /data=[\S]*/;
 
         // Capture the parameters that determine what map tiles to use
-        // In roadmap view, mode URLs include zoom paramater (e.g. "14z")
+        // In roadmap view, mode URLs include zoom parameter (e.g. "14z")
         // In satellite (or "earth") view, URLs include a distance parameter (e.g. "84511m")
-        // In streetview, URLs include paramaters like "3a,75y,49.76h,90t" -- see http://stackoverflow.com/a/22988073
+        // In streetview, URLs include parameters like "3a,75y,49.76h,90t" -- see http://stackoverflow.com/a/22988073
         var display_mode_regex = /,((?:[-\d.]+[zmayht],?)*)/;
 
         var regexes = {
