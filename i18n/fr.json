@@ -10,7 +10,7 @@
 	"modern-timeline-param-width": "Largeur de la frise chronologique en <tt>%</tt>. Peut également être indiquée en <tt>px</tt>, <tt>em</tt>, ou <tt>ex</tt>.",
 	"modern-timeline-param-height": "Hauteur de la frise chronologique en pixels. Peut également être indiquée en <tt>em</tt> ou en <tt>ex</tt>.",
 	"modern-timeline-param-bookmark": "Permet de marquer la frise chronologique avec un signet via l’URL de la page",
-	"modern-timeline-param-background": "Couleur de fond pour les pages de frise chronologique (valeurs CSS de couleur)",
+	"modern-timeline-param-background": "Couleur de fond pour les pages de frise chronologique (valeurs CSS de couleur).",
 	"modern-timeline-param-scale-factor": "Largeur de la frise chronologique en nombre de largeurs d’écran à la première présentation",
 	"modern-timeline-param-position": "Affiche la navigation dans la frise chronologique en haut ou en bas",
 	"modern-timeline-param-tick-width": "Distance optimale (en pixels) entre les graduations de l’axe",
@@ -19,6 +19,6 @@
 	"modern-timeline-param-transition-duration": "Durée de transition des pages en millisecondes",
 	"modern-timeline-param-navigation-height": "Hauteur de la section navigable de la frise chronologique en <tt>%</tt>ou en <tt>px</tt>.",
 	"modern-timeline-param-template": "Nom du modèle pour afficher la frise chronologique",
-	"modern-timeline-param-image-property": "Propriété sémantique de type Page. Doit être demandé comme requête d’impression",
+	"modern-timeline-param-image-property": "Propriété sémantique de type Page. Doit être demandé comme requête d’impression.",
 	"modern-timeline-format-name": "Frise chronologique moderne"
 }
