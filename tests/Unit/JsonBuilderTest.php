@@ -156,4 +156,30 @@ class JsonBuilderTest extends TestCase {
 		);
 	}
 
+	public function testNullTitlesAreSkipped() {
+		$json = $this->toJson(
+			new Event(
+				new Subject(
+					$this->newNullReturningDiWikiPage(),
+					[
+						$this->newStartDateValueCollection(),
+						$this->newEndDateValueCollection()
+					]
+				),
+				$this->newStartDate(),
+				$this->newEndDate()
+			)
+		);
+
+		$this->assertSame( [], $json['events'] );
+	}
+
+	private function newNullReturningDiWikiPage(): DIWikiPage {
+		$page = $this->createMock( DIWikiPage::class );
+
+		$page->method( 'getTitle' )->willReturn( null );
+
+		return $page;
+	}
+
 }

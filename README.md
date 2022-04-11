@@ -1,8 +1,6 @@
 # Modern Timeline
 
-[![Build Status](https://travis-ci.org/ProfessionalWiki/ModernTimeline.svg?branch=master)](https://travis-ci.org/ProfessionalWiki/ModernTimeline)
 [![Code Coverage](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/professional-wiki/modern-timeline/version.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
 [![Download count](https://poser.pugx.org/professional-wiki/modern-timeline/d/total.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
 
@@ -20,9 +18,9 @@ Example timeline
 
 ## Platform requirements
 
-* PHP 7.1 or later
-* MediaWiki 1.31.x up to 1.34.x
-* Semantic MediaWiki 3.0 or later
+* PHP 7.1 or later (tested up to PHP 8.0)
+* MediaWiki 1.31.x or later (tested up to MediaWiki 1.37)
+* Semantic MediaWiki 3.0 or later (tested up to SMW 4.0.2)
 
 See the [release notes](#release-notes) for more information on the different versions of Modern Timeline.
 
@@ -168,6 +166,12 @@ have a look at the contribution guideline.
 [GNU General Public License v2.0 or later (GPL-2.0-or-later)](/COPYING).
 
 ## Release notes
+
+### Version 1.2.1
+
+Released on April 11th, 2022.
+
+* Fixed fatal error in some cases where a Title becomes available
 
 ### Version 1.2.0
 
