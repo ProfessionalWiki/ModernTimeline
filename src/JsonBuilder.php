@@ -24,7 +24,9 @@ class JsonBuilder {
 		$jsonEvents = [];
 
 		foreach ( $events as $event ) {
-			$jsonEvents[] = $this->buildEvent( $event );
+			if ( $event->getSubject()->getWikiPage()->getTitle() !== null ) {
+				$jsonEvents[] = $this->buildEvent( $event );
+			}
 		}
 
 		return [ 'events' => $jsonEvents ];
