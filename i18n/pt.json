@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Hamilton Abreu"
+		]
+	},
+	"modern-timeline-desc": "Fornece uma visualização de linha cronológica moderna para o MediaWiki Semântico",
+	"modern-timeline-param-width": "Largura da linha cronológica em \"%\". Também pode ser especificada em 'px', 'em' e 'ex'",
+	"modern-timeline-param-height": "Altura da linha cronológica em píxeis. Também pode ser especificada em 'em' e 'ex'",
+	"modern-timeline-param-bookmark": "Tornar a linha cronológica possível de marcar por meio do URL da página",
+	"modern-timeline-param-background": "Cor de fundo para os diapositivos da linha cronológica (valores de cor CSS)",
+	"modern-timeline-param-scale-factor": "Largura da linha cronológica em larguras de ecrã na apresentação inicial",
+	"modern-timeline-param-position": "Apresentar a navegação da linha cronológica na parte superior ou inferior",
+	"modern-timeline-param-tick-width": "Distância ideal (em píxeis) entre as graduações do eixo",
+	"modern-timeline-param-start-slide": "O primeiro diapositivo a apresentar quando a linha cronológica é carregada",
+	"modern-timeline-param-start-at-end": "Começar com o último diapositivo da linha cronológica",
+	"modern-timeline-param-transition-duration": "Transição entre dispositivos em milissegundos",
+	"modern-timeline-param-navigation-height": "Altura da secção de navegação da linha cronológica em '%' ou 'px'",
+	"modern-timeline-param-template": "Nome de um modelo com que mostrar a área do diapositivo",
+	"modern-timeline-param-image-property": "Propriedade semântica do tipo Page (página). Precisa de ser consultada como pedido de impressão",
+	"modern-timeline-format-name": "Linha cronológica moderna"
+}
