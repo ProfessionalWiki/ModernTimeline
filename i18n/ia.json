@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"modern-timeline-desc": "Forni un visualisation moderne de linea chronologic pro Semantic MediaWiki",
+	"modern-timeline-param-width": "Latitude del chronologia in %. Pote tamben esser specificate in px, em e ex",
+	"modern-timeline-param-height": "Altitude del chronologia in pixels. Pote tamben esser specificate in em e ex",
+	"modern-timeline-param-bookmark": "Permitte adder le chronologia al marcapaginas via le URL del pagina",
+	"modern-timeline-param-background": "Color de fundo pro le diapositivas del chronologia (valores de color CSS)",
+	"modern-timeline-param-scale-factor": "Latitude del chronologia in latitudes de schermo al prime presentation",
+	"modern-timeline-param-position": "Monstrar le navigation del chronologia in alto o in basso",
+	"modern-timeline-param-tick-width": "Distantia optimal (in pixels) inter le graduationes del axe",
+	"modern-timeline-param-start-slide": "Le prime diapositiva a monstrar quando le chronologia se carga",
+	"modern-timeline-param-start-at-end": "Comenciar con le ultime diapositiva del chronologia",
+	"modern-timeline-param-transition-duration": "Transition de diapositivas in millisecundas",
+	"modern-timeline-param-navigation-height": "Altitude del section de navigation del chronologia in % o px",
+	"modern-timeline-param-template": "Nomine de un patrono con le qual monstrar le area del diapositiva",
+	"modern-timeline-param-image-property": "Proprietate semantic del typo Pagina. Debe esser consultate como requesta de impression.",
+	"modern-timeline-format-name": "Chronologia moderne"
+}
