@@ -4,6 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline;
 
+use MediaWiki\MediaWikiServices;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
@@ -57,7 +58,12 @@ class EventExtractor {
 	}
 
 	public function getUrlForFileTitle( \Title $existingTitle ): string {
-		return RepoGroup::singleton()->findFile( $existingTitle )->getURL();
+		if ( method_exists( MediaWikiServices::class, 'getRepoGroup' ) ) {
+			// MediaWiki 1.34+
+			return MediaWikiServices::getInstance()->getRepoGroup()->findFile( $existingTitle )->getURL();
+		} else {
+			return RepoGroup::singleton()->findFile( $existingTitle )->getURL();
+		}
 	}
 
 	private function getDates( Subject $subject ): array {
