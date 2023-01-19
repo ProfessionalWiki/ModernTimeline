@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Eleassar"
+		]
+	},
+	"modern-timeline-desc": "Zagotavlja sodoben prikaz časovnice za Semantični MediaWiki",
+	"modern-timeline-param-width": "Širina časovnice v %. Lahko se določi tudi v px, em in ex.",
+	"modern-timeline-param-height": "Višina časovnice v pikslih. Lahko se določi tudi v em in ex.",
+	"modern-timeline-param-bookmark": "Ustvari časovnico, ki jo je mogoče z URL-jem strani dodati med zaznamke",
+	"modern-timeline-param-background": "Barva ozadja za drsnice časovnice (barvne vrednosti CSS)",
+	"modern-timeline-param-scale-factor": "Širina časovnice v širinah zaslona ob prvi predstavitvi",
+	"modern-timeline-param-position": "Na vrhu ali na dnu prikaže navigacijo po časovnici",
+	"modern-timeline-param-tick-width": "Optimalna razdalja (v pikslih) med oznakami na osi",
+	"modern-timeline-param-start-slide": "Prva drsnica, ki se prikaže ob naložitvi časovnice",
+	"modern-timeline-param-start-at-end": "Začetek z zadnjo drsnico časovnice",
+	"modern-timeline-param-transition-duration": "Prehajanje med drsnicami v milisekundah",
+	"modern-timeline-param-navigation-height": "Višina navigacijskega območja časovnice v % ali px",
+	"modern-timeline-param-template": "Ime predloge za prikaz območja drsnic",
+	"modern-timeline-param-image-property": "Semantična lastnost vrste Page. Poizvedovati jo je treba kot zahtevek za tisk.",
+	"modern-timeline-format-name": "Sodobna časovnica"
+}
