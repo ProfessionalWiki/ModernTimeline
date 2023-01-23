@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Justman10000",
 			"Karsten Hoffmeyer",
 			"Kghbln"
 		]
@@ -18,5 +19,6 @@
 	"modern-timeline-param-transition-duration": "Legt fest, wie viele Millisekunden zwischen dem Wechseln der Anzeige einzelner Elemente der Zeitleiste vergehen sollen",
 	"modern-timeline-param-navigation-height": "Legt fest, wie hoch der Navigationsbereich der Zeitleiste sein soll (in %). Mögliche Maßeinheiten: % und px",
 	"modern-timeline-param-template": "Legt fest, welche Vorlage zum Anzeigen der Zeitleiste verwendet werden soll",
+	"modern-timeline-param-image-property": "Semantische Eigenschaft vom Typ Seite. Muss als Druckauftrag abgefragt werden",
 	"modern-timeline-format-name": "Zeit (moderne Zeitleiste)"
 }
