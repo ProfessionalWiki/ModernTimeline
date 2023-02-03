@@ -146,8 +146,9 @@ $wgModernTimelineHeight = '500px';
 * The timeline style does not automatically match that of the wiki
 * The timeline language does not automatically match that of the wiki
 
-[Professional MediaWiki development](https://professional.wiki/en/services#development) is available via
-[Professional.Wiki](https://professional.wiki/).
+Contact [Professional.Wiki](https://professional.wiki/) for
+[Professional MediaWiki development](https://professional.wiki/en/mediawiki-development) or
+[Semantic MediaWiki hosting](https://www.pro.wiki/semantic-mediawiki).
 
 ## Contribution and support
 
