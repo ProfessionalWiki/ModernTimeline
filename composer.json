@@ -40,5 +40,10 @@
 			"ModernTimeline\\": "src/",
 			"ModernTimeline\\Tests\\": "tests/"
 		}
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	}
 }
