@@ -1,12 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
+			"Amire80",
 			"Jeroen De Dauw",
 			"Karsten Hoffmeyer"
 		]
 	},
 	"modern-timeline-name": "{{Name}}",
-	"modern-timeline-desc": "{{Desc|name=Network|url=https://github.com/ProfessionalWiki/Network}}",
+	"modern-timeline-desc": "{{Desc|name=ModernTimeline|url=https://github.com/ProfessionalWiki/ModernTimeline}}",
 	"modern-timeline-param-width": "{{Doc-paramdesc|width}}",
 	"modern-timeline-param-height": "{{Doc-paramdesc|height}}",
 	"modern-timeline-param-bookmark": "{{Doc-paramdesc|bookmark}}",

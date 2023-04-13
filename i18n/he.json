@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Amire80"
+		]
+	},
+	"modern-timeline-desc": "אספקת הצגת ציר זמן מודרנית עבור מדיה־ויקי סמנטית",
+	"modern-timeline-param-width": "רוחב ציר הזמן ב־%. ניתן לציין גם ב־px, ב־em וב־ex",
+	"modern-timeline-param-height": "גובה ציר הזמן בפיקסלים. ניתן לציין גם ב־em וב־ex",
+	"modern-timeline-param-bookmark": "לגרום לציר הזמן להיות זמין בתור סימנייה באמצעות ב־URL של הדף",
+	"modern-timeline-param-background": "צבע רקע עבור שקופיות ציר הזמן (ערכי צבע CSS)",
+	"modern-timeline-param-scale-factor": "רוחב ציר הזמן ברוחב המסך בהצגה הראשונה",
+	"modern-timeline-param-position": "להציג את הניווט בציר הזמן בחלק העליון או התחתון",
+	"modern-timeline-param-tick-width": "מרחק מיטבי (בפיקסלים) בין סימונים על הציר",
+	"modern-timeline-param-start-slide": "השקופית הראשונה שתוצג כאשר ציר הזמן נטען",
+	"modern-timeline-param-start-at-end": "להתחיל עם שקופית ציר הזמן האחרונה",
+	"modern-timeline-param-transition-duration": "מעבר שקופית באלפיות שנייה",
+	"modern-timeline-param-navigation-height": "גובה קטע הניווט בציר הזמן ב־% או ב־px",
+	"modern-timeline-param-template": "שם התבנית שאזור השקופיות יוצג איתה",
+	"modern-timeline-param-image-property": "מאפיים סמנטית מסוג Page. חייב להתקבל בשאילתה בתור בקשת הדפסה",
+	"modern-timeline-format-name": "ציר זמן מודרני"
+}
