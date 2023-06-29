@@ -1,0 +1,19 @@
+{
+	"@metadata": {
+		"authors": [
+			"Nokeoo"
+		]
+	},
+	"modern-timeline-param-width": "Laiko juostos plotis %. Taip pat galima nurodyti px, em ir ex",
+	"modern-timeline-param-height": "Laiko juostos aukštis pikseliais. Taip pat gali būti nurodyta em ir ex",
+	"modern-timeline-param-bookmark": "Padarykite laiko juostą įtrauktiną į žymes naudodami puslapio URL",
+	"modern-timeline-param-background": "Laiko juostos skaidrių fono spalva (CSS spalvų reikšmės)",
+	"modern-timeline-param-position": "Rodyti laiko juostos naršymo parinktis viršuje ar apačioje",
+	"modern-timeline-param-tick-width": "Optimalus atstumas (pikseliais) tarp ašies žymeklių",
+	"modern-timeline-param-start-slide": "Pirmoji skaidrė, kuri bus rodoma, kai įkeliama laiko juosta",
+	"modern-timeline-param-start-at-end": "Pradėti nuo paskutinės laiko juostos skaidrės",
+	"modern-timeline-param-transition-duration": "Skaidrės perėjimas milisekundėmis",
+	"modern-timeline-param-navigation-height": "Laiko juostos naršymo sekcijos aukštis % arba pikseliais",
+	"modern-timeline-param-template": "Šablono, su kuriuo bus rodoma skaidrės sritis, pavadinimas",
+	"modern-timeline-format-name": "Šiuolaikinė laiko juosta"
+}
