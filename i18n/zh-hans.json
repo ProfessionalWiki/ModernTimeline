@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"LittlePaw365"
+		]
+	},
+	"modern-timeline-desc": "给语义MediaWiki提供现代时间线可视化功能",
+	"modern-timeline-param-width": "时间线宽度（%，也可指定为px、em和ex）",
+	"modern-timeline-param-height": "时间线高度（像素，也可指定为em和ex）",
+	"modern-timeline-param-bookmark": "让时间线可通过页面URL添加书签",
+	"modern-timeline-param-background": "时间线滑块的背景颜色（CSS颜色值）",
+	"modern-timeline-param-scale-factor": "首次展示时时间线宽度与屏幕宽度的比值",
+	"modern-timeline-param-position": "在顶部或底部显示时间线导航",
+	"modern-timeline-param-tick-width": "轴上刻度之间的最佳距离（像素）",
+	"modern-timeline-param-start-slide": "时间线加载时显示的首个滑块",
+	"modern-timeline-param-start-at-end": "从最后一个时间线滑块开始",
+	"modern-timeline-param-transition-duration": "滑块切换时长（毫秒）",
+	"modern-timeline-param-navigation-height": "时间线导航部分的高度（%或px）",
+	"modern-timeline-param-template": "显示滑块区域的模板的名称",
+	"modern-timeline-param-image-property": "页面（Page）类型的语义属性。需要作为打印请求查询",
+	"modern-timeline-format-name": "现代时间线"
+}
