@@ -168,11 +168,17 @@ have a look at the contribution guideline.
 
 ## Release notes
 
+### Version 1.2.2
+
+Not released yet
+
+* Fixed compatibility with MediaWiki 1.38 and above
+
 ### Version 1.2.1
 
 Released on April 11th, 2022.
 
-* Fixed fatal error in some cases where a Title becomes available
+* Fixed fatal error in some cases where a Title becomes unavailable
 
 ### Version 1.2.0
 
