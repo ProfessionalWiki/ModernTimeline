@@ -170,9 +170,10 @@ have a look at the contribution guideline.
 
 ### Version 1.2.2
 
-Not released yet
+Released on November 9th, 2023.
 
 * Fixed compatibility with MediaWiki 1.38 and above
+* Translation updates from https://translatewiki.net
 
 ### Version 1.2.1
 
