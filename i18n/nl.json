@@ -1,0 +1,23 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie",
+			"Siebrand"
+		]
+	},
+	"modern-timeline-desc": "Biedt een moderne tijdlijn-visualisatie voor Semantic MediaWiki",
+	"modern-timeline-param-width": "Breedte tijdlijn in %. Kan ook worden opgegeven in px, em en ex",
+	"modern-timeline-param-height": "Hoogte tijdlijn in pixels. Kan ook worden opgegeven in em en ex",
+	"modern-timeline-param-bookmark": "Maakt het mogelijk de tijdlijn via de URL van de pagina aan de bladwijzers toe te voegen",
+	"modern-timeline-param-background": "Achtergrondkleur voor de tijdlijndia’s (CSS-kleurwaarden)",
+	"modern-timeline-param-scale-factor": "Breedte tijdlijn in schermbreedten bij eerste presentatie",
+	"modern-timeline-param-position": "De tijdlijn-navigatie bovenaan of onderaan weergeven",
+	"modern-timeline-param-tick-width": "Optimale afstand (in pixels) tussen streepjes op de as",
+	"modern-timeline-param-start-slide": "De eerste dia die wordt weergegeven wanneer de tijdlijn wordt geladen",
+	"modern-timeline-param-start-at-end": "Met de laatste tijdlijn-dia beginnen",
+	"modern-timeline-param-transition-duration": "Dia-overgang in milliseconden",
+	"modern-timeline-param-navigation-height": "Hoogte van de tijdlijn-navigatie-sectie in % of px",
+	"modern-timeline-param-template": "Naam van een sjabloon om het dia-gebied mee weer te geven",
+	"modern-timeline-param-image-property": "Semantische eigenschap van het type Pagina. Moet worden opgevraagd als afdrukverzoek",
+	"modern-timeline-format-name": "Moderne tijdlijn"
+}
