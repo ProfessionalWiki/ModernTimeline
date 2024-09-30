@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yukkuri Shambis"
+		]
+	},
+	"modern-timeline-param-width": "タイムラインの幅を%で指定します。px、em、exでも指定できます",
+	"modern-timeline-param-height": "タイムラインの高さをピクセルで指定します。emもしくはexでも指定できます",
+	"modern-timeline-param-bookmark": "ページのURLを経由して、タイムラインをブックマークできるようにします",
+	"modern-timeline-param-background": "タイムラインスライドの背景色です（CSSの色の値で指定）",
+	"modern-timeline-param-scale-factor": "初回表示時のタイムラインの幅を、画面の幅に対して相対的に指定します",
+	"modern-timeline-param-position": "タイムラインのナビゲーションを上に表示するか下に表示するか指定します",
+	"modern-timeline-param-tick-width": "軸上の目盛り間の最適な距離をピクセル単位で指定します",
+	"modern-timeline-param-start-slide": "タイムラインが読み込まれた際に表示される最初のスライドを指定します",
+	"modern-timeline-param-start-at-end": "最後のタイムラインから始める",
+	"modern-timeline-param-transition-duration": "スライドの遷移にかかる時間をミリ秒単位で指定します",
+	"modern-timeline-param-navigation-height": "タイムラインナビゲーションの節の高さを%かpxで指定します",
+	"modern-timeline-param-template": "スライドの領域を表示するテンプレートの名前を指定します",
+	"modern-timeline-format-name": "Modern timeline"
+}
