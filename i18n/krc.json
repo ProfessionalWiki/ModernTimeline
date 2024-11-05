@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Къарачайлы"
+		]
+	},
+	"modern-timeline-desc": "Семантика MediaWiki ючюн модерн хронология визуализацияны баджарады",
+	"modern-timeline-param-width": "Хронология кенглик % болады. Аны тышында px, em эмда ex болуб да белгилерге боллукъду.",
+	"modern-timeline-param-height": "Пикселледе хронология мийиклик. Аны тышында px, em эмда ex болуб да белгилерге боллукъду",
+	"modern-timeline-param-bookmark": "Хронологияны бетни URL-адресини юсю бла сайламалагъа къошарча эт",
+	"modern-timeline-param-background": "Хронология слайтланы аркъа планыны бояуу (CSS бояу кодла)",
+	"modern-timeline-param-scale-factor": "Биринчи презентацияда экран кенгликледе хронологияны кенглиги",
+	"modern-timeline-param-position": "Хронология навигацияны башында неда тюбюнде кёргюз",
+	"modern-timeline-param-tick-width": "Осдан белгиле арасындагъы эм келишимли аралыкъ (пикселледе)",
+	"modern-timeline-param-start-slide": "Хронологияны джюклегенден сора кёргюзюллюк биринчи слайд",
+	"modern-timeline-param-start-at-end": "Ахыр хронология слайд бла башла",
+	"modern-timeline-param-transition-duration": "Миллисекундлада слайд кёчюу",
+	"modern-timeline-param-navigation-height": "Хронологияны навигация бёлюмюню % неда px халда мийиклиги",
+	"modern-timeline-param-template": "Слайд бёлгени кёргюзюллюк шаблонуну аты",
+	"modern-timeline-param-image-property": "Бет типни семантика энчилиги. Басмалау излеми халда сорууламасы керекди",
+	"modern-timeline-format-name": "Модерн хронология"
+}
