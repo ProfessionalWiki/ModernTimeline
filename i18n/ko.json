@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"Ykhwong"
+		]
+	},
+	"modern-timeline-param-background": "타임라인 슬라이드의 배경색 (CSS 색상값)",
+	"modern-timeline-param-scale-factor": "첫 번째 프레젠테이션의 화면 너비의 타임라인 너비",
+	"modern-timeline-param-start-at-end": "마지막 타임라인 슬라이드부터 시작",
+	"modern-timeline-param-transition-duration": "슬라이드 전환 (단위: 밀리초)",
+	"modern-timeline-format-name": "모던 타임라인"
+}
