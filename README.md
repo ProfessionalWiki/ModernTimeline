@@ -1,8 +1,8 @@
 # Modern Timeline
 
 [![Code Coverage](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/ProfessionalWiki/ModernTimeline/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/professional-wiki/modern-timeline/version.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
-[![Download count](https://poser.pugx.org/professional-wiki/modern-timeline/d/total.png)](https://packagist.org/packages/professional-wiki/modern-timeline)
+[![Latest Stable Version](https://poser.pugx.org/professional-wiki/modern-timeline/v/stable)](https://packagist.org/packages/professional-wiki/modern-timeline)
+[![Download count](https://poser.pugx.org/professional-wiki/modern-timeline/downloads)](https://packagist.org/packages/professional-wiki/modern-timeline)
 
 The **Modern Timeline** extension provides a
 [modern timeline visualization](https://timeline.knightlab.com) for
