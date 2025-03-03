@@ -6,11 +6,12 @@ namespace ModernTimeline\ResultFacade;
 
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
-use SMWQueryResult;
+use SMW\Query\QueryResult;
+use SMW\Query\Result\ResultArray;
 
 class ResultSimplifier {
 
-	public function newSubjectCollection( SMWQueryResult $result ): SubjectCollection {
+	public function newSubjectCollection( QueryResult $result ): SubjectCollection {
 		$subjects = [];
 
 		foreach ( $result->getResults() as $diWikiPage ) {
@@ -23,10 +24,10 @@ class ResultSimplifier {
 	/**
 	 * @param DIWikiPage $resultPage
 	 * @param PrintRequest[] $printRequests
-	 * @param SMWQueryResult $result
+	 * @param QueryResult $result
 	 * @return Subject
 	 */
-	private function newSubject( DIWikiPage $resultPage, array $printRequests, SMWQueryResult $result ): Subject {
+	private function newSubject( DIWikiPage $resultPage, array $printRequests, QueryResult $result ): Subject {
 		$propertyValueCollections = [];
 
 		foreach ( $printRequests as $printRequest ) {
@@ -45,8 +46,8 @@ class ResultSimplifier {
 	 * Compat with SMW 3.0
 	 * In 3.1+ do: ResultArray::factory( $resultPage, $printRequest, $result )
 	 */
-	private function newResultArray( DIWikiPage $resultPage, PrintRequest $printRequest, SMWQueryResult $result ): \SMWResultArray {
-		return new \SMWResultArray(
+	private function newResultArray( DIWikiPage $resultPage, PrintRequest $printRequest, QueryResult $result ): ResultArray {
+		return new ResultArray(
 			$resultPage,
 			$printRequest,
 			$result->getStore(),

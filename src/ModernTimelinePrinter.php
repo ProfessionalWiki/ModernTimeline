@@ -13,9 +13,9 @@ use ParamProcessor\Param;
 use ParamProcessor\ProcessedParam;
 use ParamProcessor\ProcessingResult;
 use SMW\Parser\RecursiveTextProcessor;
+use SMW\Query\QueryResult;
 use SMW\Query\ResultPrinter;
 use SMWQuery;
-use SMWQueryResult;
 
 class ModernTimelinePrinter implements ResultPrinter {
 
@@ -48,13 +48,13 @@ class ModernTimelinePrinter implements ResultPrinter {
 	}
 
 	/**
-	 * @param SMWQueryResult $result
+	 * @param QueryResult $result
 	 * @param Param[] $parameters
 	 * @param int $outputMode
 	 *
 	 * @return string
 	 */
-	public function getResult( SMWQueryResult $result, array $parameters, $outputMode ): string {
+	public function getResult( QueryResult $result, array $parameters, $outputMode ): string {
 		return $this->format->buildPresenter()->presentResult(
 			new SimpleQueryResult(
 				$this->simplifyResult( $result ),
@@ -63,7 +63,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 		);
 	}
 
-	private function simplifyResult( SMWQueryResult $result ): SubjectCollection {
+	private function simplifyResult( QueryResult $result ): SubjectCollection {
 		return ( new ResultSimplifier() )->newSubjectCollection( $result );
 	}
 
