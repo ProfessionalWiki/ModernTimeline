@@ -10,6 +10,7 @@ jobs:
     continue-on-error: ${{ matrix.experimental }}
 
     strategy:
+      fail-fast: false
       matrix:
         include:
           - mw: 'REL1_39'
@@ -20,23 +21,24 @@ jobs:
           - mw: 'REL1_41'
             php: '8.1'
             db: 'mysql'
-            smw: '4.2.0'
-            experimental: false
+            # SMW 4.2.0 should be compatible with MW 1.41, but the tests are not.
+            smw: 'dev-master'
+            experimental: true
           - mw: 'REL1_42'
             php: '8.2'
             db: 'mysql'
             smw: 'dev-master'
-            experimental: false
+            experimental: true
           - mw: 'REL1_43'
             php: '8.3'
             db: 'mysql'
             smw: 'dev-master'
-            experimental: false
+            experimental: true
           - mw: 'REL1_43'
             php: '8.3'
             db: 'sqlite'
             smw: 'dev-master'
-            experimental: false
+            experimental: true
           - mw: 'master'
             php: '8.4'
             db: 'mysql'
