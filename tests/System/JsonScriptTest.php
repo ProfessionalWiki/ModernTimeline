@@ -6,6 +6,9 @@ namespace ModernTimeline\Tests\System;
 
 use SMW\Tests\Integration\JSONScript\JSONScriptTestCaseRunnerTest;
 
+/**
+ * @group Database
+ */
 class JsonScriptTest extends JSONScriptTestCaseRunnerTest {
 
 	public function setUp(): void {
