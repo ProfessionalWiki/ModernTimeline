@@ -4,9 +4,9 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline\Tests\System;
 
-use SMW\Tests\Integration\JSONScript\JsonTestCaseScriptRunnerTest;
+use SMW\Tests\Integration\JSONScript\JSONScriptTestCaseRunnerTest;
 
-class JsonScriptTest extends JsonTestCaseScriptRunnerTest {
+class JsonScriptTest extends JSONScriptTestCaseRunnerTest {
 
 	public function setUp(): void {
 		if ( substr( SMW_VERSION, 0, 3 ) === '3.0' ) {
