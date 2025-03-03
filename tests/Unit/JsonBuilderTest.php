@@ -136,7 +136,7 @@ class JsonBuilderTest extends TestCase {
 	public function testHeadline() {
 		$json = $this->toJson( $this->newEventWithStartAndEndDate() );
 
-		$this->assertContains(
+		$this->assertStringContainsString(
 			self::PAGE_NAME,
 			$json['events'][0]['text']['headline']
 		);
