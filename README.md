@@ -69,7 +69,7 @@ Add the following line to the end of your "LocalSettings.php" file:
 ## Usage
 
 See also live demos at the following website:
-[Professional.Wiki Starter demo wiki - Category:Modern Timeline examples.](https://starter.professional.wiki/page/Category:Modern_Timeline_examples)
+[Professional.Wiki demo wiki - Category:Modern Timeline examples.](https://test.pro.wiki/wiki/Category:Modern_Timeline_examples)
 
 The first date printout is used as date for the timeline events:
 
