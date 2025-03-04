@@ -1,14 +1,14 @@
 /*!
-	Timeline JS 3 
-	
+	Timeline JS 3
+
 	Designed and built by Zach Wise for the Northwestern University Knight Lab
-	
+
 	This Source Code Form is subject to the terms of the Mozilla Public
 	License, v. 2.0. If a copy of the MPL was not distributed with this
 	file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 */
-/* Includes 
+/* Includes
 ================================================== */
 /*	VARIABLES
 	BASE
@@ -340,8 +340,8 @@
 ================================================== */
 @font-face {
   font-family: 'tl-icons';
-  src: url(../js/../css/icons/tl-icons.eot);
-  src: url(../js/../css/icons/tl-icons.eot?#iefix) format('embedded-opentype'), url(../js/../css/icons/tl-icons.ttf) format('truetype'), url(../js/../css/icons/tl-icons.woff2) format('woff2'), url(../js/../css/icons/tl-icons.woff) format('woff'), url(../js/../css/icons/tl-icons.svg#tl-icons) format('svg');
+  src: url(tl-icons.eot);
+  src: url(tl-icons.eot?#iefix) format('embedded-opentype'), url(tl-icons.ttf) format('truetype'), url(tl-icons.woff2) format('woff2'), url(tl-icons.woff) format('woff'), url(tl-icons.svg#tl-icons) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -551,7 +551,7 @@
   -o-user-select: none;
   user-select: none;
 }
-/* MenuBar 
+/* MenuBar
 ================================================== */
 .tl-menubar {
   position: absolute;
@@ -593,7 +593,7 @@
 	//.translucent-background(rgb(0,0,0), .5);
 	border-top: 2px solid #000;
 	animation: invertToBlack 1s;
-	-webkit-animation:invertToBlack 1s; 
+	-webkit-animation:invertToBlack 1s;
 }
 */
 @keyframes invertToBlack {
@@ -698,7 +698,7 @@
     background: #FFF;
   }
 }
-/* MESSAGE 
+/* MESSAGE
 ================================================== */
 .tl-message,
 .tl-message-full {
