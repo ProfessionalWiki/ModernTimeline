@@ -1,16 +1,17 @@
 /*!
-	Timeline JS 3
-
+	Timeline JS 3 
+	
 	Designed and built by Zach Wise for the Northwestern University Knight Lab
-
+	
 	This Source Code Form is subject to the terms of the Mozilla Public
 	License, v. 2.0. If a copy of the MPL was not distributed with this
 	file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
 */
-/* Includes
+/* Includes 
 ================================================== */
 /*	VARIABLES
+	BASE
 ----------------------------------------------------- */
 /* ICON PATH
 ================================================== */
@@ -196,8 +197,6 @@
 .tl-storyjs canvas,
 .tl-storyjs video {
   display: inline-block;
-  *display: inline;
-  *zoom: 1;
 }
 .tl-storyjs audio:not([controls]) {
   display: none;
@@ -446,7 +445,6 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 15px;
-  *zoom: 1;
   margin-bottom: 15px;
   margin-top: 10px;
 }
@@ -561,8 +559,8 @@
 ================================================== */
 @font-face {
   font-family: 'tl-icons';
-  src: url(tl-icons.eot);
-  src: url(tl-icons.eot?#iefix) format('embedded-opentype'), url(tl-icons.ttf) format('truetype'), url(tl-icons.woff2) format('woff2'), url(tl-icons.woff) format('woff'), url(tl-icons.svg#tl-icons) format('svg');
+  src: url(../css/icons/tl-icons.eot);
+  src: url(../css/icons/tl-icons.eot?#iefix) format('embedded-opentype'), url(../css/icons/tl-icons.ttf) format('truetype'), url(../css/icons/tl-icons.woff2) format('woff2'), url(../css/icons/tl-icons.woff) format('woff'), url(../css/icons/tl-icons.svg#tl-icons) format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -763,7 +761,7 @@
   -o-user-select: none;
   user-select: none;
 }
-/* MenuBar
+/* MenuBar 
 ================================================== */
 .tl-menubar {
   position: absolute;
@@ -805,7 +803,7 @@
 	//.translucent-background(rgb(0,0,0), .5);
 	border-top: 2px solid #000;
 	animation: invertToBlack 1s;
-	-webkit-animation:invertToBlack 1s;
+	-webkit-animation:invertToBlack 1s; 
 }
 */
 @keyframes invertToBlack {
@@ -906,7 +904,7 @@
     background: #FFF;
   }
 }
-/* MESSAGE
+/* MESSAGE 
 ================================================== */
 .tl-message,
 .tl-message-full {
@@ -2250,10 +2248,6 @@
 	       -ms-hyphens: auto;
 	           hyphens: auto;
 		*/
-  filter: alpha(opacity=15);
-  -khtml-opacity: 0.15;
-  -moz-opacity: 0.15;
-  opacity: 0.15;
 }
 .tl-slidenav-previous .tl-slidenav-title small,
 .tl-slidenav-next .tl-slidenav-title small,
@@ -2264,6 +2258,10 @@
 .tl-slidenav-previous .tl-slidenav-title,
 .tl-slidenav-next .tl-slidenav-title {
   margin-top: 10px;
+  filter: alpha(opacity=15);
+  -khtml-opacity: 0.15;
+  -moz-opacity: 0.15;
+  opacity: 0.15;
   font-size: 11px;
   line-height: 11px;
 }
@@ -2551,7 +2549,6 @@
 }
 .tl-media .tl-media-content-container .tl-media-content {
   position: relative;
-  *zoom: 1;
 }
 .tl-media .tl-media-content-container .tl-media-content:before,
 .tl-media .tl-media-content-container .tl-media-content:after {
