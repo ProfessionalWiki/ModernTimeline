@@ -77,7 +77,7 @@ class EventExtractor {
 				if ( $startDate === null ) {
 					$startDate = $dataItem;
 				}
-				else if ( $endDate === null ) {
+				elseif ( $endDate === null ) {
 					$endDate = $dataItem;
 					break;
 				}

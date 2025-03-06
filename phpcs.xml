@@ -24,6 +24,7 @@
 		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine" />
 		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
 		<exclude name="Universal.WhiteSpace.CommaSpacing.SpaceBeforeInFunctionCall" />
+		<exclude name="Generic.Metrics.NestingLevel.TooHigh" />
 	</rule>
 
 	<rule ref="Generic.Formatting.NoSpaceAfterCast" />

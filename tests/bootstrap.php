@@ -9,7 +9,8 @@ if ( PHP_SAPI !== 'cli' ) {
 error_reporting( -1 );
 ini_set( 'display_errors', '1' );
 
-if ( !is_readable( $autoloaderClassPath = __DIR__ . '/../../SemanticMediaWiki/tests/autoloader.php' ) ) {
+$autoloaderClassPath = __DIR__ . '/../../SemanticMediaWiki/tests/autoloader.php';
+if ( !is_readable( $autoloaderClassPath ) ) {
 	die( "\nThe Semantic MediaWiki test autoloader is not available" );
 }
 
