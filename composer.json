@@ -31,7 +31,7 @@
 		"source": "https://github.com/ProfessionalWiki/ModernTimeline"
 	},
 	"require": {
-		"php": ">=7.1",
+		"php": ">=8.0",
 		"composer/installers": "^2|^1.0.1",
 		"param-processor/param-processor": "~1.10"
 	},

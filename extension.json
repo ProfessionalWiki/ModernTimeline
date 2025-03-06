@@ -19,9 +19,9 @@
 	"type": "semantic",
 
 	"requires": {
-		"MediaWiki": ">= 1.31.0",
+		"MediaWiki": ">= 1.39.0",
 		"extensions": {
-			"SemanticMediaWiki": ">= 3.0.0"
+			"SemanticMediaWiki": ">= 4.0.0"
 		}
 	},
 
