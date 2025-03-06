@@ -8,13 +8,12 @@ use Traversable;
 
 class PropertyValueCollections implements \IteratorAggregate {
 
-	private $propertyValueCollections;
-
 	/**
 	 * @param PropertyValueCollection[] $propertyValueCollections
 	 */
-	public function __construct( array $propertyValueCollections ) {
-		$this->propertyValueCollections = $propertyValueCollections;
+	public function __construct(
+		private array $propertyValueCollections
+	) {
 	}
 
 	/**

@@ -6,11 +6,18 @@ namespace ModernTimeline\ResultFacade;
 
 class ResultFormatRegistrator {
 
+	/**
+	 * @var callable
+	 */
 	private $registry;
 
-	private $name;
-	private $nameMessageKey;
-	private $parameterDefinitions;
+	private string $name;
+	private string $nameMessageKey;
+	private array $parameterDefinitions;
+
+	/**
+	 * @var callable
+	 */
 	private $constructionFunction;
 
 	public function __construct( callable $registry ) {
@@ -37,7 +44,7 @@ class ResultFormatRegistrator {
 		return $this;
 	}
 
-	public function register() {
+	public function register(): void {
 		call_user_func( $this->registry, $this->newResultFormat() );
 	}
 

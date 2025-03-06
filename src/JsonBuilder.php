@@ -10,10 +10,9 @@ use SMWDITime;
 
 class JsonBuilder {
 
-	private $slidePresenter;
-
-	public function __construct( SlidePresenter $slidePresenter ) {
-		$this->slidePresenter = $slidePresenter;
+	public function __construct(
+		private SlidePresenter $slidePresenter
+	) {
 	}
 
 	/**
