@@ -1,0 +1,49 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Call to an undefined method SMWDataItem\:\:getTitle\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: src/EventExtractor.php
+
+		-
+			message: '#^Cannot call method getURL\(\) on File\|false\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/EventExtractor.php
+
+		-
+			message: '#^Parameter \#1 \$title of method ModernTimeline\\JsonBuilder\:\:newHeadline\(\) expects MediaWiki\\Title\\Title, MediaWiki\\Title\\Title\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/JsonBuilder.php
+
+		-
+			message: '#^Method ModernTimeline\\ModernTimelinePrinter\:\:getQueryMode\(\) has parameter \$context with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/ModernTimelinePrinter.php
+
+		-
+			message: '#^Cannot access offset ''moderntimeline'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/ModernTimelineSetup.php
+
+		-
+			message: '#^Class ModernTimeline\\ResultFacade\\PropertyValueCollections implements generic interface IteratorAggregate but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/ResultFacade/PropertyValueCollections.php
+
+		-
+			message: '#^Cannot call method getFullText\(\) on MediaWiki\\Title\\Title\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/SlidePresenter/TemplateSlidePresenter.php
+
+		-
+			message: '#^Method ModernTimeline\\TimelinePresenter\:\:createJsonString\(\) should return string but returns string\|false\.$#'
+			identifier: return.type
+			count: 1
+			path: src/TimelinePresenter.php
