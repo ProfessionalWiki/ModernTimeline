@@ -1,8 +1,14 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Call to an undefined method SMWDataItem\:\:getTitle\(\)\.$#'
-			identifier: method.notFound
+			message: '#^Cannot call method getDataItems\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/EventExtractor.php
+
+		-
+			message: '#^Cannot call method getPrintRequest\(\) on mixed\.$#'
+			identifier: method.nonObject
 			count: 1
 			path: src/EventExtractor.php
 
@@ -113,6 +119,18 @@ parameters:
 			identifier: missingType.iterableValue
 			count: 1
 			path: src/ResultFacade/SubjectCollection.php
+
+		-
+			message: '#^Cannot call method getDataItems\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/SlidePresenter/SimpleSlidePresenter.php
+
+		-
+			message: '#^Cannot call method getPrintRequest\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: src/SlidePresenter/SimpleSlidePresenter.php
 
 		-
 			message: '#^Method ModernTimeline\\SlidePresenter\\SimpleSlidePresenter\:\:__construct\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
