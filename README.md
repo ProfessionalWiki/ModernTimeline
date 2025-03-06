@@ -168,6 +168,13 @@ have a look at the contribution guideline.
 
 ## Release notes
 
+### Version 2.0.0
+
+Under development.
+
+* Upgraded to TimelineJS3 3.9.6
+* Translation updates from https://translatewiki.net
+
 ### Version 1.2.2
 
 Released on November 9th, 2023.
