@@ -13,7 +13,7 @@ use SMWOutputs;
 
 class TimelinePresenter implements ResultPresenter {
 
-	private $id;
+	private string $id;
 
 	public function __construct() {
 		$this->id = $this->newTimelineId();
@@ -35,7 +35,7 @@ class TimelinePresenter implements ResultPresenter {
 		return $this->createDiv( $result->getParameters() );
 	}
 
-	private function createJsonString( SimpleQueryResult $result ) {
+	private function createJsonString( SimpleQueryResult $result ): string {
 		$preJson = $this->newJsonBuilder( $result )
 			->eventsToTimelineJson( ( new EventExtractor( $result->getParameters() ) )->extractEvents( $result->getSubjects() ) );
 

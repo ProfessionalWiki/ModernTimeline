@@ -11,15 +11,16 @@ use SMW\DIWikiPage;
  */
 class Subject {
 
-	private $wikiPage;
-	private $propertyValueCollections;
+	private PropertyValueCollections $propertyValueCollections;
 
 	/**
 	 * @param DIWikiPage $wikiPage
 	 * @param PropertyValueCollection[] $propertyValueCollections
 	 */
-	public function __construct( DIWikiPage $wikiPage, array $propertyValueCollections ) {
-		$this->wikiPage = $wikiPage;
+	public function __construct(
+		private DIWikiPage $wikiPage,
+		array $propertyValueCollections
+	) {
 		$this->propertyValueCollections = new PropertyValueCollections( $propertyValueCollections );
 	}
 
@@ -27,9 +28,6 @@ class Subject {
 		return $this->wikiPage;
 	}
 
-	/**
-	 * @return PropertyValueCollection[]
-	 */
 	public function getPropertyValueCollections(): PropertyValueCollections {
 		return $this->propertyValueCollections;
 	}

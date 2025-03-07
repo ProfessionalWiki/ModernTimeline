@@ -11,10 +11,9 @@ use SMW\DataValueFactory;
 
 class TemplateSlidePresenter implements SlidePresenter {
 
-	private $templateName;
-
-	public function __construct( string $templateName ) {
-		$this->templateName = $templateName;
+	public function __construct(
+		private string $templateName
+	) {
 	}
 
 	public function getText( Subject $subject ): string {

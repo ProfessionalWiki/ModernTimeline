@@ -7,20 +7,20 @@ namespace ModernTimeline\SlidePresenter;
 use ModernTimeline\ResultFacade\Subject;
 use SMW\DataValueFactory;
 use SMW\Query\PrintRequest;
+use Traversable;
 
 class SimpleSlidePresenter implements SlidePresenter {
 
-	private $parameters;
-
-	public function __construct( array $parameters ) {
-		$this->parameters = $parameters;
+	public function __construct(
+		private array $parameters
+	) {
 	}
 
 	public function getText( Subject $subject ): string {
 		return implode( '<br>', iterator_to_array( $this->getDisplayValues( $subject ) ) );
 	}
 
-	private function getDisplayValues( Subject $subject ) {
+	private function getDisplayValues( Subject $subject ): Traversable {
 		foreach ( $subject->getPropertyValueCollections() as $propertyValues ) {
 			foreach ( $propertyValues->getDataItems() as $dataItem ) {
 				if ( !$this->isHiddenPrintRequest( $propertyValues->getPrintRequest() ) ) {
@@ -30,11 +30,11 @@ class SimpleSlidePresenter implements SlidePresenter {
 		}
 	}
 
-	private function isHiddenPrintRequest( PrintRequest $pr ) {
+	private function isHiddenPrintRequest( PrintRequest $pr ): bool {
 		return $pr->getText( null ) === $this->parameters['image property'];
 	}
 
-	private function getDisplayValue( PrintRequest $pr, \SMWDataItem $dataItem ) {
+	private function getDisplayValue( PrintRequest $pr, \SMWDataItem $dataItem ): string {
 		$property = $pr->getText( null );
 		$value = $this->dataItemToText( $dataItem );
 

@@ -42,17 +42,8 @@ class ResultSimplifier {
 		return new Subject( $resultPage, $propertyValueCollections );
 	}
 
-	/**
-	 * Compat with SMW 3.0
-	 * In 3.1+ do: ResultArray::factory( $resultPage, $printRequest, $result )
-	 */
 	private function newResultArray( DIWikiPage $resultPage, PrintRequest $printRequest, QueryResult $result ): ResultArray {
-		return new ResultArray(
-			$resultPage,
-			$printRequest,
-			$result->getStore(),
-			method_exists( $result, 'getFieldItemFinder' ) ? $result->getFieldItemFinder() : null
-		);
+		return ResultArray::factory( $resultPage, $printRequest, $result );
 	}
 
 }

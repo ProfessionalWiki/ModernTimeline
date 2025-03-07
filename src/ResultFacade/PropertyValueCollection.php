@@ -9,16 +9,13 @@ use SMWDataItem;
 
 class PropertyValueCollection {
 
-	private $printRequest;
-	private $dataItems;
-
 	/**
-	 * @param PrintRequest $printRequest
 	 * @param SMWDataItem[] $dataItems
 	 */
-	public function __construct( PrintRequest $printRequest, array $dataItems ) {
-		$this->printRequest = $printRequest;
-		$this->dataItems = $dataItems;
+	public function __construct(
+		private PrintRequest $printRequest,
+		private array $dataItems
+	) {
 	}
 
 	public function getPrintRequest(): PrintRequest {

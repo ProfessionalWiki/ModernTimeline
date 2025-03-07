@@ -172,6 +172,8 @@ have a look at the contribution guideline.
 
 Under development.
 
+* Raised minimum PHP version to 8.0
+* Raised minimum MediaWiki version to 1.39
 * Upgraded to TimelineJS3 3.9.6
 * Translation updates from https://translatewiki.net
 

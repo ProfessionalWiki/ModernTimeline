@@ -6,15 +6,17 @@ namespace ModernTimeline\ResultFacade;
 
 class ResultFormat {
 
-	private $name;
-	private $nameMessageKey;
-	private $parameterDefinitions;
+	/**
+	 * @var callable
+	 */
 	private $constructionFunction;
 
-	public function __construct( string $name, string $nameMessageKey, array $parameterDefinitions, callable $presenterBuilder ) {
-		$this->name = $name;
-		$this->nameMessageKey = $nameMessageKey;
-		$this->parameterDefinitions = $parameterDefinitions;
+	public function __construct(
+		private string $name,
+		private string $nameMessageKey,
+		private array $parameterDefinitions,
+		callable $presenterBuilder
+	) {
 		$this->constructionFunction = $presenterBuilder;
 	}
 

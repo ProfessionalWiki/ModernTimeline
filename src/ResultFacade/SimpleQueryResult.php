@@ -8,12 +8,10 @@ use ParamProcessor\ProcessingResult;
 
 class SimpleQueryResult {
 
-	private $subjects;
-	private $processingResult;
-
-	public function __construct( SubjectCollection $subjects, ProcessingResult $processingResult ) {
-		$this->subjects = $subjects;
-		$this->processingResult = $processingResult;
+	public function __construct(
+		private SubjectCollection $subjects,
+		private ProcessingResult $processingResult
+	) {
 	}
 
 	public function getSubjects(): SubjectCollection {
