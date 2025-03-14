@@ -31,9 +31,13 @@
 		"source": "https://github.com/ProfessionalWiki/ModernTimeline"
 	},
 	"require": {
-		"php": ">=7.1",
+		"php": ">=8.0",
 		"composer/installers": "^2|^1.0.1",
 		"param-processor/param-processor": "~1.10"
+	},
+	"require-dev": {
+		"phpstan/phpstan": "^2.0.1",
+		"mediawiki/mediawiki-codesniffer": "^46.0.0"
 	},
 	"autoload": {
 		"psr-4": {
@@ -43,7 +47,8 @@
 	},
 	"config": {
 		"allow-plugins": {
-			"composer/installers": true
+			"composer/installers": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	}
 }

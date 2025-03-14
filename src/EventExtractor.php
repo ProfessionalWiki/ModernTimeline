@@ -14,10 +14,9 @@ use SMWDITime;
 
 class EventExtractor {
 
-	private $parameters;
-
-	public function __construct( array $parameters ) {
-		$this->parameters = $parameters;
+	public function __construct(
+		private array $parameters
+	) {
 	}
 
 	/**
@@ -50,7 +49,7 @@ class EventExtractor {
 		return $events;
 	}
 
-	private function isImageValue( \SMWDataItem $dataItem ) {
+	private function isImageValue( \SMWDataItem $dataItem ): bool {
 		return $dataItem instanceof DIWikiPage
 			&& $dataItem->getTitle() instanceof \Title
 			&& $dataItem->getTitle()->getNamespace() === NS_FILE
@@ -58,12 +57,7 @@ class EventExtractor {
 	}
 
 	public function getUrlForFileTitle( \Title $existingTitle ): string {
-		if ( method_exists( MediaWikiServices::class, 'getRepoGroup' ) ) {
-			// MediaWiki 1.34+
-			return MediaWikiServices::getInstance()->getRepoGroup()->findFile( $existingTitle )->getURL();
-		} else {
-			return RepoGroup::singleton()->findFile( $existingTitle )->getURL();
-		}
+		return MediaWikiServices::getInstance()->getRepoGroup()->findFile( $existingTitle )->getURL();
 	}
 
 	private function getDates( Subject $subject ): array {
@@ -77,7 +71,7 @@ class EventExtractor {
 				if ( $startDate === null ) {
 					$startDate = $dataItem;
 				}
-				else if ( $endDate === null ) {
+				elseif ( $endDate === null ) {
 					$endDate = $dataItem;
 					break;
 				}
@@ -90,7 +84,7 @@ class EventExtractor {
 	/**
 	 * @return PropertyValueCollection[]
 	 */
-	private function getPropertyValueCollectionsWithDates( Subject $subject ) {
+	private function getPropertyValueCollectionsWithDates( Subject $subject ): array {
 		return array_filter(
 			$subject->getPropertyValueCollections()->toArray(),
 			function( PropertyValueCollection $pvc ) {

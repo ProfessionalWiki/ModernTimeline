@@ -9,15 +9,13 @@ use SMWDITime;
 
 class Event {
 
-	private $subject;
-	private $startDate;
-	private $endDate;
-	private $imageUrl;
+	private string $imageUrl = '';
 
-	public function __construct( Subject $subject, SMWDITime $startDate, ?SMWDITime $endDate ) {
-		$this->subject = $subject;
-		$this->startDate = $startDate;
-		$this->endDate = $endDate;
+	public function __construct(
+		private Subject $subject,
+		private SMWDITime $startDate,
+		private ?SMWDITime $endDate
+	) {
 	}
 
 	public function getSubject(): Subject {
@@ -33,14 +31,14 @@ class Event {
 	}
 
 	public function hasImage(): bool {
-		return $this->imageUrl !== null;
+		return $this->imageUrl !== '';
 	}
 
 	public function getImageUrl(): string {
 		return $this->imageUrl;
 	}
 
-	public function setImageUrl( string $url ) {
+	public function setImageUrl( string $url ): void {
 		$this->imageUrl = $url;
 	}
 

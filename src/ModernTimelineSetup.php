@@ -6,13 +6,13 @@ namespace ModernTimeline;
 
 class ModernTimelineSetup {
 
-	public static function onExtensionFunction() {
+	public static function onExtensionFunction(): void {
 		self::doSmwCheck();
 
 		$GLOBALS['smwgResultFormats']['moderntimeline'] = ModernTimelinePrinter::class;
 	}
 
-	private static function doSmwCheck() {
+	private static function doSmwCheck(): void {
 		if ( !defined( 'SMW_VERSION' ) ) {
 
 			if ( PHP_SAPI === 'cli' || PHP_SAPI === 'phpdbg' ) {

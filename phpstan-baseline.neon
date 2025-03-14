@@ -1,0 +1,193 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Cannot call method getDataItems\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/EventExtractor.php
+
+		-
+			message: '#^Cannot call method getPrintRequest\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/EventExtractor.php
+
+		-
+			message: '#^Cannot call method getURL\(\) on File\|false\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/EventExtractor.php
+
+		-
+			message: '#^Method ModernTimeline\\EventExtractor\:\:__construct\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/EventExtractor.php
+
+		-
+			message: '#^Method ModernTimeline\\EventExtractor\:\:getDates\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/EventExtractor.php
+
+		-
+			message: '#^Method ModernTimeline\\JsonBuilder\:\:buildEvent\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/JsonBuilder.php
+
+		-
+			message: '#^Method ModernTimeline\\JsonBuilder\:\:eventsToTimelineJson\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/JsonBuilder.php
+
+		-
+			message: '#^Method ModernTimeline\\JsonBuilder\:\:timeToJson\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/JsonBuilder.php
+
+		-
+			message: '#^Parameter \#1 \$title of method ModernTimeline\\JsonBuilder\:\:newHeadline\(\) expects MediaWiki\\Title\\Title, MediaWiki\\Title\\Title\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: src/JsonBuilder.php
+
+		-
+			message: '#^Method ModernTimeline\\ModernTimelinePrinter\:\:getParamDefinitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ModernTimelinePrinter.php
+
+		-
+			message: '#^Method ModernTimeline\\ModernTimelinePrinter\:\:getQueryMode\(\) has parameter \$context with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: src/ModernTimelinePrinter.php
+
+		-
+			message: '#^Method ModernTimeline\\ModernTimelinePrinter\:\:newProcessingResultFromParams\(\) has parameter \$params with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ModernTimelinePrinter.php
+
+		-
+			message: '#^Cannot access offset ''moderntimeline'' on mixed\.$#'
+			identifier: offsetAccess.nonOffsetAccessible
+			count: 1
+			path: src/ModernTimelineSetup.php
+
+		-
+			message: '#^Class ModernTimeline\\ResultFacade\\PropertyValueCollections implements generic interface IteratorAggregate but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: src/ResultFacade/PropertyValueCollections.php
+
+		-
+			message: '#^Method ModernTimeline\\ResultFacade\\ResultFormat\:\:__construct\(\) has parameter \$parameterDefinitions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ResultFacade/ResultFormat.php
+
+		-
+			message: '#^Method ModernTimeline\\ResultFacade\\ResultFormat\:\:getParameterDefinitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ResultFacade/ResultFormat.php
+
+		-
+			message: '#^Method ModernTimeline\\ResultFacade\\ResultFormatRegistrator\:\:andParameterDefinitions\(\) has parameter \$parameterDefinitions with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ResultFacade/ResultFormatRegistrator.php
+
+		-
+			message: '#^Property ModernTimeline\\ResultFacade\\ResultFormatRegistrator\:\:\$parameterDefinitions type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ResultFacade/ResultFormatRegistrator.php
+
+		-
+			message: '#^Method ModernTimeline\\ResultFacade\\SimpleQueryResult\:\:getParameters\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ResultFacade/SimpleQueryResult.php
+
+		-
+			message: '#^Property ModernTimeline\\ResultFacade\\SubjectCollection\:\:\$pages type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/ResultFacade/SubjectCollection.php
+
+		-
+			message: '#^Cannot call method getDataItems\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/SlidePresenter/SimpleSlidePresenter.php
+
+		-
+			message: '#^Cannot call method getPrintRequest\(\) on mixed\.$#'
+			identifier: method.nonObject
+			count: 2
+			path: src/SlidePresenter/SimpleSlidePresenter.php
+
+		-
+			message: '#^Method ModernTimeline\\SlidePresenter\\SimpleSlidePresenter\:\:__construct\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/SlidePresenter/SimpleSlidePresenter.php
+
+		-
+			message: '#^Method ModernTimeline\\SlidePresenter\\SimpleSlidePresenter\:\:getDisplayValues\(\) return type has no value type specified in iterable type Traversable\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/SlidePresenter/SimpleSlidePresenter.php
+
+		-
+			message: '#^Cannot call method getFullText\(\) on MediaWiki\\Title\\Title\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: src/SlidePresenter/TemplateSlidePresenter.php
+
+		-
+			message: '#^Method ModernTimeline\\SlidePresenter\\TemplateSlidePresenter\:\:getTemplateSegments\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/SlidePresenter/TemplateSlidePresenter.php
+
+		-
+			message: '#^Method ModernTimeline\\TimelineOptions\:\:getStartAtSlide\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/TimelineOptions.php
+
+		-
+			message: '#^Method ModernTimeline\\TimelineOptions\:\:getTimelineParameterDefinitions\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/TimelineOptions.php
+
+		-
+			message: '#^Method ModernTimeline\\TimelineOptions\:\:processedParamsToJson\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/TimelineOptions.php
+
+		-
+			message: '#^Method ModernTimeline\\TimelineOptions\:\:processedParamsToJson\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/TimelineOptions.php
+
+		-
+			message: '#^Method ModernTimeline\\TimelinePresenter\:\:createDiv\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: src/TimelinePresenter.php
+
+		-
+			message: '#^Method ModernTimeline\\TimelinePresenter\:\:createJsonString\(\) should return string but returns string\|false\.$#'
+			identifier: return.type
+			count: 1
+			path: src/TimelinePresenter.php

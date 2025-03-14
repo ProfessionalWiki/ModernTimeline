@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<ruleset>
+	<file>src/</file>
+	<file>tests/</file>
+
+	<arg name="extensions" value="php"/>
+
+	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
+		<exclude name="Generic.Files.LineLength.TooLong" />
+		<exclude name="MediaWiki.Commenting.FunctionComment" />
+		<exclude name="MediaWiki.Commenting.PropertyDocumentation" />
+		<exclude name="MediaWiki.Commenting.FunctionAnnotations.UnrecognizedAnnotation" />
+		<exclude name="MediaWiki.Commenting.MissingCovers.MissingCovers" />
+		<exclude name="MediaWiki.ControlStructures.IfElseStructure.SpaceBeforeElse" />
+		<exclude name="MediaWiki.WhiteSpace.SpaceBeforeSingleLineComment" />
+		<exclude name="MediaWiki.WhiteSpace.DisallowEmptyLineFunctions.NoEmptyLine" />
+		<exclude name="MediaWiki.WhiteSpace.SpaceAfterClosure.NoWhitespaceAfterClosure" />
+		<exclude name="MediaWiki.WhiteSpace.SameLineCatch.CatchNotOnSameLine" />
+		<exclude name="MediaWiki.WhiteSpace.SpaceAfterClosure.NoWhitespaceAfterArrow" />
+		<exclude name="MediaWiki.Classes.UnusedUseStatement.UnusedUse" />
+		<exclude name="MediaWiki.Classes.UnsortedUseStatements.UnsortedUse" />
+		<exclude name="MediaWiki.Usage.StaticClosure.StaticClosure" />
+		<exclude name="MediaWiki.PHPUnit.MockBoilerplate.ConstraintEqualTo" />
+		<exclude name="Squiz.WhiteSpace.SuperfluousWhitespace.EndLine" />
+		<exclude name="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseBrace" />
+		<exclude name="Universal.WhiteSpace.CommaSpacing.SpaceBeforeInFunctionCall" />
+		<exclude name="Generic.Metrics.NestingLevel.TooHigh" />
+	</rule>
+
+	<rule ref="Generic.Formatting.NoSpaceAfterCast" />
+	<rule ref="Generic.Metrics.CyclomaticComplexity" />
+	<rule ref="Generic.Metrics.NestingLevel" />
+	<rule ref="Squiz.Operators.ValidLogicalOperators" />
+</ruleset>

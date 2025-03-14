@@ -4,7 +4,7 @@ namespace ModernTimeline\ResultFacade;
 
 class SubjectCollection {
 
-	private $pages;
+	private array $pages;
 
 	public function __construct( Subject ...$subjects ) {
 		$this->pages = $subjects;

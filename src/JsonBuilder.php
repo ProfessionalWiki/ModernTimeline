@@ -10,10 +10,9 @@ use SMWDITime;
 
 class JsonBuilder {
 
-	private $slidePresenter;
-
-	public function __construct( SlidePresenter $slidePresenter ) {
-		$this->slidePresenter = $slidePresenter;
+	public function __construct(
+		private SlidePresenter $slidePresenter
+	) {
 	}
 
 	/**
@@ -36,7 +35,7 @@ class JsonBuilder {
 		$jsonEvent = [
 			'text' => [
 				'headline' => $this->newHeadline( $event->getSubject()->getWikiPage()->getTitle() ),
-				'text' =>  $this->slidePresenter->getText( $event->getSubject() )
+				'text' => $this->slidePresenter->getText( $event->getSubject() )
 			],
 			'start_date' => $this->timeToJson( $event->getStartDate() ),
 		];

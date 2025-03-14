@@ -19,10 +19,7 @@ use SMWQuery;
 
 class ModernTimelinePrinter implements ResultPrinter {
 
-	/**
-	 * @var ResultFormat
-	 */
-	private $format;
+	private ResultFormat $format;
 
 	public function __construct() {
 		$registry = new ResultFormatRegistry();
@@ -99,7 +96,7 @@ class ModernTimelinePrinter implements ResultPrinter {
 		return SMWQuery::MODE_INSTANCES;
 	}
 
-	public function setShowErrors( $show ) {
+	public function setShowErrors( $show ): void {
 	}
 
 	public function isExportFormat(): bool {
@@ -118,6 +115,6 @@ class ModernTimelinePrinter implements ResultPrinter {
 		return false;
 	}
 
-	public function setRecursiveTextProcessor( RecursiveTextProcessor $recursiveTextProcessor ) {
+	public function setRecursiveTextProcessor( RecursiveTextProcessor $recursiveTextProcessor ): void {
 	}
 }
