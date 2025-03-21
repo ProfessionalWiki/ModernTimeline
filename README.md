@@ -113,7 +113,7 @@ A full list of supported output parameters can be obtained in wiki via the `smwd
 {{#smwdoc: moderntimeline }}
 ```
 
-### Configuration
+## PHP Configuration
 
 The default value of all parameters can be changed by placing configuration in "LocalSettings.php".
 These configuration settings are available:
