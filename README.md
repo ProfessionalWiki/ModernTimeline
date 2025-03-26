@@ -9,7 +9,7 @@ The **Modern Timeline** extension provides a
 [Semantic MediaWiki](https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki) as a
 [result format](https://www.semantic-mediawiki.org/wiki/Help:Result_formats).
 
-It was created by [Professional.Wiki](https://professional.wiki/) and funded by
+It was created by [Professional Wiki](https://professional.wiki/) and funded by
 [KDZ - Centre for Public Administration Research](https://www.kdz.eu/).
 
 Example timeline
