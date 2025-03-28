@@ -20,7 +20,7 @@ class ModernTimelineSetup {
 			}
 
 			die(
-				'<b>Error:</b> The <a href="https://github.com/ProfessionalWiki/ModernTimeline">Modern Timeline</a> ' .
+				'<b>Error:</b> The <a href="https://professional.wiki/en/extension/modern-timeline">Modern Timeline</a> ' .
 				'extension requires <a href="https://www.semantic-mediawiki.org/wiki/Semantic_MediaWiki">Semantic MediaWiki</a> to be ' .
 				'installed and enabled.<br />'
 			);
