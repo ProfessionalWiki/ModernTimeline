@@ -11,7 +11,7 @@
 		"visualization",
 		"TimelineJS3"
 	],
-	"homepage": "https://github.com/ProfessionalWiki/ModernTimeline",
+	"homepage": "https://professional.wiki/en/extension/modern-timeline",
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
@@ -28,6 +28,7 @@
 		}
 	],
 	"support": {
+		"issues": "https://github.com/ProfessionalWiki/ModernTimeline/issues",
 		"source": "https://github.com/ProfessionalWiki/ModernTimeline"
 	},
 	"require": {
