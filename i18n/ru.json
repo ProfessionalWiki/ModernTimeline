@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Alex Mashin"
+		]
+	},
+	"modern-timeline-desc": "Обепечивает современную визуализацию временно́й шкалы для Semantic MediaWiki",
+	"modern-timeline-param-width": "Ширина шкалы в процентах. Можно указать в px, em или ex",
+	"modern-timeline-param-height": "Высота шкалы в пикселях. Можно указать в em и ex",
+	"modern-timeline-param-bookmark": "Менять URL страницы при движении ползунка, так чтобы можно было скопировать веб-адрес, соответствующий определённому времени на шкале",
+	"modern-timeline-param-background": "Цвет фона слайдов шкалы (в формате CSS)",
+	"modern-timeline-param-scale-factor": "Отношение ширины шкалы к ширине экрана при первом показе",
+	"modern-timeline-param-position": "Вывод инструментов управления шкалой сверху или снизу",
+	"modern-timeline-param-tick-width": "Оптимальное расстояние в пикселях между засечками на оси",
+	"modern-timeline-param-start-slide": "Первый слайд, показываемый при загрузке шкалы",
+	"modern-timeline-param-start-at-end": "Начать с первого слайда шкалы",
+	"modern-timeline-param-transition-duration": "Время перехода между слайдами в миллисекундах",
+	"modern-timeline-param-navigation-height": "Высота инструментов управления шкалой в процентах или px",
+	"modern-timeline-param-template": "Имя шаблона для показа области слайда",
+	"modern-timeline-param-image-property": "Семантической свойство типа Страница. Должно присутствовать в запросе",
+	"modern-timeline-format-name": "Современная временная шкала"
+}
