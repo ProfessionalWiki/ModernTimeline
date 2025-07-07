@@ -20,7 +20,7 @@ Example timeline
 
 * PHP 8.0 or later
 * MediaWiki 1.39 or later (tested up to MediaWiki 1.43)
-* Semantic MediaWiki 5.0 or later (tested up to SMW 5.0.2)
+* Semantic MediaWiki 4.0 or later (tested up to SMW 5.0.2)
 
 See the [release notes](#release-notes) for more information on the different versions of Modern Timeline.
 
