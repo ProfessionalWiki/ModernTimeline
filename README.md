@@ -18,9 +18,9 @@ Example timeline
 
 ## Platform requirements
 
-* PHP 7.1 or later (tested up to PHP 8.0)
-* MediaWiki 1.31.x or later (tested up to MediaWiki 1.37)
-* Semantic MediaWiki 3.0 or later (tested up to SMW 4.0.2)
+* PHP 8.0 or later
+* MediaWiki 1.39 or later (tested up to MediaWiki 1.43)
+* Semantic MediaWiki 5.0 or later (tested up to SMW 5.0.2)
 
 See the [release notes](#release-notes) for more information on the different versions of Modern Timeline.
 
@@ -172,7 +172,7 @@ have a look at the contribution guideline.
 
 ### Version 2.0.0
 
-Under development.
+Released on July 7th, 2025.
 
 * Raised minimum PHP version to 8.0
 * Raised minimum MediaWiki version to 1.39
