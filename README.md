@@ -40,7 +40,7 @@ create one and add the following content to it:
 ```
 {
 	"require": {
-		"professional-wiki/modern-timeline": "~1.0"
+		"professional-wiki/modern-timeline": "~2.0"
 	}
 }
 ```
@@ -48,7 +48,7 @@ create one and add the following content to it:
 If you already have a "composer.local.json" file add the following line to the end of the "require"
 section in your file:
 
-    "professional-wiki/modern-timeline": "~1.0"
+    "professional-wiki/modern-timeline": "~2.0"
 
 Remember to add a comma to the end of the preceding line in this section.
 
@@ -162,7 +162,7 @@ have a look at the contribution guideline.
 * Ask a question on [the mailing list](https://www.semantic-mediawiki.org/wiki/Mailing_list)
 
 [Professional MediaWiki support](https://professional.wiki/en/support) is available via
-[Professional.Wiki](https://professional.wiki/).
+[Professional Wiki](https://professional.wiki/).
 
 ## License
 
