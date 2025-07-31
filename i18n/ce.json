@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Умар"
+		]
+	},
+	"modern-timeline-desc": "ХӀинцалера бӀаьра хенан шкалан ло Semantic MediaWiki-на",
+	"modern-timeline-param-width": "Шкалан шоралла проценташца. px, em или ex -ца билгалдаккха мегар ду",
+	"modern-timeline-param-height": "Шкалан локхалла пикселшкахь. em и ex -ца билгалдаккха мегар ду",
+	"modern-timeline-param-bookmark": "Текхарг дӀасахилорца агӀонан URL хийца, масштабехь билгалйаьккхинчу хенаца догӀуш долу веб-адрес копи дан йиш хилийта",
+	"modern-timeline-param-background": "Шкалан слайдийн фонан бос (CSS форматехь)",
+	"modern-timeline-param-scale-factor": "Хьалхарчу презентацехь экранан шораллехь хенан сизан шораллица",
+	"modern-timeline-param-position": "Шкалан урхаллин гӀирсаш гайта лакхахь йа лахахь",
+	"modern-timeline-param-tick-width": "Оптималан геналла пикселашца аса тӀехь венезийн йукъахь",
+	"modern-timeline-param-start-slide": "Хьалхара слайд гойту шкала чуйаьккхича",
+	"modern-timeline-param-start-at-end": "Шкалан хьалхарчу слайда тӀера дӀадоло",
+	"modern-timeline-param-transition-duration": "Слайдашна йукъахь дӀасалела хан миллисекундашца",
+	"modern-timeline-param-navigation-height": "Шкалан урхаллин гӀирсийн локхалла проценташца йа px",
+	"modern-timeline-param-template": "Слайдан меттиг гайта кепан цӀе",
+	"modern-timeline-param-image-property": "АгӀо тайпанан семантикин башхалла. Дехарехь хила йеза",
+	"modern-timeline-format-name": "ХӀинцалера хенан шкала"
+}
