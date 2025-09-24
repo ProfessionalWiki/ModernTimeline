@@ -7,6 +7,8 @@ namespace ModernTimeline;
 use ModernTimeline\ResultFacade\SubjectCollection;
 use ModernTimeline\SlidePresenter\SlidePresenter;
 use SMWDITime;
+use MediaWiki\Title\Title;
+use MediaWiki\Html\Html;
 
 class JsonBuilder {
 
@@ -54,8 +56,8 @@ class JsonBuilder {
 		return $jsonEvent;
 	}
 
-	private function newHeadline( \Title $title ): string {
-		return \Html::element(
+	private function newHeadline( Title $title ): string {
+		return Html::element(
 			'a',
 			[ 'href' => $title->getFullURL() ],
 			$title->getText()

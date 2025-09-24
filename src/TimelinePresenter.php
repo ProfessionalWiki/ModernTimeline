@@ -10,6 +10,7 @@ use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
 use ModernTimeline\SlidePresenter\SlidePresenter;
 use ModernTimeline\SlidePresenter\TemplateSlidePresenter;
 use SMWOutputs;
+use MediaWiki\Html\Html;
 
 class TimelinePresenter implements ResultPresenter {
 
@@ -61,7 +62,7 @@ class TimelinePresenter implements ResultPresenter {
 	}
 
 	private function createJs( string $json ): string {
-		return \Html::rawElement(
+		return Html::rawElement(
 			'script',
 			[
 				'type' => 'text/javascript'
@@ -75,14 +76,14 @@ class TimelinePresenter implements ResultPresenter {
 		$width = $parameters[TimelineOptions::PARAM_WIDTH];
 		$height = $parameters[TimelineOptions::PARAM_HEIGHT];
 
-		return \Html::rawElement(
+		return Html::rawElement(
 			'div',
 			[
 				'id' => $this->id,
 				'style' => "width: $width; height: $height",
 				'class' => 'modern_timeline_outer_div'
 			],
-			\Html::element(
+			Html::element(
 				'div',
 				[
 					'class' => 'modern_timeline_inner_div',
