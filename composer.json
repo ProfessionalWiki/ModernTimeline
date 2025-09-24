@@ -32,7 +32,7 @@
 		"source": "https://github.com/ProfessionalWiki/ModernTimeline"
 	},
 	"require": {
-		"php": ">=8.0",
+		"php": ">=8.1",
 		"composer/installers": "^2|^1.0.1",
 		"param-processor/param-processor": "~1.10"
 	},
