@@ -13,19 +13,8 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - mw: 'REL1_39'
-            php: '8.0'
-            db: 'mysql'
-            smw: '4.2.0'
-            experimental: false
-          - mw: 'REL1_41'
+          - mw: 'REL1_43'
             php: '8.1'
-            db: 'mysql'
-            # SMW 4.2.0 should be compatible with MW 1.41, but the tests are not.
-            smw: 'dev-master'
-            experimental: true
-          - mw: 'REL1_42'
-            php: '8.2'
             db: 'mysql'
             smw: 'dev-master'
             experimental: true
