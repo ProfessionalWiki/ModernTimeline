@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"Toliño"
+		]
+	},
+	"modern-timeline-desc": "Ofrece unha visualización moderna da liña de tempo para Semantic MediaWiki",
+	"modern-timeline-param-width": "Largura da liña de tempo en %. Tamén se pode especificar en px, em e ex",
+	"modern-timeline-param-height": "Altura da liña de tempo en píxeles. Tamén se pode especificar en em e ex",
+	"modern-timeline-param-bookmark": "Facer que a liña de tempo se poida engadir a marcadores a través do enderezo URL da páxina",
+	"modern-timeline-param-background": "Cor de fondo para as diapositivas da liña de tempo (valores de cor CSS)",
+	"modern-timeline-param-scale-factor": "Largura da liña de tempo en anchos de pantalla na primeira presentación",
+	"modern-timeline-param-position": "Mostrar a navegación da liña de tempo na parte superior ou inferior",
+	"modern-timeline-param-tick-width": "Distancia óptima (en píxeles) entre as marcas no eixo",
+	"modern-timeline-param-start-slide": "A primeira diapositiva que se mostrará cando se cargue a liña de tempo",
+	"modern-timeline-param-start-at-end": "Comezar coa última diapositiva da liña de tempo",
+	"modern-timeline-param-transition-duration": "Transición entre diapositivas en milisegundos",
+	"modern-timeline-param-navigation-height": "Altura da sección de navegación da liña de tempo en % ou px",
+	"modern-timeline-param-template": "Nome dun modelo para mostrar a área da diapositiva",
+	"modern-timeline-param-image-property": "Propiedade semántica de tipo «Páxina». Debe ser consultada como solicitude de impresión.",
+	"modern-timeline-format-name": "Liña de tempo moderna"
+}
