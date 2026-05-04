@@ -2,12 +2,14 @@
 	"@metadata": {
 		"authors": [
 			"Tensama0415",
+			"YeBoy371",
 			"Ykhwong"
 		]
 	},
 	"modern-timeline-desc": "시맨틱 미디어위키를 위한 현대적인 타임라인 시각화 기능을 제공합니다",
 	"modern-timeline-param-width": "타임라인 너비 (% 단위) 입니다. px, em 및 ex 단위로도 지정할 수 있습니다",
 	"modern-timeline-param-height": "타임라인 높이 (픽셀 단위) 입니다. em 및 ex 단위로도 지정할 수 있습니다",
+	"modern-timeline-param-bookmark": "페이지 URL을 통해 타임라인을 북마크할 수 있도록 설정",
 	"modern-timeline-param-background": "타임라인 슬라이드의 배경색 (CSS 색상값)",
 	"modern-timeline-param-scale-factor": "첫 번째 프레젠테이션의 화면 너비의 타임라인 너비",
 	"modern-timeline-param-start-at-end": "마지막 타임라인 슬라이드부터 시작",
