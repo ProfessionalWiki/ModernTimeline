@@ -1,0 +1,12 @@
+{
+	"@metadata": {
+		"authors": [
+			"شاه زمان پټان"
+		]
+	},
+	"modern-timeline-desc": "مانا پوهنيزه مېډياويکي ته وسمهاله مهالوېش ليد وړاندې کوي",
+	"modern-timeline-param-width": "د مهالوېش پلنوالی په ٪ کې. په px, em او ex کې هم ښودل کېدای شي",
+	"modern-timeline-param-height": "د مهالوېش لوړوالی په پيکسلو کې. په em او ex کې هم ښودل کېدای شي",
+	"modern-timeline-param-start-at-end": "د وروستي مهالوېش سلايډ سره يې پيل کړئ",
+	"modern-timeline-format-name": "وسمهاله مهالوېش"
+}
