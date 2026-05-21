@@ -17,5 +17,8 @@
 	"modern-timeline-param-start-slide": "타임라인이 로드될 때 표시되는 첫 번째 슬라이드",
 	"modern-timeline-param-start-at-end": "마지막 타임라인 슬라이드부터 시작",
 	"modern-timeline-param-transition-duration": "슬라이드 전환 (단위: 밀리초)",
+	"modern-timeline-param-navigation-height": "타임라인 탐색 섹션의 높이 (% 또는 px 단위)",
+	"modern-timeline-param-template": "슬라이드 영역을 표시하는 데 사용할 틀의 이름",
+	"modern-timeline-param-image-property": "문서 유형의 시맨틱 속성입니다. 인쇄 요청으로 조회되어야 합니다",
 	"modern-timeline-format-name": "모던 타임라인"
 }
