@@ -1,10 +1,11 @@
 {
 	"@metadata": {
 		"authors": [
-			"Kly"
+			"Kly",
+			"LowensteinYang"
 		]
 	},
-	"modern-timeline-desc": "提供用於 Semantic MediaWiki 的新型視覺化時間軸",
+	"modern-timeline-desc": "提供一個針對語義MediaWiki的當代時間軸視覺化",
 	"modern-timeline-param-width": "時間軸寬度，以 % 為單位。也可以用 px、em、ex 來指定",
 	"modern-timeline-param-height": "時間軸高度，以像素為單位。也可以用 em、ex 來指定",
 	"modern-timeline-param-bookmark": "透過頁面 URL 產生時間軸標註",
