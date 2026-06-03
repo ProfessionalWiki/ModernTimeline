@@ -16,20 +16,25 @@ jobs:
           - mw: 'REL1_43'
             php: '8.1'
             db: 'mysql'
-            smw: 'dev-master'
+            smw: '^6.0'
+            experimental: false
+          - mw: 'REL1_44'
+            php: '8.2'
+            db: 'mysql'
+            smw: '^6.0'
             experimental: true
-          - mw: 'REL1_43'
+          - mw: 'REL1_45'
             php: '8.3'
             db: 'mysql'
             smw: 'dev-master'
             experimental: true
-          - mw: 'REL1_43'
-            php: '8.3'
-            db: 'sqlite'
+          - mw: 'REL1_46'
+            php: '8.4'
+            db: 'mysql'
             smw: 'dev-master'
             experimental: true
           - mw: 'master'
-            php: '8.4'
+            php: '8.5'
             db: 'mysql'
             smw: 'dev-master'
             experimental: true
@@ -38,7 +43,7 @@ jobs:
 
     services:
       db:
-        image: mariadb
+        image: mariadb:11.8
         ports:
           - 3306:3306
         env:
@@ -94,11 +99,12 @@ jobs:
         run: php maintenance/update.php --quick
 
       - name: Run PHPUnit
-        run: php tests/phpunit/phpunit.php -c extensions/ModernTimeline/
+        working-directory: mediawiki/extensions/ModernTimeline
+        run: composer phpunit
         if: matrix.mw != 'master'
 
       - name: Run PHPUnit with code coverage
-        run: php tests/phpunit/phpunit.php -c extensions/ModernTimeline/ --coverage-clover coverage.xml
+        run: composer phpunit -- extensions/ModernTimeline/tests/ --coverage-clover coverage.xml --coverage-filter extensions/ModernTimeline/src
         if: matrix.mw == 'master'
 
       - name: Upload code coverage
@@ -116,7 +122,7 @@ jobs:
           - mw: 'REL1_43'
             php: '8.3'
             db: 'sqlite'
-            smw: 'dev-master'
+            smw: '^6.0'
 
     runs-on: ubuntu-latest
 
@@ -181,7 +187,7 @@ jobs:
           - mw: 'REL1_43'
             php: '8.3'
             db: 'sqlite'
-            smw: 'dev-master'
+            smw: '^6.0'
 
     runs-on: ubuntu-latest
 

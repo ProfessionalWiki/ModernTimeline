@@ -46,6 +46,9 @@
 			"ModernTimeline\\Tests\\": "tests/"
 		}
 	},
+	"scripts": {
+		"phpunit": "cd ../../ && php vendor/bin/phpunit -c phpunit.xml.dist extensions/ModernTimeline/tests/"
+	},
 	"config": {
 		"allow-plugins": {
 			"composer/installers": true,
