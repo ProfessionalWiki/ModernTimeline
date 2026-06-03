@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
 use SMWDITime;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \ModernTimeline\SlidePresenter\TemplateSlidePresenter
@@ -65,7 +66,7 @@ class TemplateSlidePresenterTest extends TestCase {
 	private function newDiWikiPage(): DIWikiPage {
 		$page = $this->createMock( DIWikiPage::class );
 
-		$page->method( 'getTitle' )->willReturn( \Title::newFromText( self::PAGE_NAME ) );
+		$page->method( 'getTitle' )->willReturn( Title::newFromText( self::PAGE_NAME ) );
 
 		return $page;
 	}
