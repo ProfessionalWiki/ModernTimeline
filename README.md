@@ -172,7 +172,7 @@ have a look at the contribution guideline.
 
 ### Version 3.0.0
 
-Under development.
+Released on June 2nd, 2026.
 
 * Raised minimum PHP version to 8.1
 * Raised minimum MediaWiki version to 1.43
