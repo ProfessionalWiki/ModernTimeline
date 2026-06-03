@@ -9,7 +9,7 @@ use ModernTimeline\ResultFacade\ResultPresenter;
 use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
 use ModernTimeline\SlidePresenter\SlidePresenter;
 use ModernTimeline\SlidePresenter\TemplateSlidePresenter;
-use SMWOutputs;
+use SMW\MediaWiki\Outputs;
 use MediaWiki\Html\Html;
 
 class TimelinePresenter implements ResultPresenter {
@@ -26,9 +26,9 @@ class TimelinePresenter implements ResultPresenter {
 	}
 
 	public function presentResult( SimpleQueryResult $result ): string {
-		SMWOutputs::requireResource( 'ext.modern.timeline' );
+		Outputs::requireResource( 'ext.modern.timeline' );
 
-		SMWOutputs::requireHeadItem(
+		Outputs::requireHeadItem(
 			$this->id,
 			$this->createJs( $this->createJsonString( $result ) )
 		);

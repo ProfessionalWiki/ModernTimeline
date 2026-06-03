@@ -170,6 +170,13 @@ have a look at the contribution guideline.
 
 ## Release notes
 
+### Version 7.0.0
+
+Under development.
+
+* Raised minimum Semantic MediaWiki version to 7.0
+* The version number now follows the major version of Semantic MediaWiki (skipping 4.x through 6.x)
+
 ### Version 3.0.0
 
 Released on June 2nd, 2026.

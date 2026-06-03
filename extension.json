@@ -1,7 +1,7 @@
 {
 	"name": "ModernTimeline",
 
-	"version": "3.0.0",
+	"version": "7.0.0-alpha",
 
 	"author": [
 		"[https://professional.wiki/ Professional Wiki]",
@@ -21,7 +21,7 @@
 	"requires": {
 		"MediaWiki": ">= 1.43.0",
 		"extensions": {
-			"SemanticMediaWiki": ">= 6.0.0"
+			"SemanticMediaWiki": ">= 7.0.0"
 		}
 	},
 

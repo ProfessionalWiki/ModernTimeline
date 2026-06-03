@@ -10,8 +10,9 @@ use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
 use RepoGroup;
-use SMW\DIWikiPage;
-use SMWDITime;
+use SMW\DataItems\DataItem;
+use SMW\DataItems\Time;
+use SMW\DataItems\WikiPage;
 
 class EventExtractor {
 
@@ -50,8 +51,8 @@ class EventExtractor {
 		return $events;
 	}
 
-	private function isImageValue( \SMWDataItem $dataItem ): bool {
-		return $dataItem instanceof DIWikiPage
+	private function isImageValue( DataItem $dataItem ): bool {
+		return $dataItem instanceof WikiPage
 			&& $dataItem->getTitle() instanceof Title
 			&& $dataItem->getTitle()->getNamespace() === NS_FILE
 			&& $dataItem->getTitle()->exists();
@@ -68,7 +69,7 @@ class EventExtractor {
 		foreach ( $this->getPropertyValueCollectionsWithDates( $subject ) as $propertyValues ) {
 			$dataItem = $propertyValues->getDataItems()[0];
 
-			if ( $dataItem instanceof SMWDITime ) {
+			if ( $dataItem instanceof Time ) {
 				if ( $startDate === null ) {
 					$startDate = $dataItem;
 				}

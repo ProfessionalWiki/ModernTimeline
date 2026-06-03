@@ -10,9 +10,9 @@ use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\SlidePresenter\SimpleSlidePresenter;
 use PHPUnit\Framework\TestCase;
-use SMW\DIWikiPage;
+use SMW\DataItems\Time;
+use SMW\DataItems\WikiPage;
 use SMW\Query\PrintRequest;
-use SMWDITime;
 use MediaWiki\Title\Title;
 
 /**
@@ -60,8 +60,8 @@ class JsonBuilderTest extends TestCase {
 		);
 	}
 
-	private function newDiWikiPage( string $pageName = self::PAGE_NAME ): DIWikiPage {
-		$page = $this->createMock( DIWikiPage::class );
+	private function newDiWikiPage( string $pageName = self::PAGE_NAME ): WikiPage {
+		$page = $this->createMock( WikiPage::class );
 
 		$page->method( 'getTitle' )->willReturn( Title::newFromText( $pageName ) );
 
@@ -77,9 +77,9 @@ class JsonBuilderTest extends TestCase {
 		);
 	}
 
-	private function newStartDate(): SMWDITime {
-		return new SMWDITime(
-			SMWDITime::CM_GREGORIAN,
+	private function newStartDate(): Time {
+		return new Time(
+			Time::CM_GREGORIAN,
 			2019,
 			8,
 			2,
@@ -98,9 +98,9 @@ class JsonBuilderTest extends TestCase {
 		);
 	}
 
-	private function newEndDate(): SMWDITime {
-		return new SMWDITime(
-			SMWDITime::CM_GREGORIAN,
+	private function newEndDate(): Time {
+		return new Time(
+			Time::CM_GREGORIAN,
 			2019,
 			8,
 			5,
@@ -174,8 +174,8 @@ class JsonBuilderTest extends TestCase {
 		$this->assertSame( [], $json['events'] );
 	}
 
-	private function newNullReturningDiWikiPage(): DIWikiPage {
-		$page = $this->createMock( DIWikiPage::class );
+	private function newNullReturningDiWikiPage(): WikiPage {
+		$page = $this->createMock( WikiPage::class );
 
 		$page->method( 'getTitle' )->willReturn( null );
 

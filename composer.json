@@ -40,6 +40,11 @@
 		"phpstan/phpstan": "^2.0.1",
 		"mediawiki/mediawiki-codesniffer": "^46.0.0"
 	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "7.0.0-dev"
+		}
+	},
 	"autoload": {
 		"psr-4": {
 			"ModernTimeline\\": "src/",

@@ -8,9 +8,9 @@ use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\SlidePresenter\TemplateSlidePresenter;
 use PHPUnit\Framework\TestCase;
-use SMW\DIWikiPage;
+use SMW\DataItems\Time;
+use SMW\DataItems\WikiPage;
 use SMW\Query\PrintRequest;
-use SMWDITime;
 use MediaWiki\Title\Title;
 
 /**
@@ -34,8 +34,8 @@ class TemplateSlidePresenterTest extends TestCase {
 				new PropertyValueCollection(
 					$this->newDatePrintRequestWithLabel( 'Has date' ),
 					[
-						new SMWDITime(
-							SMWDITime::CM_GREGORIAN,
+						new Time(
+							Time::CM_GREGORIAN,
 							2019,
 							8,
 							2,
@@ -48,8 +48,8 @@ class TemplateSlidePresenterTest extends TestCase {
 				new PropertyValueCollection(
 					$this->newDatePrintRequestWithLabel( 'End date' ),
 					[
-						new SMWDITime(
-							SMWDITime::CM_GREGORIAN,
+						new Time(
+							Time::CM_GREGORIAN,
 							2019,
 							8,
 							5,
@@ -63,8 +63,8 @@ class TemplateSlidePresenterTest extends TestCase {
 		);
 	}
 
-	private function newDiWikiPage(): DIWikiPage {
-		$page = $this->createMock( DIWikiPage::class );
+	private function newDiWikiPage(): WikiPage {
+		$page = $this->createMock( WikiPage::class );
 
 		$page->method( 'getTitle' )->willReturn( Title::newFromText( self::PAGE_NAME ) );
 

@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 namespace ModernTimeline\SlidePresenter;
 
 use ModernTimeline\ResultFacade\Subject;
+use SMW\DataItems\DataItem;
 use SMW\DataValueFactory;
 use SMW\Query\PrintRequest;
 use Traversable;
@@ -34,7 +35,7 @@ class SimpleSlidePresenter implements SlidePresenter {
 		return $pr->getText( null ) === $this->parameters['image property'];
 	}
 
-	private function getDisplayValue( PrintRequest $pr, \SMWDataItem $dataItem ): string {
+	private function getDisplayValue( PrintRequest $pr, DataItem $dataItem ): string {
 		$property = $pr->getText( null );
 		$value = $this->dataItemToText( $dataItem );
 
@@ -45,7 +46,7 @@ class SimpleSlidePresenter implements SlidePresenter {
 		return $property . ': ' . $value;
 	}
 
-	private function dataItemToText( \SMWDataItem $dataItem ): string {
+	private function dataItemToText( DataItem $dataItem ): string {
 		return DataValueFactory::getInstance()->newDataValueByItem( $dataItem )->getLongHTMLText();
 	}
 

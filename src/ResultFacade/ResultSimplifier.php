@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline\ResultFacade;
 
-use SMW\DIWikiPage;
+use SMW\DataItems\WikiPage;
 use SMW\Query\PrintRequest;
 use SMW\Query\QueryResult;
 use SMW\Query\Result\ResultArray;
@@ -22,12 +22,12 @@ class ResultSimplifier {
 	}
 
 	/**
-	 * @param DIWikiPage $resultPage
+	 * @param WikiPage $resultPage
 	 * @param PrintRequest[] $printRequests
 	 * @param QueryResult $result
 	 * @return Subject
 	 */
-	private function newSubject( DIWikiPage $resultPage, array $printRequests, QueryResult $result ): Subject {
+	private function newSubject( WikiPage $resultPage, array $printRequests, QueryResult $result ): Subject {
 		$propertyValueCollections = [];
 
 		foreach ( $printRequests as $printRequest ) {
@@ -42,7 +42,7 @@ class ResultSimplifier {
 		return new Subject( $resultPage, $propertyValueCollections );
 	}
 
-	private function newResultArray( DIWikiPage $resultPage, PrintRequest $printRequest, QueryResult $result ): ResultArray {
+	private function newResultArray( WikiPage $resultPage, PrintRequest $printRequest, QueryResult $result ): ResultArray {
 		return ResultArray::factory( $resultPage, $printRequest, $result );
 	}
 

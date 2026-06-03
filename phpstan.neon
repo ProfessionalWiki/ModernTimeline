@@ -11,4 +11,5 @@ parameters:
 		- ../../vendor
 	bootstrapFiles:
 		- ../../includes/AutoLoader.php
+		- phpstan-bootstrap.php
 	reportUnmatchedIgnoredErrors: false

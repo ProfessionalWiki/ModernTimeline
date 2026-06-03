@@ -5,7 +5,7 @@ declare( strict_types = 1 );
 namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\Subject;
-use SMWDITime;
+use SMW\DataItems\Time;
 
 class Event {
 
@@ -13,8 +13,8 @@ class Event {
 
 	public function __construct(
 		private Subject $subject,
-		private SMWDITime $startDate,
-		private ?SMWDITime $endDate
+		private Time $startDate,
+		private ?Time $endDate
 	) {
 	}
 
@@ -22,11 +22,11 @@ class Event {
 		return $this->subject;
 	}
 
-	public function getStartDate(): SMWDITime {
+	public function getStartDate(): Time {
 		return $this->startDate;
 	}
 
-	public function getEndDate(): ?SMWDITime {
+	public function getEndDate(): ?Time {
 		return $this->endDate;
 	}
 
