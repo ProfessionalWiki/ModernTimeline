@@ -8,6 +8,7 @@ use SMW\Tests\Integration\JSONScript\JSONScriptTestCaseRunnerTest;
 
 /**
  * @group Database
+ * @coversNothing
  */
 class JsonScriptTest extends JSONScriptTestCaseRunnerTest {
 
@@ -19,7 +20,7 @@ class JsonScriptTest extends JSONScriptTestCaseRunnerTest {
 		parent::setUp();
 	}
 
-	protected function getTestCaseLocation() {
+	protected function getTestCaseLocation(): string {
 		return __DIR__ . '/JsonScript';
 	}
 
