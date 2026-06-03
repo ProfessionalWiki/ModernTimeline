@@ -13,7 +13,7 @@ use PHPUnit\Framework\TestCase;
 use SMW\DIWikiPage;
 use SMW\Query\PrintRequest;
 use SMWDITime;
-use Title;
+use MediaWiki\Title\Title;
 
 /**
  * @covers \ModernTimeline\EventExtractor

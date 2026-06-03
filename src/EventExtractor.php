@@ -5,6 +5,7 @@ declare( strict_types = 1 );
 namespace ModernTimeline;
 
 use MediaWiki\MediaWikiServices;
+use MediaWiki\Title\Title;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
@@ -51,12 +52,12 @@ class EventExtractor {
 
 	private function isImageValue( \SMWDataItem $dataItem ): bool {
 		return $dataItem instanceof DIWikiPage
-			&& $dataItem->getTitle() instanceof \Title
+			&& $dataItem->getTitle() instanceof Title
 			&& $dataItem->getTitle()->getNamespace() === NS_FILE
 			&& $dataItem->getTitle()->exists();
 	}
 
-	public function getUrlForFileTitle( \Title $existingTitle ): string {
+	public function getUrlForFileTitle( Title $existingTitle ): string {
 		return MediaWikiServices::getInstance()->getRepoGroup()->findFile( $existingTitle )->getURL();
 	}
 
