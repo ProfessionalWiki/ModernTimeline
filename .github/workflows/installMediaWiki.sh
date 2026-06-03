@@ -14,6 +14,15 @@ mv mediawiki-$MW_BRANCH mediawiki
 
 cd mediawiki
 
+# `phpunit.xml.dist` is `export-ignore`d in MediaWiki's .gitattributes, so the
+# GitHub source tarball doesn't include it — fetch it separately. MW master
+# renamed the file to `phpunit.xml.template` (read by
+# tests/phpunit/generatePHPUnitConfig.php); REL1_43 still reads `.dist`. Leave
+# wget to save under the URL's basename so the file lands under the name MW
+# core expects on that branch.
+wget -nv "https://raw.githubusercontent.com/wikimedia/mediawiki/$MW_BRANCH/phpunit.xml.dist" || \
+    wget -nv "https://raw.githubusercontent.com/wikimedia/mediawiki/$MW_BRANCH/phpunit.xml.template"
+
 composer install
 if [ "$DB" = "mysql" ]; then
     php maintenance/install.php --dbtype mysql --dbserver 127.0.0.1:3306 --dbuser mediawiki --dbpass mediawiki \
@@ -28,7 +37,6 @@ error_reporting(E_ALL| E_STRICT);
 ini_set("display_errors", "1");
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
-$wgDevelopmentWarnings = true;
 EOT
 
 cat <<EOT >> LocalSettings.php
