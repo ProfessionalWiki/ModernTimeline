@@ -1,0 +1,48 @@
+{
+	"description": "Warmup case: the first Semantic MediaWiki query in a test run returns no results (query engine cold-start), which would make whichever JSONScript case sorts first fail spuriously. This case sorts first and only asserts that the container renders, priming the engine for the assertion-bearing cases.",
+	"setup": [
+		{
+			"page": "News date",
+			"namespace": "SMW_NS_PROPERTY",
+			"contents": "[[Has type::Date]]"
+		},
+		{
+			"page": "Description",
+			"namespace": "SMW_NS_PROPERTY",
+			"contents": "[[Has type::Text]]"
+		},
+		{
+			"page": "Warmup event",
+			"contents": "[[News date::August 1, 2019]] [[Description::warmup]]"
+		},
+		{
+			"page": "Warmup query",
+			"contents": "{{ #ask: [[Description::+]] | format=moderntimeline | ?News date }}"
+		}
+	],
+	"tests": [
+		{
+			"about": "the timeline container renders",
+			"type": "parser",
+			"subject": "Warmup query",
+			"assert-output": {
+				"to-contain": [
+					"modern&#95;timeline&#95;outer&#95;div"
+				]
+			}
+		}
+	],
+	"settings": {
+		"wgContLang": "en",
+		"wgLang": "en",
+		"smwgNamespacesWithSemanticLinks": {
+			"NS_MAIN": true,
+			"SMW_NS_PROPERTY": true
+		}
+	},
+	"meta": {
+		"version": "2",
+		"is-incomplete": false,
+		"debug": false
+	}
+}
