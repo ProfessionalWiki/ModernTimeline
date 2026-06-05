@@ -8,6 +8,7 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\Parser\Parser;
 use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
+use SMW\DataItems\DataItem;
 use SMW\DataValueFactory;
 
 class TemplateSlidePresenter implements SlidePresenter {
@@ -51,8 +52,14 @@ class TemplateSlidePresenter implements SlidePresenter {
 		);
 	}
 
-	private function dataItemToText( \SMWDataItem $dataItem ): string {
-		return DataValueFactory::getInstance()->newDataValueByItem( $dataItem )->getLongHTMLText();
+	private function dataItemToText( DataItem $dataItem ): string {
+		// Template parameters must be plain text. Semantic MediaWiki 7 wraps
+		// values such as dates in HTML (e.g. <time>...</time>) in
+		// getLongHTMLText(), which the parser then strips when expanding the
+		// template, losing the value. Strip the markup so the text survives.
+		return strip_tags(
+			DataValueFactory::getInstance()->newDataValueByItem( $dataItem )->getLongHTMLText()
+		);
 	}
 
 	private function parameter( string $name, string $value ): string {

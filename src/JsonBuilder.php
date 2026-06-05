@@ -6,7 +6,7 @@ namespace ModernTimeline;
 
 use ModernTimeline\ResultFacade\SubjectCollection;
 use ModernTimeline\SlidePresenter\SlidePresenter;
-use SMWDITime;
+use SMW\DataItems\Time;
 use MediaWiki\Title\Title;
 use MediaWiki\Html\Html;
 
@@ -66,7 +66,7 @@ class JsonBuilder {
 //		return DataValueFactory::getInstance()->newDataValueByItem( $subject->getWikiPage() )->getLongHTMLText( smwfGetLinker() );
 	}
 
-	private function timeToJson( SMWDITime $time ): array {
+	private function timeToJson( Time $time ): array {
 		return [
 			'year' => $time->getYear(),
 			'month' => $time->getMonth(),

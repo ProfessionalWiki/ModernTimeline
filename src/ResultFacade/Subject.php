@@ -4,7 +4,7 @@ declare( strict_types = 1 );
 
 namespace ModernTimeline\ResultFacade;
 
-use SMW\DIWikiPage;
+use SMW\DataItems\WikiPage;
 
 /**
  * Data from a single subject (page or subobject)
@@ -14,17 +14,17 @@ class Subject {
 	private PropertyValueCollections $propertyValueCollections;
 
 	/**
-	 * @param DIWikiPage $wikiPage
+	 * @param WikiPage $wikiPage
 	 * @param PropertyValueCollection[] $propertyValueCollections
 	 */
 	public function __construct(
-		private DIWikiPage $wikiPage,
+		private WikiPage $wikiPage,
 		array $propertyValueCollections
 	) {
 		$this->propertyValueCollections = new PropertyValueCollections( $propertyValueCollections );
 	}
 
-	public function getWikiPage(): DIWikiPage {
+	public function getWikiPage(): WikiPage {
 		return $this->wikiPage;
 	}
 

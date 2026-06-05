@@ -15,7 +15,7 @@ use ParamProcessor\ProcessingResult;
 use SMW\Parser\RecursiveTextProcessor;
 use SMW\Query\QueryResult;
 use SMW\Query\ResultPrinter;
-use SMWQuery;
+use SMW\Query\Query;
 
 class ModernTimelinePrinter implements ResultPrinter {
 
@@ -93,10 +93,13 @@ class ModernTimelinePrinter implements ResultPrinter {
 	}
 
 	public function getQueryMode( $context ): int {
-		return SMWQuery::MODE_INSTANCES;
+		return Query::MODE_INSTANCES;
 	}
 
 	public function setShowErrors( $show ): void {
+	}
+
+	public function setContext( int $context ): void {
 	}
 
 	public function isExportFormat(): bool {

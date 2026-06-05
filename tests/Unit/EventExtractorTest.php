@@ -10,9 +10,9 @@ use ModernTimeline\ResultFacade\PropertyValueCollection;
 use ModernTimeline\ResultFacade\Subject;
 use ModernTimeline\ResultFacade\SubjectCollection;
 use PHPUnit\Framework\TestCase;
-use SMW\DIWikiPage;
+use SMW\DataItems\Time;
+use SMW\DataItems\WikiPage;
 use SMW\Query\PrintRequest;
-use SMWDITime;
 use MediaWiki\Title\Title;
 
 /**
@@ -46,8 +46,8 @@ class EventExtractorTest extends TestCase {
 		);
 	}
 
-	private function newDiWikiPage( string $pageName = 'Some page' ): DIWikiPage {
-		$page = $this->createMock( DIWikiPage::class );
+	private function newDiWikiPage( string $pageName = 'Some page' ): WikiPage {
+		$page = $this->createMock( WikiPage::class );
 
 		$page->method( 'getTitle' )->willReturn( Title::newFromText( $pageName ) );
 
@@ -90,9 +90,9 @@ class EventExtractorTest extends TestCase {
 		return $pr;
 	}
 
-	private function newStartDate(): SMWDITime {
-		return new SMWDITime(
-			SMWDITime::CM_GREGORIAN,
+	private function newStartDate(): Time {
+		return new Time(
+			Time::CM_GREGORIAN,
 			2019,
 			8,
 			2,
