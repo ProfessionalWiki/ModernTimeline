@@ -19,8 +19,8 @@ Example timeline
 ## Platform requirements
 
 * PHP 8.1 or later
-* MediaWiki 1.43 or later (tested up to MediaWiki 1.43)
-* Semantic MediaWiki 6.0 or later (tested up to SMW 6.0.1)
+* MediaWiki 1.43 or later (tested up to MediaWiki 1.45)
+* Semantic MediaWiki 7.0 or later (tested up to SMW 7.0)
 
 See the [release notes](#release-notes) for more information on the different versions of Modern Timeline.
 
@@ -40,7 +40,7 @@ create one and add the following content to it:
 ```
 {
 	"require": {
-		"professional-wiki/modern-timeline": "~3.0"
+		"professional-wiki/modern-timeline": "~4.0"
 	}
 }
 ```
@@ -48,7 +48,7 @@ create one and add the following content to it:
 If you already have a "composer.local.json" file add the following line to the end of the "require"
 section in your file:
 
-    "professional-wiki/modern-timeline": "~3.0"
+    "professional-wiki/modern-timeline": "~4.0"
 
 Remember to add a comma to the end of the preceding line in this section.
 
@@ -172,7 +172,7 @@ have a look at the contribution guideline.
 
 ### Version 4.0.0
 
-Under development.
+Released on June 8th, 2026.
 
 * Raised minimum Semantic MediaWiki version to 7.0
 
