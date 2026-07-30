@@ -8,6 +8,9 @@
 	"modern-timeline-param-width": "د مهالوېش پلنوالی په ٪ کې. په px, em او ex کې هم ښودل کېدای شي",
 	"modern-timeline-param-height": "د مهالوېش لوړوالی په پيکسلو کې. په em او ex کې هم ښودل کېدای شي",
 	"modern-timeline-param-bookmark": "د مخ وېبتړ له لارې مهالوېش ته لوست‌نښه ورکړئ",
+	"modern-timeline-param-background": "د مهالوېش ښويندو لپاره د شاليد رنگ (د سي‌اېس‌اېس رنگ ارزښتونه)",
 	"modern-timeline-param-start-at-end": "د وروستي مهالوېش سلايډ سره يې پيل کړئ",
+	"modern-timeline-param-template": "د هغه کينډۍ نوم چې د ښويېندې ډگر يې ښودل کېږي",
+	"modern-timeline-param-image-property": "د مخ د ډول ماناپوهنيزه ځانتيا. د چاپ غوښتنې په توگه يې پوښتلو ته اړتيا ده",
 	"modern-timeline-format-name": "وسمهاله مهالوېش"
 }

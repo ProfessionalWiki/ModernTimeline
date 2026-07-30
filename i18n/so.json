@@ -1,0 +1,22 @@
+{
+	"@metadata": {
+		"authors": [
+			"AhmedG612"
+		]
+	},
+	"modern-timeline-desc": "Waxay bixisaa muuqaal waqtiyeed casri ah oo loogu talagalay Semantic MediaWiki",
+	"modern-timeline-param-width": "Ballaca jadwalka waqtiyeedka ee %. Waxa kale oo lagu qeexi karaa px, em iyo ex",
+	"modern-timeline-param-height": "Dhererka jadwalka waqtiyeedka ee pixels. Waxa kale oo lagu qeexi karaa em iyo ex",
+	"modern-timeline-param-bookmark": "Ka dhig jadwalka waqtiyeed mid lagu calaamadayn karo iyada oo loo marayo URL-ka bogga",
+	"modern-timeline-param-background": "Midabka asalka ee sawirrada jadwalka waqtiyeedka (qiimayaasha midabka CSS)",
+	"modern-timeline-param-scale-factor": "Ballaca jadwalka waqtiyeedka marka loo eego ballaca shaashadda ee bandhigga ugu horreeya",
+	"modern-timeline-param-position": "Ku soo bandhig hagaha jadwalka waqtiyeedka korka ama hoose",
+	"modern-timeline-param-tick-width": "Masaafada ugu habboon (pixels ahaan) ee u dhexeysa calaamadaha ku yaal dhidibka",
+	"modern-timeline-param-start-slide": "Sawirka ugu horreeya ee la soo bandhigayo marka jadwalka waqtiyeedka la soo raro",
+	"modern-timeline-param-start-at-end": "Ku bilow sawirka ugu dambeeya ee jadwalka waqtiyeedka",
+	"modern-timeline-param-transition-duration": "Kala guurka sawirrada ee milise ilbiriqsi",
+	"modern-timeline-param-navigation-height": "Dhererka qaybta hagaha jadwalka waqtiyeedka ee % ama px",
+	"modern-timeline-param-template": "Magaca tusmada lagu muujinayo aagga sawirka",
+	"modern-timeline-param-image-property": "Hantida Semantic ee nooca Bogga. Waxay u baahan tahay in loo weydiiyo sidii codsi daabacaad",
+	"modern-timeline-format-name": "Jadwal waqtiyeed casri ah"
+}
