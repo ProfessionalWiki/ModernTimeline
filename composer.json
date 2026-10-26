@@ -38,7 +38,7 @@
 	},
 	"require-dev": {
 		"phpstan/phpstan": "^2.0.1",
-		"mediawiki/mediawiki-codesniffer": "^46.0.0"
+		"mediawiki/mediawiki-codesniffer": "^48.0.0"
 	},
 	"extra": {
 		"branch-alias": {
